@@ -4,18 +4,16 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ProfileData implements Parcelable {
-
-    int profileId;
-    String profileName;
-
-    public ProfileData(){
-        profileId=1;
-        profileName="Audi";
-    }
+    int id;
+    String name;
+    String avatar;
 
     protected ProfileData(Parcel in) {
-        profileId = in.readInt();
-        profileName = in.readString();
+        id = in.readInt();
+        name = in.readString();
+        avatar = in.readString();
+        settings = in.readString();
+        isActive = in.readByte() != 0;
     }
 
     public static final Creator<ProfileData> CREATOR = new Creator<ProfileData>() {
@@ -30,20 +28,61 @@ public class ProfileData implements Parcelable {
         }
     };
 
-    public int getProfileId() {
-        return profileId;
+    public int getId() {
+        return id;
     }
 
-    public void setProfileId(int profileId) {
-        this.profileId = profileId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getProfileName() {
-        return profileName;
+    public String getName() {
+        return name;
     }
 
-    public void setProfileName(String profileName) {
-        this.profileName = profileName;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getSettings() {
+        return settings;
+    }
+
+    public void setSettings(String settings) {
+        this.settings = settings;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
+    String settings;
+    boolean isActive;
+
+    public ProfileData(){
+        id=1;
+        name="Driver1";
+        avatar="avatar1";
+        settings=null;
+        isActive=true;
+    }
+    public ProfileData(int id,String name, String avatar/*, boolean isActive*/){
+        this.name=name;
+        this.avatar=avatar;
+        this.id=id;
+
     }
 
     @Override
@@ -52,8 +91,11 @@ public class ProfileData implements Parcelable {
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(profileId);
-        dest.writeString(profileName);
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeString(name);
+        parcel.writeString(avatar);
+        parcel.writeString(settings);
+        parcel.writeByte((byte) (isActive ? 1 : 0));
     }
 }

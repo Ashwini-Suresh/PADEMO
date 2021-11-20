@@ -7,9 +7,12 @@ public interface IPersonalAccount extends android.os.IInterface
   /** Default implementation for IPersonalAccount. */
   public static class Default implements common.IPersonalAccount
   {
-    @Override public com.training.personalaccountservice.ProfileData getProfile() throws android.os.RemoteException
+    @Override public java.util.List<com.training.personalaccountservice.ProfileData> getAllProfile() throws android.os.RemoteException
     {
       return null;
+    }
+    @Override public void addProfile(java.lang.String profileName, java.lang.String profileAvatar) throws android.os.RemoteException
+    {
     }
     @Override
     public android.os.IBinder asBinder() {
@@ -54,18 +57,23 @@ public interface IPersonalAccount extends android.os.IInterface
           reply.writeString(descriptor);
           return true;
         }
-        case TRANSACTION_getProfile:
+        case TRANSACTION_getAllProfile:
         {
           data.enforceInterface(descriptor);
-          com.training.personalaccountservice.ProfileData _result = this.getProfile();
+          java.util.List<com.training.personalaccountservice.ProfileData> _result = this.getAllProfile();
           reply.writeNoException();
-          if ((_result!=null)) {
-            reply.writeInt(1);
-            _result.writeToParcel(reply, android.os.Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-          }
-          else {
-            reply.writeInt(0);
-          }
+          reply.writeTypedList(_result);
+          return true;
+        }
+        case TRANSACTION_addProfile:
+        {
+          data.enforceInterface(descriptor);
+          java.lang.String _arg0;
+          _arg0 = data.readString();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          this.addProfile(_arg0, _arg1);
+          reply.writeNoException();
           return true;
         }
         default:
@@ -89,24 +97,19 @@ public interface IPersonalAccount extends android.os.IInterface
       {
         return DESCRIPTOR;
       }
-      @Override public com.training.personalaccountservice.ProfileData getProfile() throws android.os.RemoteException
+      @Override public java.util.List<com.training.personalaccountservice.ProfileData> getAllProfile() throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
-        com.training.personalaccountservice.ProfileData _result;
+        java.util.List<com.training.personalaccountservice.ProfileData> _result;
         try {
           _data.writeInterfaceToken(DESCRIPTOR);
-          boolean _status = mRemote.transact(Stub.TRANSACTION_getProfile, _data, _reply, 0);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getAllProfile, _data, _reply, 0);
           if (!_status && getDefaultImpl() != null) {
-            return getDefaultImpl().getProfile();
+            return getDefaultImpl().getAllProfile();
           }
           _reply.readException();
-          if ((0!=_reply.readInt())) {
-            _result = com.training.personalaccountservice.ProfileData.CREATOR.createFromParcel(_reply);
-          }
-          else {
-            _result = null;
-          }
+          _result = _reply.createTypedArrayList(com.training.personalaccountservice.ProfileData.CREATOR);
         }
         finally {
           _reply.recycle();
@@ -114,9 +117,30 @@ public interface IPersonalAccount extends android.os.IInterface
         }
         return _result;
       }
+      @Override public void addProfile(java.lang.String profileName, java.lang.String profileAvatar) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeString(profileName);
+          _data.writeString(profileAvatar);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_addProfile, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().addProfile(profileName, profileAvatar);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
       public static common.IPersonalAccount sDefaultImpl;
     }
-    static final int TRANSACTION_getProfile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
+    static final int TRANSACTION_getAllProfile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
+    static final int TRANSACTION_addProfile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
     public static boolean setDefaultImpl(common.IPersonalAccount impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
@@ -134,5 +158,6 @@ public interface IPersonalAccount extends android.os.IInterface
       return Stub.Proxy.sDefaultImpl;
     }
   }
-  public com.training.personalaccountservice.ProfileData getProfile() throws android.os.RemoteException;
+  public java.util.List<com.training.personalaccountservice.ProfileData> getAllProfile() throws android.os.RemoteException;
+  public void addProfile(java.lang.String profileName, java.lang.String profileAvatar) throws android.os.RemoteException;
 }

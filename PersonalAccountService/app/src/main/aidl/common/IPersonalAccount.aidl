@@ -5,9 +5,7 @@ package common;
 import com.training.personalaccountservice.ProfileData;
 
 interface IPersonalAccount {
-  ProfileData getProfile();
-  /*String updateProfileName(String name);
+  java.util.List<ProfileData> getAllProfile();
+  void addProfile(String profileName, String profileAvatar);
 
-  boolean canDelete();
-  boolean canCreate();*/
   }
