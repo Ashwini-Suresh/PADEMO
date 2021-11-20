@@ -1,32 +1,29 @@
 package com.training.personalaccountservice;
 
 import android.content.Context;
-import android.os.RemoteException;
 
 import java.util.List;
 
 import common.IPersonalAccount;
 
 public class ServiceInterface extends IPersonalAccount.Stub {
-    Context context ;
+
+    PAServiceManager manager;
 
     public ServiceInterface(Context context) {
-        this.context=context;
+        manager=PAServiceManager.getInstance(context);
 
     }
 
 
     @Override
-    public List<ProfileData> getAllProfile() throws RemoteException {
-        PAServiceManager manager=new PAServiceManager(context);
+    public List<ProfileData> getAllProfile() {
         return manager.storeDataInArray();
     }
 
     @Override
-    public void addProfile(String pName, String avatar) throws RemoteException {
-        PAServiceManager manager=new PAServiceManager(context);
-        manager.addToDataBase(pName,avatar,null);
-
+    public void addProfile(String pName, String avatar) {
+        manager.addToDataBase(pName,avatar);
     }
 
 }

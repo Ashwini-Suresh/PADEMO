@@ -11,7 +11,6 @@ import androidx.annotation.Nullable;
 
 public class PADataBaseManager extends SQLiteOpenHelper {
 
-    private Context context;
 
     private static final String DATABASE_NAME="ProfileDB.db";
     private static final int DATABASE_VERSION =1;
@@ -22,11 +21,24 @@ public class PADataBaseManager extends SQLiteOpenHelper {
     private static final String COLUMN_AVATAR ="profile_avatar";
     private static final String COLUMN_SETTINGS ="profile_settings";
 
-    public PADataBaseManager(@Nullable Context context) {
-        super(context,DATABASE_NAME,null,DATABASE_VERSION);
-        this.context=context;
+    private static volatile PADataBaseManager INSTANCE=null;
+
+    // creating singleton instance
+    public static PADataBaseManager getInstance(Context context){
+        if (INSTANCE==null){
+            synchronized (PADataBaseManager.class){
+                if(INSTANCE==null)
+                    INSTANCE=new PADataBaseManager(context);
+            }
+        }
+        return INSTANCE;
     }
 
+    private PADataBaseManager(@Nullable Context context) {
+        super(context,DATABASE_NAME,null,DATABASE_VERSION);
+    }
+
+    //creating new database with columns as id,name,avatar,settings
         @Override
         public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
@@ -37,20 +49,21 @@ public class PADataBaseManager extends SQLiteOpenHelper {
 
         }
 
+        //when upgrading delete current table and create new
         @Override
         public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
             onCreate(sqLiteDatabase);
         }
 
-        void addProfile(String name,String avatar, String settings){
+        //adding new profile to database
+        void addProfile(int profile_id,String profile_name,String profile_avatar){
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues cv = new ContentValues();
 
-            cv.put(COLUMN_NAME,name);
-            cv.put(COLUMN_AVATAR,avatar);
-            cv.put(COLUMN_SETTINGS,settings);
+            cv.put(COLUMN_ID,profile_id);
+            cv.put(COLUMN_NAME,profile_name);
+            cv.put(COLUMN_AVATAR,profile_avatar);
 
             long result = db.insert(TABLE_NAME, null, cv);
             if(result==-1){
@@ -60,6 +73,7 @@ public class PADataBaseManager extends SQLiteOpenHelper {
         }
 
 
+        //reading all profiles from database and returning as cursor
         Cursor readAllData(){
             String query = "SELECT * FROM " +TABLE_NAME;
             SQLiteDatabase db = this.getReadableDatabase();
