@@ -48,7 +48,7 @@ public class PAServicePreference {
 
     public void replaceData(SharedPreferences preferences){
         SharedPreferences.Editor editor = preferences.edit();
-        for(int i=0;i<=3;i++){
+        for(int i=1;i<=3;i++){
             editor.putInt("prev"+i,preferences.getInt("prev"+(i+1),0));
             editor.apply();
         }
