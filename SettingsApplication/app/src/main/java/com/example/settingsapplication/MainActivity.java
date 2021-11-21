@@ -2,6 +2,7 @@ package com.example.settingsapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
         mRefresh=(Button) findViewById(R.id.buttonRefresh);
 
 
-       // click save
+       // click save button
         mSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +68,106 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
             }
         });
 
+        // changing background color of button on click
+
+        mAutoPlayStatusON.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                change(mAutoPlayStatusON,mAutoplayStatusOFF);
+            }
+        });
+       mAutoplayStatusOFF.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+
+               changeDefault(mAutoplayStatusOFF,mAutoPlayStatusON);
+           }
+       });
+
+        mTimeON.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                change(mTimeON,mTimeOFF);
+            }
+        });
+        mTimeOFF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                changeDefault(mTimeOFF,mTimeON);
+            }
+        });
+
+        mDisplayManual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                change(mDisplayManual,mDisplayAutomatic);
+            }
+        });
+        mDisplayAutomatic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                changeDefault(mDisplayAutomatic,mDisplayManual);
+            }
+        });
+        mTheme1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeThemeBackground(mTheme1);
+            }
+        });
+        mTheme2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeThemeBackground(mTheme2);
+            }
+        });
+        mTheme3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeThemeBackground(mTheme3);
+            }
+        });
+
     }
+
+    private void changeThemeBackground(Button changeTheme) {
+        if(changeTheme==mTheme2)
+        {
+            mTheme1.setBackgroundColor(Color.parseColor("#FF000000"));
+            mTheme2.setBackgroundColor(Color.parseColor("#188C1D"));
+            mTheme3.setBackgroundColor(Color.parseColor("#FF000000"));
+        }
+        else if (changeTheme==mTheme3)
+        {
+            mTheme1.setBackgroundColor(Color.parseColor("#FF000000"));
+            mTheme2.setBackgroundColor(Color.parseColor("#FF000000"));
+            mTheme3.setBackgroundColor(Color.parseColor("#188C1D"));
+        }
+        else if (changeTheme==mTheme1)
+        {
+            mTheme1.setBackgroundColor(Color.parseColor("#188C1D"));
+            mTheme2.setBackgroundColor(Color.parseColor("#FF000000"));
+            mTheme3.setBackgroundColor(Color.parseColor("#FF000000"));
+        }
+    }
+
+    private void changeDefault(Button d, Button dd) {
+        d.setBackgroundColor(Color.parseColor("#188C1D"));
+        dd.setBackgroundColor(Color.parseColor("#FF000000"));
+    }
+
+    private void change(Button s, Button ss) {
+
+         ss.setBackgroundColor(Color.parseColor("#FF000000"));
+        s.setBackgroundColor(Color.parseColor("#188C1D"));
+
+    }
+
 
     @Override
     public void onSave(String message) {
