@@ -10,6 +10,14 @@ public interface  MainAcitivityContract {
 
         void doSave(String msg);
         void doRefresh(String msg);
+        void setSettingsStatus(String settingsKey, String settingsValue);
+
     }
+    interface MainActivityModel{
+
+        void setSettingsStatus(String settingsKey, String settingsValue);
+
+    }
+
 
 }
