@@ -12,7 +12,14 @@
         <service
             android:name=".PAService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true">
+
+        </service>
+        <provider
+            android:authorities="com.training.personalaccountservice"
+            android:name=".PASettingsProvider"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>
