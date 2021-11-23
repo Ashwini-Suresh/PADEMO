@@ -1,21 +1,49 @@
+/**
+ * @file MainActivityContract.java
+ * @brief This Interface handles all actions related to SettingsApplication.
+ * This include interfaces used by the SettingsApplication.
+ * @author Ashwini.
+ */
 package com.example.settingsapplication;
 
-public interface  MainAcitivityContract {
+import java.util.HashMap;
 
-    interface View{
+public interface MainAcitivityContract {
+    /**
+     *  @brief interface View declares the function in view class
+     */
+
+    interface View {
         void onSave(String message);
+
         void onRefresh(String message);
+
+        void loadSettings();
     }
-    interface Presenter{
+
+    /**
+     * @brief interface presenter handles the functions that are in MainActivityPresenter class
+     */
+    interface Presenter {
 
         void doSave(String msg);
+
         void doRefresh(String msg);
+
         void setSettingsStatus(String settingsKey, String settingsValue);
+
+        HashMap<String, String> getSettings();
 
     }
-    interface MainActivityModel{
+
+    /**
+     * @brief interface MainActivityModel having the functions that are called in MainActivityPresenter class
+     */
+    interface MainActivityModel {
 
         void setSettingsStatus(String settingsKey, String settingsValue);
+
+        void getSettings();
 
     }
 

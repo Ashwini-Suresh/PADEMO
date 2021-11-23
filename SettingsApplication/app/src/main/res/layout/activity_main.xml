@@ -4,33 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#FF9800"
         android:gravity="center"
         android:text="Settings"
-        android:id="@+id/header"
         android:textSize="20dp"></TextView>
+
     <LinearLayout
+        android:id="@+id/layoutAutoPlayStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:layout_marginLeft="30dp"
-        android:id="@+id/layoutAutoPlayStatus"
-        android:layout_below="@id/header">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@id/header"
-        android:id="@+id/textAutoPlayStatus"
-        android:textSize="20dp"
-        android:text="Auto Play Status"></TextView>
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textAutoPlayStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header"
+            android:text="Auto Play Status"
+            android:textSize="20dp"></TextView>
 
         <Button
             android:id="@+id/buttonAutoPlayStatusOn"
@@ -39,51 +41,56 @@
             android:layout_marginLeft="37dp"
             android:backgroundTint="@color/green"
             android:onClick="onClick"
-            android:textColor="@color/white"
-            android:text="ON"></Button>
+            android:text="ON"
+            android:textColor="@color/white"></Button>
+
         <Button
+            android:id="@+id/buttonAutoPlayStatusOff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonAutoPlayStatusOff"
-            android:backgroundTint="@color/black"
             android:layout_marginStart="30dp"
-            android:onClick="onClick"
-            android:textColor="@color/white"
             android:layout_toRightOf="@id/buttonAutoPlayStatusOn"
-            android:text="OFF"></Button>
+            android:backgroundTint="@color/black"
+            android:onClick="onClick"
+            android:text="OFF"
+            android:textColor="@color/white"></Button>
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/layoutTimeFormat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_below="@id/layoutAutoPlayStatus"
         android:layout_marginLeft="30dp"
-        android:id="@+id/layoutTimeFormat"
-        android:layout_below="@id/layoutAutoPlayStatus">
+        android:orientation="horizontal">
+
         <TextView
+            android:id="@+id/textTimeFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textTimeFormat"
-            android:textSize="20dp"
-            android:text="Time Format"></TextView>
+            android:text="Time Format"
+            android:textSize="20dp"></TextView>
+
         <Button
+            android:id="@+id/buttonTimeOn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
-            android:text="ON"
+            android:backgroundTint="@color/green"
             android:onClick="onClick"
-            android:textColor="@color/white"
-            android:id="@+id/buttonTimeOn"
-            android:backgroundTint="@color/green"></Button>
+            android:text="ON"
+            android:textColor="@color/white"></Button>
+
         <Button
+            android:id="@+id/buttonTimeOFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonTimeOFF"
             android:layout_marginStart="30dp"
-            android:onClick="onClick"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/black"
             android:layout_toRightOf="@id/buttonTimeOn"
-            android:text="OFF"></Button>
+            android:backgroundTint="@color/black"
+            android:onClick="onClick"
+            android:text="OFF"
+            android:textColor="@color/white"></Button>
     </LinearLayout>
 
     <LinearLayout
@@ -106,138 +113,149 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="62dp"
-            android:textColor="@color/white"
-            android:onClick="onClick"
             android:backgroundTint="@color/green"
-            android:text="Theme 1"></Button>
+            android:onClick="onClick"
+            android:text="Theme 1"
+            android:textColor="@color/white"></Button>
 
         <Button
             android:id="@+id/buttonTheme2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:onClick="onClick"
-            android:textColor="@color/white"
             android:layout_toRightOf="@id/buttonTheme1"
             android:backgroundTint="@color/black"
-            android:text="Theme 2"></Button>
+            android:onClick="onClick"
+            android:text="Theme 2"
+            android:textColor="@color/white"></Button>
 
         <Button
             android:id="@+id/buttonTheme3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:onClick="onClick"
-            android:textColor="@color/white"
             android:layout_toRightOf="@id/buttonTheme2"
             android:backgroundTint="@color/black"
-            android:text="Theme 3"></Button>
+            android:onClick="onClick"
+            android:text="Theme 3"
+            android:textColor="@color/white"></Button>
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/layoutDisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_below="@id/layoutTActiveTheme"
         android:layout_marginLeft="30dp"
-        android:id="@+id/layoutDisplay"
-        android:layout_below="@id/layoutTActiveTheme">
+        android:orientation="horizontal">
+
         <TextView
+            android:id="@+id/textDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textDisplay"
-            android:textSize="20dp"
-            android:text="Display"></TextView>
+            android:text="Display"
+            android:textSize="20dp"></TextView>
+
         <Button
+            android:id="@+id/buttonDisplay_manual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="120dp"
-            android:textColor="@color/white"
-            android:text="Manual"
+            android:backgroundTint="@color/green"
             android:onClick="onClick"
-            android:id="@+id/buttonDisplay_manual"
-            android:backgroundTint="@color/green"></Button>
+            android:text="Manual"
+            android:textColor="@color/white"></Button>
+
         <Button
+            android:id="@+id/buttonDisplay_Automatic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonDisplay_Automatic"
             android:layout_marginStart="30dp"
-            android:textColor="@color/white"
-            android:onClick="onClick"
-            android:backgroundTint="@color/black"
             android:layout_toRightOf="@id/buttonDisplay_manual"
-            android:text="Automatic"></Button>
+            android:backgroundTint="@color/black"
+            android:onClick="onClick"
+            android:text="Automatic"
+            android:textColor="@color/white"></Button>
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/layoutFm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/layoutFm"
+        android:layout_below="@id/layoutDisplay"
         android:layout_marginLeft="30dp"
-        android:layout_below="@id/layoutDisplay">
+        android:orientation="horizontal">
+
         <TextView
+            android:id="@+id/textFM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textFM"
-            android:textSize="20dp"
-            android:text="FM Radio"></TextView>
+            android:text="FM Radio"
+            android:textSize="20dp"></TextView>
+
         <Button
+            android:id="@+id/buttonFM1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
+            android:backgroundTint="@color/green"
+            android:onClick="onClick"
             android:text="BIG FM"
-            android:textColor="@color/white"
-            android:onClick="onClick"
-            android:id="@+id/buttonFM1"
-            android:backgroundTint="@color/green"></Button>
+            android:textColor="@color/white"></Button>
+
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/buttonFM2"
-            android:textColor="@color/white"
-            android:layout_marginStart="38dp"
-           android:backgroundTint="@color/black"
-            android:layout_toRightOf="@id/buttonFM1"
-            android:text="RADIO CITY"
-            android:onClick="onClick"
-            ></Button>
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonFM3"
-            android:textColor="@color/white"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="38dp"
+            android:layout_toRightOf="@id/buttonFM1"
             android:backgroundTint="@color/black"
             android:onClick="onClick"
+            android:text="RADIO CITY"
+            android:textColor="@color/white"></Button>
+
+        <Button
+            android:id="@+id/buttonFM3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
             android:layout_toRightOf="@id/buttonFM2"
-            android:text="RADIO FM"></Button>
+            android:backgroundTint="@color/black"
+            android:onClick="onClick"
+            android:text="RADIO FM"
+            android:textColor="@color/white"></Button>
 
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/Bottoms"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="15dp"
-        android:id="@+id/Bottoms"
+        android:layout_below="@id/layoutFm"
         android:layout_marginLeft="30dp"
-        android:layout_below="@id/layoutFm">
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Refresh"
-            android:onClick="onClick"
             android:id="@+id/buttonRefresh"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/black"></Button>
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonSave"
-            android:onClick="onClick"
-            android:textColor="@color/white"
-            android:layout_marginLeft="20dp"
             android:backgroundTint="@color/black"
+            android:onClick="onClick"
+            android:text="Refresh"
+            android:textColor="@color/white"></Button>
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:layout_toRightOf="@id/buttonRefresh"
-            android:text="Save"></Button>
+            android:backgroundTint="@color/black"
+            android:onClick="onClick"
+            android:text="Save"
+            android:textColor="@color/white"></Button>
     </LinearLayout>
 
 </RelativeLayout>
