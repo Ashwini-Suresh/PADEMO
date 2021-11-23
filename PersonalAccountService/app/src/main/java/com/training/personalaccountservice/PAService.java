@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.IBinder;
 
 public class PAService extends Service {
-    Context context = this;
+    private Context context = this;
 
     @Override
     public IBinder onBind(Intent intent) {

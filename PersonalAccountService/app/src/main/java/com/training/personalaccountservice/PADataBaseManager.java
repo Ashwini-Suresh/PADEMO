@@ -66,7 +66,6 @@ public class PADataBaseManager extends SQLiteOpenHelper {
             cv.put(COLUMN_ID,1);
             cv.put(COLUMN_NAME,"Driver1");
             cv.put(COLUMN_AVATAR,"avatar1");
-            cv.put(COLUMN_SETTINGS,"SETTINGS1");
 
             long result = sqLiteDatabase.insert(TABLE_NAME, null, cv);
             if(result==-1){

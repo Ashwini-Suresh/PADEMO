@@ -22,42 +22,22 @@ public class PAServiceManager {
     /**
      * Declaring object of PADataBaseManager to manipulate data in database
      */
-    PADataBaseManager myDB;
+    private PADataBaseManager mPADBManager;
 
     /**
      * Declaring object of PAServicePreference to manipulate data in sharedPreference
      */
-    PAServicePreference activeList;
+    private PAServicePreference activeList;
 
     /**
      * new arrayList for adding profile object and return it to ServiceInterface
      */
-    List<ProfileData> list =new ArrayList<>();
+    private List<ProfileData> list =new ArrayList<>();
 
     /**
      * profile id for newly added profiles this will add to database and sharedPreference
      */
-    int newId;
-
-    /**
-     * profile id from database used to store in profile list
-     */
-    int pId;
-
-    /**
-     * profile name from database used to store in profile list
-     */
-    String pName;
-
-    /**
-     * profile avatar from database used to store in profile list
-     */
-    String pAvatar;
-
-    /**
-     * @brief: to indicate which is active profile using id stored in sharedPreference
-     */
-    boolean isActive;
+    private int mNewProfileId;
 
     private static volatile PAServiceManager INSTANCE=null;
 
@@ -83,10 +63,10 @@ public class PAServiceManager {
      */
     private PAServiceManager(Context context){
         activeList = PAServicePreference.getInstance(context);
-        myDB=PADataBaseManager.getInstance(context);
+        mPADBManager=PADataBaseManager.getInstance(context);
         //Initialising new profile id as 2 for first time because of already one profile is
         //present in database
-        newId=2;
+        mNewProfileId=2;
     }
 
     /**
@@ -94,18 +74,20 @@ public class PAServiceManager {
      * showing all profiles present in ui of client
      * @return : returns List of profileData
      */
-    List<ProfileData> storeDataInArray() {
+    public List<ProfileData> getProfileListFromDatabase() {
 
         int aId = activeList.getActiveId();
         list.clear();
-        Cursor cursor = myDB.readAllData();
+        Cursor cursor = mPADBManager.readAllData();
 
         while (cursor.moveToNext()) {
-            pId = Integer.parseInt(cursor.getString(0));
-            pName = cursor.getString(1);
-            pAvatar = cursor.getString(2);
-            isActive = pId == aId;
-            ProfileData p = new ProfileData(pId, pName, pName, isActive);
+
+            int mProfileId = Integer.parseInt(cursor.getString(0));
+            String mProfileName = cursor.getString(1);
+            String mProfileAvatar = cursor.getString(2);
+            boolean misActive = mProfileId == aId;
+
+            ProfileData p = new ProfileData(mProfileId, mProfileName, mProfileAvatar, misActive);
             list.add(p);
         }
 
@@ -115,13 +97,13 @@ public class PAServiceManager {
 
     /**
      * @brief: add new profile to database and id in shared preference
-     * @param pName: profile name from serviceInterface
-     * @param pAvatar:profile name from serviceInterface
+     * @param pName : profile name of new profile
+     * @param pAvatar : profile avatar of new profile
      */
-    void addToDataBase(String pName,String pAvatar){
-        myDB.addProfile(newId,pName,pAvatar);
-        activeList.add(newId);
-        newId++;
+    public void addNewProfileToDataBase(String pName, String pAvatar){
+        mPADBManager.addProfile(mNewProfileId,pName,pAvatar);
+        activeList.add(mNewProfileId);
+        mNewProfileId++;
     }
 
 
@@ -129,7 +111,7 @@ public class PAServiceManager {
      * @brief: adding given profile id to shared preference where we store profile id of active profile
      * @param activeProfileId: profile id of selected profile
      */
-    void newActiveProfile(int activeProfileId) {
+    public void switchProfile(int activeProfileId) {
         Log.i("ChangeActiveProfile","Profile id " +activeProfileId);
         Log.i("ActiveProfile","Before changing "+ activeList.getActiveId());
         if(activeList.getActiveId()!=activeProfileId){
@@ -144,7 +126,7 @@ public class PAServiceManager {
      */
     public Cursor readActiveProfileSettings() {
         Cursor cursor;
-        cursor= myDB.readActiveProfileSettings();
+        cursor= mPADBManager.readActiveProfileSettings();
         return cursor;
     }
 
@@ -154,6 +136,6 @@ public class PAServiceManager {
      * @return : update count
      */
     public int updateActiveProfileSettings(ContentValues contentValues) {
-        return myDB.updateActiveProfileSettings(contentValues);
+        return mPADBManager.updateActiveProfileSettings(contentValues);
     }
 }
