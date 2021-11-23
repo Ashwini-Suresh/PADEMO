@@ -1,3 +1,9 @@
+/**
+ * @file        PADataBaseManager.java
+ * @brief       PADataBaseManager manages the functionalities of DataBase.
+ * @author      Akshay K B
+ */
+
 package com.training.personalaccountservice;
 
 import android.content.ContentValues;
@@ -9,22 +15,28 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+/**
+ * @brief: PADataBaseManager manages the functionalities of DataBase.
+ */
 public class PADataBaseManager extends SQLiteOpenHelper {
 
-
+    /**
+     * @brief: varaiable denoting
+     */
     private static final String DATABASE_NAME="ProfileDB.db";
     private static final int DATABASE_VERSION =1;
-
     private static final String TABLE_NAME="profile_table";
     private static final String COLUMN_ID="_id";
     private static final String COLUMN_NAME ="profile_name";
     private static final String COLUMN_AVATAR ="profile_avatar";
     private static final String COLUMN_SETTINGS ="profile_settings";
 
-    private static volatile PADataBaseManager INSTANCE=null;
     private final Context context;
 
-    // creating singleton instance
+    private static volatile PADataBaseManager INSTANCE=null;
+
+
+
     public static PADataBaseManager getInstance(Context context){
         if (INSTANCE==null){
             synchronized (PADataBaseManager.class){
