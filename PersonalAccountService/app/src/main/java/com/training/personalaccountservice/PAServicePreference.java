@@ -24,6 +24,7 @@ public class PAServicePreference {
     private PAServicePreference(Context context){
         sharedPreferences= context.getSharedPreferences(context.getPackageName()+"."+TAG,Context.MODE_PRIVATE);
         prevNum=0;
+        add(1);
     }
 
 

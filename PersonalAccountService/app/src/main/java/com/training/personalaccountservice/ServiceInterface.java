@@ -26,4 +26,8 @@ public class ServiceInterface extends IPersonalAccount.Stub {
         manager.addToDataBase(pName,avatar);
     }
 
+    @Override
+    public void changeActiveProfile(int pId) {
+        manager.newActiveProfile(pId);
+    }
 }

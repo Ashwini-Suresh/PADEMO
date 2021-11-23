@@ -22,6 +22,7 @@ public class PADataBaseManager extends SQLiteOpenHelper {
     private static final String COLUMN_SETTINGS ="profile_settings";
 
     private static volatile PADataBaseManager INSTANCE=null;
+    private final Context context;
 
     // creating singleton instance
     public static PADataBaseManager getInstance(Context context){
@@ -36,6 +37,7 @@ public class PADataBaseManager extends SQLiteOpenHelper {
 
     private PADataBaseManager(@Nullable Context context) {
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
+        this.context = context;
     }
 
     //creating new database with columns as id,name,avatar,settings
@@ -46,6 +48,19 @@ public class PADataBaseManager extends SQLiteOpenHelper {
                     COLUMN_NAME + " TEXT, " + COLUMN_AVATAR + " TEXT, " +
                     COLUMN_SETTINGS +" TEXT);";
             sqLiteDatabase.execSQL(query);
+
+            ContentValues cv = new ContentValues();
+
+            cv.put(COLUMN_ID,1);
+            cv.put(COLUMN_NAME,"Driver1");
+            cv.put(COLUMN_AVATAR,"avatar1");
+            cv.put(COLUMN_SETTINGS,"SETTINGS1");
+
+            long result = sqLiteDatabase.insert(TABLE_NAME, null, cv);
+            if(result==-1){
+                Log.i("AddProfile","failed");
+            }else
+                Log.i("AddProfile","Success");
 
         }
 
@@ -83,4 +98,25 @@ public class PADataBaseManager extends SQLiteOpenHelper {
             }
             return  cursor;
         }
+
+    Cursor readActiveProfileSettings(){
+        int activeProfileId = PAServicePreference.getInstance(context).getActiveId();
+        String arg=String.valueOf(activeProfileId);
+        Log.i("content provider","activeprofile "+activeProfileId);
+        String query = "SELECT "+COLUMN_SETTINGS+" FROM " +TABLE_NAME+" WHERE "+COLUMN_ID+ " = ?";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor=null;
+        if(db!=null){
+            cursor=db.rawQuery(query,new String[] {arg});
+        }
+        return  cursor;
+    }
+
+    int updateActiveProfileSettings(ContentValues cv) {
+        int activeProfileId = PAServicePreference.getInstance(context).getActiveId();
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        return db.update(TABLE_NAME,cv,COLUMN_ID+" = ?",new String[]{String.valueOf(activeProfileId)});
+    }
+
 }
