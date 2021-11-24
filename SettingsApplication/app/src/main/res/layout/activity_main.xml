@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="37dp"
-            android:backgroundTint="@color/green"
+
             android:onClick="onClick"
             android:text="ON"
             android:textColor="@color/white"></Button>
@@ -50,7 +50,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_toRightOf="@id/buttonAutoPlayStatusOn"
-            android:backgroundTint="@color/black"
             android:onClick="onClick"
             android:text="OFF"
             android:textColor="@color/white"></Button>
@@ -76,7 +75,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
-            android:backgroundTint="@color/green"
             android:onClick="onClick"
             android:text="ON"
             android:textColor="@color/white"></Button>
@@ -87,7 +85,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_toRightOf="@id/buttonTimeOn"
-            android:backgroundTint="@color/black"
             android:onClick="onClick"
             android:text="OFF"
             android:textColor="@color/white"></Button>

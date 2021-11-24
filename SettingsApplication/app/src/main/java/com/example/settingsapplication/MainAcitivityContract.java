@@ -14,9 +14,7 @@ public interface MainAcitivityContract {
      */
 
     interface View {
-        void onSave(String message);
 
-        void onRefresh(String message);
 
         void loadSettings();
     }
@@ -26,9 +24,9 @@ public interface MainAcitivityContract {
      */
     interface Presenter {
 
-        void doSave(String msg);
+        void doSave();
 
-        void doRefresh(String msg);
+        void doRefresh();
 
         void setSettingsStatus(String settingsKey, String settingsValue);
 
@@ -41,11 +39,15 @@ public interface MainAcitivityContract {
      */
     interface MainActivityModel {
 
+
         void setSettingsStatus(String settingsKey, String settingsValue);
 
         void getSettings();
 
+        void onSave();
+
     }
+
 
 
 }

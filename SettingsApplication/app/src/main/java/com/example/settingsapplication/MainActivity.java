@@ -15,10 +15,14 @@ import static com.example.settingsapplication.Common.SettingsConstants.TIME_FORM
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ComponentName;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.database.Cursor;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
@@ -26,9 +30,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.settingsapplication.Common.SettingsConstants;
+import com.example.settingsapplication.Presenter.MainActivityPresenter;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -38,14 +42,18 @@ import java.util.Set;
 import common.IPersonalAccount;
 
 /**
- * @brief This is the main class
+ * @brief This is the main class which implements the View ans onclick listner
  */
 public class MainActivity extends AppCompatActivity implements MainAcitivityContract.View, View.OnClickListener {
 
-    // create object for presenter
-    MainAcitivityContract.Presenter presenter;
-    IPersonalAccount mCommon;
-    // Intitializing Button
+    /**
+     * creating object for presenter class
+     */
+    private static MainAcitivityContract.Presenter presenter;
+    private static IPersonalAccount mCommon;
+    /**
+     * Intitializing Buttons
+     */
     private Button mAutoPlayStatusON;
     private Button mAutoplayStatusOFF;
     private Button mTimeON;
@@ -65,19 +73,23 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // hide taskbar
+        /**
+         *  Hide taskbar
+         */
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
 
-        //creating presenter object
+        /**
+         * Creating presenter object
+         */
 
-        presenter = new MainActivityPresenter(this);
+        presenter = new MainActivityPresenter(this, getApplicationContext());
 
         /**
-         * finding ui elements
+         * Finding all the ui elements
          */
 
         mAutoPlayStatusON = (Button) findViewById(R.id.buttonAutoPlayStatusOn);
@@ -96,42 +108,40 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
         mRefresh = (Button) findViewById(R.id.buttonRefresh);
 
 
+        //defining function to bind with service
+
+        Intent intent = new Intent();
+        intent.setClassName("com.example.servicelist", "com.example.servicelist.MyService");
+        //bindService(intent,serviceConnection,BIND_AUTO_CREATE);
+        if (getApplicationContext().bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE)) {
+            Log.i("Binding", "Success");
+        } else {
+            Log.i("Binding", "failed");
+        }
+
         /**
-         * @brief click on save button
+         * @brief When click on ave button it calls a  function in presenter class to save the updated settings.
          */
         mSave.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                presenter.doSave();
 
             }
         });
-
-        //defining finction to bind with service
-
-            Intent intent = new Intent();
-            intent.setClassName("com.example.servicelist","com.example.servicelist.MyService");
-            //bindService(intent,serviceConnection,BIND_AUTO_CREATE);
-            if (getApplicationContext().bindService(intent,serviceConnection, Context.BIND_AUTO_CREATE)){
-                Log.i("Binding","Success");
-            }else{
-                Log.i("Binding","failed");
-            }
-
-
-
-
-
         /**
-         * @brief the action perform when click on the refresh button
+         * @brief Click on a Refresh button ,it calls a function in presenter class to get saved settings
          */
         mRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
+                presenter.doRefresh();
             }
         });
 
     }
+
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -143,12 +153,14 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
         public void onServiceDisconnected(ComponentName name) {
 
         }
+
     };
+
     /**
      * @param selected       : This is a selected Button in the ui
      * @param notSelectedOne : This is the unSelected Button in the ui
      * @param notSelectedTwo : This is the unSelected Button in the ui
-     * @brief The changeStatus function having 3 parameters to change the ui status
+     * @brief : The changeStatus function having 3 parameters to change the ui status
      * where one parameter is selected button and other two buttons are unselected.
      * when click on one button the status of that button indicated in green color
      * and others are in black color.
@@ -194,17 +206,16 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
 
     }
 
+
     /**
-     *
-     * @param settingsKey
-     * @param settingsValue :
+     * @param selected       : This is a selected Button in the ui
+     * @param notSelectedOne : This is the unSelected Button in the ui
+     * @param notSelectedTwo : This is the unSelected Button in the ui
+     * @brief The setStatus function having 3 parameters to set the ui status
+     * where one parameter is selected button and other two buttons are unselected.
+     * when click on one button the status of that button indicated in green color
+     * and others are in black color.
      */
-    private void setSettingsStatus(String settingsKey, String settingsValue) {
-
-
-    }
-
-
     public void setStatus(Button selected, Button notSelectedOne, Button notSelectedTwo) {
         selected.setBackgroundColor(Color.parseColor(SettingsConstants.GREEN_COLOR));
         selected.setSelected(true);
@@ -218,25 +229,7 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
     }
 
 
-    @Override
-    public void onSave(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onRefresh(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-
-    }
-
-   @Override
-    public void loadSettings() {
-
-    }
-
-
     /**
-     * @param view
      * @brief This is the onclick function to handle the function for clicking a button
      * here when a button is pressed that button id is passed in the switch statement
      * then calling the changeStatus function to change the status
@@ -286,12 +279,26 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
         }
     }
 
+
+    /**
+     * @brief The onResume method calls the LoadSettings function to load the current
+     * setting of SettingsApplication
+     */
     protected void onResume() {
 
         super.onResume();
         loadSettings();
     }
 
+
+    @Override
+    public void loadSettings() {
+
+    }
+
+    /**
+     * @brief To load the settings of the SettingsApplication,This uses HAshMap to load Settings
+     */
    /* public void loadSettings() {
         HashMap<String, String> mSettingsMap = presenter.getSettings();
 
@@ -304,16 +311,12 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
             if (mentry.getKey().equals(AUTO_PLAY_STATUS)) {
                 if (mentry.getValue().equals("ON")) {
                     setStatus(mAutoPlayStatusON, mAutoplayStatusOFF, null);
-
-
                 } else {
                     setStatus(mAutoplayStatusOFF, mAutoPlayStatusON, null);
                 }
             } else if (mentry.getKey().equals(TIME_FORMAT)) {
                 if (mentry.getValue().equals("ON")) {
                     setStatus(mTimeON, mTimeOFF, null);
-
-
                 } else {
                     setStatus(mTimeOFF, mTimeON, null);
 
@@ -333,8 +336,6 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
                 if (mentry.getKey().equals(DISPLAY)) {
                     if (mentry.getValue().equals("MANUAL")) {
                         setStatus(mDisplayManual, mDisplayAutomatic, null);
-
-
                     } else {
                         setStatus(mDisplayAutomatic, mDisplayManual, null);
                     }
@@ -351,9 +352,6 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
                     }
                 }
             }
-
         }
     }*/
-
-
 }
