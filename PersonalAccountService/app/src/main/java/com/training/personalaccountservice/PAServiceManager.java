@@ -20,12 +20,12 @@ import java.util.List;
 public class PAServiceManager {
 
     /**
-     * Declaring object of PADataBaseManager to manipulate data in database
+     * Declaring object of PASDataBaseManager
      */
-    private PADataBaseManager mPADBManager;
+    private PASDataBaseManager mPASDBManager;
 
     /**
-     * Declaring object of PAServicePreference to manipulate data in sharedPreference
+     * Declaring object of PAServicePreference
      */
     private PAServicePreference mActiveList;
 
@@ -35,7 +35,7 @@ public class PAServiceManager {
     private List<ProfileData> mProfileDataList =new ArrayList<>();
 
     /**
-     * profile id for newly added profiles this will add to database and sharedPreference
+     * profile id for newly added profiles this will addToPreference to database and sharedPreference
      */
     private int mNewProfileId;
 
@@ -66,14 +66,14 @@ public class PAServiceManager {
      */
     private PAServiceManager(Context context){
         mActiveList = PAServicePreference.getInstance(context);
-        mPADBManager=PADataBaseManager.getInstance(context);
+        mPASDBManager = PASDataBaseManager.getInstance(context);
         //Initialising new profile id as 2 for first time because of already one profile is
         //present in database
         mNewProfileId=2;
     }
 
     /**
-     * @brief: get profile data from database and add this to profileList for
+     * @brief: get profile data from database and addToPreference this to profileList for
      * showing all profiles present in ui of client
      * @return : returns List of profileData
      */
@@ -81,7 +81,7 @@ public class PAServiceManager {
 
         int aId = mActiveList.getActiveId();
         mProfileDataList.clear();
-        Cursor cursor = mPADBManager.readAllData();
+        Cursor cursor = mPASDBManager.readAllData();
 
         while (cursor.moveToNext()) {
 
@@ -99,13 +99,13 @@ public class PAServiceManager {
 
 
     /**
-     * @brief: add new profile to database and id in shared preference
+     * @brief: addToPreference new profile to database and id in shared preference
      * @param pName : profile name of new profile
      * @param pAvatar : profile avatar of new profile
      */
     public void addNewProfileToDataBase(String pName, String pAvatar){
-        mPADBManager.addProfile(mNewProfileId,pName,pAvatar);
-        mActiveList.add(mNewProfileId);
+        mPASDBManager.addProfile(mNewProfileId,pName,pAvatar);
+        mActiveList.addToPreference(mNewProfileId);
         mNewProfileId++;
     }
 
@@ -118,7 +118,7 @@ public class PAServiceManager {
         Log.i("ChangeActiveProfile","Profile id " +activeProfileId);
         Log.i("ActiveProfile","Before changing "+ mActiveList.getActiveId());
         if(mActiveList.getActiveId()!=activeProfileId){
-            mActiveList.add(activeProfileId);
+            mActiveList.addToPreference(activeProfileId);
             Log.i("ActiveProfile","After changing "+ mActiveList.getActiveId());
         }
     }
@@ -129,7 +129,7 @@ public class PAServiceManager {
      */
     public Cursor readActiveProfileSettings() {
         Cursor cursor;
-        cursor= mPADBManager.readActiveProfileSettings();
+        cursor= mPASDBManager.readActiveProfileSettings();
         return cursor;
     }
 
@@ -139,6 +139,6 @@ public class PAServiceManager {
      * @return : update count, return type:integer
      */
     public int updateActiveProfileSettings(ContentValues contentValues) {
-        return mPADBManager.updateActiveProfileSettings(contentValues);
+        return mPASDBManager.updateActiveProfileSettings(contentValues);
     }
 }

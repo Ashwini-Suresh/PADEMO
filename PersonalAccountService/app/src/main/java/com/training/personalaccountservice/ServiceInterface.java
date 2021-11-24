@@ -1,3 +1,9 @@
+/**
+ * @file        ServiceInterface.java
+ * @brief       serviceInterface implements aidl functions.
+ *
+ * @author      Akshay K B
+ */
 package com.training.personalaccountservice;
 
 import android.content.Context;
@@ -7,7 +13,7 @@ import java.util.List;
 import common.IPersonalAccount;
 
 /**
- * @brief: serviceInterface implements aidl functions
+ * @brief: serviceInterface implements aidl functions.
  */
 public class ServiceInterface extends IPersonalAccount.Stub {
 
