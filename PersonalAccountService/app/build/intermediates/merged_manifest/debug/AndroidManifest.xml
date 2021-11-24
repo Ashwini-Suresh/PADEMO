@@ -21,6 +21,13 @@
         <service
             android:name="com.training.personalaccountservice.PAService"
             android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <provider
+            android:name="com.training.personalaccountservice.PASettingsProvider"
+            android:authorities="com.training.personalaccountservice"
+            android:enabled="true"
             android:exported="true" />
     </application>
 

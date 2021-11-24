@@ -7,7 +7,7 @@ public class PAServicePreference {
 
     private  static final String TAG=PAServicePreference.class.getSimpleName();
 
-    int prevNum;
+    private int prevNum;
     private final SharedPreferences sharedPreferences;
 
     private static volatile PAServicePreference INSTANCE=null;

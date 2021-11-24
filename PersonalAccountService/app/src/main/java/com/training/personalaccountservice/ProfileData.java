@@ -4,10 +4,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ProfileData implements Parcelable {
-    int id;
-    String name;
-    String avatar;
-    boolean isActive;
+    private int id;
+    private String name;
+    private String avatar;
+    private boolean isActive;
 
     public ProfileData(int id,String name, String avatar, boolean isActive){
         this.name=name;

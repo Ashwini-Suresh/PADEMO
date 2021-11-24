@@ -15,13 +15,13 @@ public class ServiceInterface extends IPersonalAccount.Stub {
     /**
      * declaring PAServiceManager object
      */
-    PAServiceManager manager;
+    private PAServiceManager mPASManager;
 
     /**
      * @param context: to give application context from service to PAServiceManager
      */
     public ServiceInterface(Context context) {
-        manager=PAServiceManager.getInstance(context);
+        mPASManager =PAServiceManager.getInstance(context);
 
     }
 
@@ -32,7 +32,7 @@ public class ServiceInterface extends IPersonalAccount.Stub {
      */
     @Override
     public List<ProfileData> getAllProfile() {
-        return manager.getProfileListFromDatabase();
+        return mPASManager.getProfileListFromDatabase();
     }
 
     /**
@@ -42,7 +42,7 @@ public class ServiceInterface extends IPersonalAccount.Stub {
      */
     @Override
     public void addProfile(String pName, String avatar) {
-        manager.addNewProfileToDataBase(pName,avatar);
+        mPASManager.addNewProfileToDataBase(pName,avatar);
     }
 
     /**
@@ -51,6 +51,6 @@ public class ServiceInterface extends IPersonalAccount.Stub {
      */
     @Override
     public void changeActiveProfile(int pId) {
-        manager.switchProfile(pId);
+        mPASManager.switchProfile(pId);
     }
 }

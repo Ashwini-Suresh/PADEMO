@@ -83,7 +83,7 @@ public class PADataBaseManager extends SQLiteOpenHelper {
         }
 
         //adding new profile to database
-        void addProfile(int profile_id,String profile_name,String profile_avatar){
+        public void addProfile(int profile_id,String profile_name,String profile_avatar){
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues cv = new ContentValues();
 
