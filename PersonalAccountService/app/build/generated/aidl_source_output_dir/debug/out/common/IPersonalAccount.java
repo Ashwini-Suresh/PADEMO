@@ -17,6 +17,10 @@ public interface IPersonalAccount extends android.os.IInterface
     @Override public void changeActiveProfile(int pId) throws android.os.RemoteException
     {
     }
+    @Override public java.util.List<java.lang.String> getAvailableAvatarList() throws android.os.RemoteException
+    {
+      return null;
+    }
     @Override
     public android.os.IBinder asBinder() {
       return null;
@@ -86,6 +90,14 @@ public interface IPersonalAccount extends android.os.IInterface
           _arg0 = data.readInt();
           this.changeActiveProfile(_arg0);
           reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_getAvailableAvatarList:
+        {
+          data.enforceInterface(descriptor);
+          java.util.List<java.lang.String> _result = this.getAvailableAvatarList();
+          reply.writeNoException();
+          reply.writeStringList(_result);
           return true;
         }
         default:
@@ -168,11 +180,32 @@ public interface IPersonalAccount extends android.os.IInterface
           _data.recycle();
         }
       }
+      @Override public java.util.List<java.lang.String> getAvailableAvatarList() throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        java.util.List<java.lang.String> _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getAvailableAvatarList, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getAvailableAvatarList();
+          }
+          _reply.readException();
+          _result = _reply.createStringArrayList();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
       public static common.IPersonalAccount sDefaultImpl;
     }
     static final int TRANSACTION_getAllProfile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
     static final int TRANSACTION_addProfile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
     static final int TRANSACTION_changeActiveProfile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 2);
+    static final int TRANSACTION_getAvailableAvatarList = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
     public static boolean setDefaultImpl(common.IPersonalAccount impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
@@ -193,4 +226,5 @@ public interface IPersonalAccount extends android.os.IInterface
   public java.util.List<com.training.personalaccountservice.ProfileData> getAllProfile() throws android.os.RemoteException;
   public void addProfile(java.lang.String profileName, java.lang.String profileAvatar) throws android.os.RemoteException;
   public void changeActiveProfile(int pId) throws android.os.RemoteException;
+  public java.util.List<java.lang.String> getAvailableAvatarList() throws android.os.RemoteException;
 }

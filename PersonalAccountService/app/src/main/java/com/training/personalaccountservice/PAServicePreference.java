@@ -65,6 +65,7 @@ public class PAServicePreference {
      * @param id : Profile id of active profile
      */
     public void addToPreference(int id){
+        deleteIfPresent(id);
         if (mLatest == 4) {
             replaceData();
             SharedPreferences.Editor editor = mSharedPreferences.edit();
@@ -80,8 +81,36 @@ public class PAServicePreference {
     }
 
     /**
-     * @brief:  To get active profile id
-     * @return : Returns integer variable stored last
+     * @brief: To delete if present on adding new id to preference.
+     * @param id : Profile id to remove from sharedPreference data.
+     */
+    private void deleteIfPresent(int id) {
+        for(int i=1;i<=mLatest;i++){
+            if(i==mLatest && mSharedPreferences.getInt("prev"+i,0)==id){
+                mLatest--;
+            }else if(mSharedPreferences.getInt("prev"+i,0)==id){
+                reArrange(i);
+            }
+        }
+
+    }
+
+    /**
+     * @brief: Values from this keyNum will be moved one position down.
+     * @param fromKeyNum : From which key value re arrange.
+     */
+    private void reArrange(int fromKeyNum) {
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        for(int j = fromKeyNum; j<mLatest; j++) {
+            editor.putInt("prev" + j, mSharedPreferences.getInt("prev" + (fromKeyNum + 1), 0));
+            editor.apply();
+        }
+        mLatest--;
+    }
+
+    /**
+     * @brief:  To get active profile id.
+     * @return : Returns integer variable stored last.
      */
     public int getActiveId(){
             return mSharedPreferences.getInt("prev"+ mLatest,0);

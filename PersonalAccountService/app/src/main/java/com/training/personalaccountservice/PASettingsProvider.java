@@ -18,55 +18,55 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
- * @brief: content provider to give settings details to PASettingsHMI
+ * @brief: content provider to give settings details to PASettingsHMI.
  */
 public class PASettingsProvider extends ContentProvider {
 
     /**
-     * Initialising AUTHORITY for CONTENT URI
+     * Initialising AUTHORITY for CONTENT URI.
      */
     public static final String AUTHORITY="com.training.personalaccountservice";
 
     /**
-     * Initialising PATH for CONTENT URI
+     * Initialising PATH for CONTENT URI.
      */
     public static final String PATH_ACTIVE_PROFILE_SETTINGS="ACTIVE_PROFILE_SETTINGS";
 
     /**
-     * Initialising URI for content provider
+     * Initialising URI for content provider.
      */
     public static final Uri CONTENT_URI= Uri.parse("content://"+AUTHORITY+"/"+PATH_ACTIVE_PROFILE_SETTINGS);
 
     /**
-     * Integer variable to match with specific URI
+     * Integer variable to match with specific URI.
      */
     public static final  int ACTIVE_PROFILE_SETTINGS = 1;
 
     /**
-     * Declaring new UriMatcher object
+     * Declaring new UriMatcher object.
      */
     private static final UriMatcher MATCHER =new UriMatcher(UriMatcher.NO_MATCH);
 
     /**
-     * Matching integer variable with URI
+     * Matching integer variable with URI.
      */
     static {
         MATCHER.addURI(AUTHORITY, PATH_ACTIVE_PROFILE_SETTINGS, ACTIVE_PROFILE_SETTINGS);
     }
 
     /**
-     * Initialising MIME TYPE to inform PASettingsHMI what type of data is sent
+     * Initialising MIME TYPE to inform PASettingsHMI what type of data is sent.
      */
     public static final String MIME_TYPE= ContentResolver.CURSOR_ITEM_BASE_TYPE+"/"+"vnd.com.training.settings";
 
     /**
-     * Declaring object of PASDataBaseManager
+     * Declaring object of PASDataBaseManager.
      */
     PAServiceManager mPASManager;
 
     /**
-     * @brief: getting PAServiceManager instance on creating the content provider
-     * @return : returns boolean true
+     * @brief: Getting PAServiceManager instance on creating the content provider.
+     * @return : Returns boolean true.
      */
     @Override
     public boolean onCreate() {
@@ -76,14 +76,14 @@ public class PASettingsProvider extends ContentProvider {
     }
 
     /**
-     * @brief: To provide settings details of active profile stored in database to PASettingsHMI
-     * @param uri : URI from PASettingsHMI. data will be sent only if it matches
+     * @brief: To provide settings details of active profile stored in database to PASettingsHMI.
+     * @param uri : URI from PASettingsHMI. Data will be sent only if it matches.
      * @param strings : Array of columns to select from table.
-     *                do not require this parameter to perform action
-     * @param s : Specific criteria for selection. do not require this parameter to perform action
-     * @param strings1 : selection values of criteria. do not require this parameter to perform action
-     * @param s1 : Sort order. do not require this parameter to perform action
-     * @return : Returns Cursor containing Settings column value of active profile
+     *                Do not require this parameter to perform action.
+     * @param s : Specific criteria for selection. Do not require this parameter to perform action.
+     * @param strings1 : selection values of criteria. Do not require this parameter to perform action.
+     * @param s1 : Sort order. Do not require this parameter to perform action.
+     * @return : Returns Cursor containing Settings column value of active profile.
      */
     @Nullable
     @Override
@@ -114,10 +114,10 @@ public class PASettingsProvider extends ContentProvider {
     }
 
     /**
-     * @brief: used to insert data into table , here it is not using
+     * @brief: used to insert data into table , here it is not using.
      * @param uri : URI from PASettingsHMI.
-     * @param contentValues : ContentValues to put into table
-     * @return : returns Uri null because its not used
+     * @param contentValues : ContentValues to put into table.
+     * @return : Returns Uri null because its not used.
      */
     @Nullable
     @Override
@@ -127,12 +127,12 @@ public class PASettingsProvider extends ContentProvider {
 
 
     /**
-     * @brief: used to insert data into table , here it is not using
-     * @param uri :URI from PASettingsHMI. Not used
-     * @param s : where clause for perform query of database to delete. Not used
-     * @param strings : values for for where clause. Not used
-     * @return : returns integer value of number of columns deleted, here it returns zero because
-     * we are not performing the delete operation
+     * @brief: Used to insert data into table , here it is not using.
+     * @param uri :URI from PASettingsHMI. Not used.
+     * @param s : Where clause for perform query of database to delete. Not used.
+     * @param strings : Values for for where clause. Not used.
+     * @return : Returns integer value of number of columns deleted, here it returns zero because
+     * we are not performing the delete operation.
      */
     @Override
     public int delete(@NonNull Uri uri, @Nullable String s, @Nullable String[] strings) {
@@ -140,12 +140,12 @@ public class PASettingsProvider extends ContentProvider {
     }
 
     /**
-     * @brief: To update settings details provided by PASettingsHMI to Settings column of active profile
-     * @param uri : URI from PASettingsHMI
-     * @param contentValues : Content values provided by PASettingsHMI
-     * @param s : Where clause . Not needed here
-     * @param strings : Values for where clause. Not needed here
-     * @return : Integer value of numbers of rows changed
+     * @brief: To update settings details provided by PASettingsHMI to Settings column of active profile.
+     * @param uri : URI from PASettingsHMI.
+     * @param contentValues : Content values provided by PASettingsHMI.
+     * @param s : Where clause . Not needed here.
+     * @param strings : Values for where clause. Not needed here.
+     * @return : Integer value of numbers of rows changed.
      */
     @Override
     public int update(@NonNull Uri uri, @Nullable ContentValues contentValues, @Nullable String s, @Nullable String[] strings) {
@@ -154,7 +154,6 @@ public class PASettingsProvider extends ContentProvider {
         if (MATCHER.match(uri) == ACTIVE_PROFILE_SETTINGS) {
             updateCount= mPASManager.updateActiveProfileSettings(contentValues);
         }
-
         return updateCount;
     }
 }

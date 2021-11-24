@@ -8,5 +8,6 @@ interface IPersonalAccount {
   java.util.List<ProfileData> getAllProfile();
   void addProfile(String profileName, String profileAvatar);
   void changeActiveProfile(int pId);
+  java.util.List<String> getAvailableAvatarList();
 
   }

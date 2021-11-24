@@ -12,6 +12,7 @@ import android.database.Cursor;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -141,4 +142,14 @@ public class PAServiceManager {
     public int updateActiveProfileSettings(ContentValues contentValues) {
         return mPASDBManager.updateActiveProfileSettings(contentValues);
     }
+
+    public List<String> getAvailableAvatar() {
+        List<String> avatarList = Arrays.asList( "avatar1", "avatar2", "avatar3", "avatar4", "avatar5", "avatar6", "avatar7", "avatar8");
+        Cursor cursor = mPASDBManager.readAllData();
+        while (cursor.moveToNext()) {
+            avatarList.remove(cursor.getString(2));
+        }
+        return avatarList;
+    }
 }
+
