@@ -6,48 +6,49 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="26"
-8-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml
+8-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="31" />
-9-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml
+9-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:5:5-23:19
+11-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:5:5-23:19
 12        android:allowBackup="true"
-12-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:6:9-35
+12-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.5.0] /home/quest/.gradle/caches/transforms-3/255d63c0f9f8f5d12ab3191ffb377750/transformed/core-1.5.0/AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.5.0] C:\Users\HP\.gradle\caches\transforms-3\255d63c0f9f8f5d12ab3191ffb377750\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
 14        android:debuggable="true"
 15        android:extractNativeLibs="false"
 16        android:icon="@mipmap/ic_launcher"
-16-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:7:9-43
+16-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:7:9-43
 17        android:label="@string/app_name"
-17-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:8:9-41
+17-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:8:9-41
 18        android:roundIcon="@mipmap/ic_launcher_round"
-18-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:9:9-54
+18-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:9:9-54
 19        android:supportsRtl="true"
-19-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:10:9-35
-20        android:theme="@style/Theme.PersonalAccountService" >
-20-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:11:9-60
-21        <service
-21-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:12:9-17:19
-22            android:name="com.training.personalaccountservice.PAService"
-22-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:13:13-38
-23            android:enabled="true"
-23-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:14:13-35
-24            android:exported="true" >
-24-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:15:13-36
-25        </service>
-26
-27        <provider
-27-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:18:9-22:38
-28            android:name="com.training.personalaccountservice.PASettingsProvider"
-28-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:20:13-47
-29            android:authorities="com.training.personalaccountservice"
-29-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:19:13-70
-30            android:enabled="true"
-30-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:21:13-35
-31            android:exported="true" />
-31-->/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/AndroidManifest.xml:22:13-36
-32    </application>
-33
-34</manifest>
+19-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:10:9-35
+20        android:testOnly="true"
+21        android:theme="@style/Theme.PersonalAccountService" >
+21-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:11:9-60
+22        <service
+22-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:12:9-17:19
+23            android:name="com.training.personalaccountservice.PAService"
+23-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:13:13-38
+24            android:enabled="true"
+24-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:14:13-35
+25            android:exported="true" >
+25-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:15:13-36
+26        </service>
+27
+28        <provider
+28-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:18:9-22:38
+29            android:name="com.training.personalaccountservice.PASettingsProvider"
+29-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:20:13-47
+30            android:authorities="com.training.personalaccountservice"
+30-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:19:13-70
+31            android:enabled="true"
+31-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:21:13-35
+32            android:exported="true" />
+32-->D:\android new\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:22:13-36
+33    </application>
+34
+35</manifest>

@@ -104,8 +104,10 @@ public class MainActivityModel implements MainAcitivityContract.MainActivityMode
 
     }
 
-    public void getSettings() {
-        //return mSettingsMap;
+    public HashMap<String, String> getSettings() {
+
+        return mSettingsMap;
+        //return null;
     }
 
     @Override
@@ -114,15 +116,16 @@ public class MainActivityModel implements MainAcitivityContract.MainActivityMode
         saveSettings();
     }
 
+    /**
+     * @breif this function makes a Json String and stored as a json variable
+     */
     public void saveSettings() {
 
         JSONObject settingsJson = new JSONObject(mSettingsMap);
 
-
         Log.i("SAMPLE", "***************SAMPLE" + settingsJson.toString());
         SettingsProvider.getInstance(mContext).updateSettings(settingsJson.toString());
         String sample = settingsJson.toString();
-
     }
 
     public HashMap<String, String> jsonToMap(String t) throws JSONException {

@@ -28,63 +28,59 @@ public class SettingsProvider {
      * Creating an object for Context.
      */
     private static Context mContext;
-
-    private SettingsProvider() {
-
-    }
+    /**
+     * creating an object for Context
+     */
+    private ContentResolver mContenetResolver;
 
     /**
      * Content Provider
      */
 
+    public static final Uri CONTENT_URI = Uri.parse("content://com.training.personalaccountservice/ACTIVE_PROFILE_SETTINGS");
+    private String mSetings;
 
- /*  public static final Uri CONTENT_URI = Uri.parse("content://com.training.personalaccountservice/ACTIVE_PROFILE_SETTINGS");
-
-   public ContentResolver mContenetResolver=getContentResolver();
-   String mSetings;
-
-   public  String RefreshSettings()
-   {
-      Cursor cursor=mContenetResolver.query(CONTENT_URI,null,null,null);
-      while (cursor!=null&& cursor.moveToNext()){
-         mSetings=cursor.getString(0);
-      }
-      return mSetings;
-   }
-   public void SaveSettings()
-   {
-
-      if(mSetings!=null){
-         ContentValues cv = new ContentValues();
-         cv.put("profile_settings",mSetings);
-         int updateCount =mContenetResolver.update(CONTENT_URI,cv,null,null);
-         Log.i("updatecount"," "+updateCount);
-      }
-
-   }
-*/
+    /**
+     * @param context
+     * @return returns singletonInstance
+     * @brief this is a instance method of Settings provider which takes the context and creating instance
+     */
     public static SettingsProvider getInstance(Context context) {
         if (mSettingsProvider == null) {
             mSettingsProvider = new SettingsProvider();
             mContext = context;
-
         }
         return mSettingsProvider;
     }
+
     /**
+     * @return settings: returns settings which is in a json String
      * @brief
-     * @return settings: returns settings which is a json String
      */
     public String getsettings() {
+        ContentResolver mContenetResolver = mContext.getContentResolver();
+        Cursor cursor = mContenetResolver.query(CONTENT_URI, null, null, null);
+        while (cursor != null && cursor.moveToNext()) {
+            mSetings = cursor.getString(0);
+        }
+        return mSetings;
 
-        String settings = ""; ///Content provider using context
-
-
-        return settings;
     }
+
+    /**
+     * @param settings :it is a String in json format
+     * @return returns a boolean value
+     * @brief this function takes a json string and stored in Service application
+     */
 
     public boolean updateSettings(String settings) {
         //update content provider settings.
+        if (settings != null) {
+            ContentValues cv = new ContentValues();
+            cv.put("profile_settings", mSetings);
+            int updateCount = mContenetResolver.update(CONTENT_URI, cv, null, null);
+            Log.i("updatecount", " " + updateCount);
+        }
 
         return true;
     }

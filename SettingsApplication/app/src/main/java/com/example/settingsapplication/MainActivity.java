@@ -282,7 +282,7 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
 
     /**
      * @brief The onResume method calls the LoadSettings function to load the current
-     * setting of SettingsApplication
+                setting of SettingsApplication
      */
     protected void onResume() {
 
@@ -290,16 +290,10 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
         loadSettings();
     }
 
-
-    @Override
-    public void loadSettings() {
-
-    }
-
     /**
      * @brief To load the settings of the SettingsApplication,This uses HAshMap to load Settings
      */
-   /* public void loadSettings() {
+    public void loadSettings() {
         HashMap<String, String> mSettingsMap = presenter.getSettings();
 
         Set set = mSettingsMap.entrySet();
@@ -353,5 +347,6 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
                 }
             }
         }
-    }*/
+    }
+
 }

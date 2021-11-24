@@ -18,9 +18,6 @@ public class MainActivityPresenter implements MainAcitivityContract.Presenter {
     MainAcitivityContract.View view;
     MainAcitivityContract.MainActivityModel mMainActivityModel;
 
-    /**
-     * @param view
-     */
     public MainActivityPresenter(MainAcitivityContract.View view, Context context) {
         this.view = view;
 
@@ -63,8 +60,7 @@ public class MainActivityPresenter implements MainAcitivityContract.Presenter {
      */
     @Override
     public HashMap<String, String> getSettings() {
-        mMainActivityModel.getSettings();
-        return null;
+        return mMainActivityModel.getSettings();
     }
 
 

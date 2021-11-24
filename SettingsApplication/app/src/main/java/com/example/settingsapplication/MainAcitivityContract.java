@@ -14,8 +14,6 @@ public interface MainAcitivityContract {
      */
 
     interface View {
-
-
         void loadSettings();
     }
 
@@ -42,7 +40,7 @@ public interface MainAcitivityContract {
 
         void setSettingsStatus(String settingsKey, String settingsValue);
 
-        void getSettings();
+        HashMap<String, String> getSettings();
 
         void onSave();
 
