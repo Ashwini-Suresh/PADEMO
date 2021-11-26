@@ -16,17 +16,17 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.personalaccounthmi.MainActivityInterface;
 import com.example.personalaccounthmi.ProfileData;
 import com.example.personalaccounthmi.R;
 import com.example.personalaccounthmi.dialogfragment.createDialog;
-import com.example.personalaccounthmi.view.CustomAdapter;
 
 import java.util.ArrayList;
-
-import Common.IMyAidlInterface;
+import common.IPersonalAccount;
 
 
 public class Fragment_allProfile extends Fragment {
@@ -38,7 +38,7 @@ public class Fragment_allProfile extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     public CustomAdapter adapter;
     private ArrayList<ProfileData> list;
-    private IMyAidlInterface mCommon;
+   // private IPersonalAccount mIPersonalAccount;
 
 
     @Override
@@ -49,20 +49,24 @@ public class Fragment_allProfile extends Fragment {
         View rootview = inflater.inflate(R.layout.fragment_allprofile, container , false);
         recyclerView=rootview.findViewById(R.id.recyclarview);
 
+        //creating object of context
         Context context = rootview.getContext();
-        layoutManager = new LinearLayoutManager(context);
+
+        //creating object of MainActivity Interface, a singleton class to pass bindService function
+        MainActivityInterface mainActivityInterface =  MainActivityInterface.getInstance(context);
+
+        layoutManager = new GridLayoutManager(context,4);
         recyclerView.setHasFixedSize(true);
         create = rootview.findViewById(R.id.create);
 
-        //function to be called to bind with service
-        bindTOAIDLService(context);
+
         Handler handler= new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
 
                 try {
-                    list=(ArrayList<ProfileData>) mCommon.getAll();
+                    list=(ArrayList<ProfileData>) mainActivityInterface.getAllProfile();
                     Log.i("fragmnt","get");
                 } catch (RemoteException e) {
                     e.printStackTrace();
@@ -70,7 +74,6 @@ public class Fragment_allProfile extends Fragment {
                 adapter=new CustomAdapter(context,list);
                 recyclerView.setAdapter(adapter);
                 recyclerView.setLayoutManager(layoutManager);
-                // recyclerView.setLayoutManager(new LinearLayoutManager(context));
             }
         },2000);
 
@@ -95,27 +98,5 @@ public class Fragment_allProfile extends Fragment {
         dialog.show(getFragmentManager(),"CreateDialog");
     }
 
-    /**
-     * @brief this function is called bind the HMI application with the service application. The communication between the application is done by the Stub object
-     * @param context
-     */
-    private void bindTOAIDLService(Context context) {
-        Intent intent = new Intent();
-        intent.setClassName("com.example.servicelist","com.example.servicelist.MyService");
-        context.bindService(intent,serviceConnection,Context.BIND_AUTO_CREATE);
-    }
-
-    private ServiceConnection serviceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            mCommon = IMyAidlInterface.Stub.asInterface(service);
-
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-
-        }
-    };
 
 }

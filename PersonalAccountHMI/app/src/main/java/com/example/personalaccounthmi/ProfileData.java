@@ -4,16 +4,24 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ProfileData implements Parcelable {
+    private int id;
+    private String name;
+    private String avatar;
+    private boolean isActive;
 
-    int id;
-    String name;
-    String avatar;
+    public ProfileData(int id,String name, String avatar, boolean isActive){
+        this.name=name;
+        this.avatar=avatar;
+        this.id=id;
+        this.isActive=isActive;
+
+    }
+
 
     protected ProfileData(Parcel in) {
         id = in.readInt();
         name = in.readString();
         avatar = in.readString();
-        settings = in.readString();
         isActive = in.readByte() != 0;
     }
 
@@ -53,13 +61,8 @@ public class ProfileData implements Parcelable {
         this.avatar = avatar;
     }
 
-    public String getSettings() {
-        return settings;
-    }
 
-    public void setSettings(String settings) {
-        this.settings = settings;
-    }
+
 
     public boolean isActive() {
         return isActive;
@@ -69,23 +72,8 @@ public class ProfileData implements Parcelable {
         isActive = active;
     }
 
-    String settings;
-    boolean isActive;
 
-    public ProfileData(){
-        id=1;
-        name="Driver1";
-        avatar="avatar1";
-        settings=null;
-        isActive=true;
-    }
-    public ProfileData(int id,String name, String avatar/*, boolean isActive*/){
-        this.name=name;
-        this.avatar=avatar;
-        this.id=id;
-        this.isActive=isActive;
 
-    }
 
     @Override
     public int describeContents() {
@@ -97,9 +85,6 @@ public class ProfileData implements Parcelable {
         parcel.writeInt(id);
         parcel.writeString(name);
         parcel.writeString(avatar);
-        parcel.writeString(settings);
         parcel.writeByte((byte) (isActive ? 1 : 0));
-
     }
-
 }
