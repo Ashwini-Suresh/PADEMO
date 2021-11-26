@@ -71,6 +71,28 @@ public class ServiceInterface extends IPersonalAccount.Stub {
         return mPASManager.getAvailableAvatar();
     }
 
+    /**
+     * @brief: To update profile name.
+     * @param newName : New name of profile to update with.
+     */
+    @Override
+    public void updateProfileName(String newName){
+        mPASManager.updateProfileName(newName);
+    }
+
+    /**
+     * @brief: To update profile avatar.
+     * @param newAvatar:New avatar of profile to update with.
+     */
+    @Override
+    public void updateProfileAvatar(String newAvatar){
+        mPASManager.updateProfileAvatar(newAvatar);
+    }
+
+    /**
+     *
+     * @param callback:
+     */
     public void registerCallback(IPersonalAccountListener callback){
         mPASManager.registerCallback(callback);
     }

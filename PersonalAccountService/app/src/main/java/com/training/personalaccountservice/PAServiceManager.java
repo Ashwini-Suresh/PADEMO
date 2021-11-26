@@ -151,8 +151,9 @@ public class PAServiceManager {
      * @return :Returns Cursor containing settings.
      */
     public Cursor readActiveProfileSettings() {
+        int activeProfileId = mActiveList.getActiveId();
         Cursor cursor;
-        cursor= mPASDBManager.readActiveProfileSettings();
+        cursor= mPASDBManager.readActiveProfileSettings(activeProfileId);
         return cursor;
     }
 
@@ -162,8 +163,9 @@ public class PAServiceManager {
      * @return : Returns Update count.
      */
     public int updateActiveProfileSettings(ContentValues contentValues) {
+        int activeProfileId = mActiveList.getActiveId();
         broadCastCallBack(PROFILE_SETTINGS_CHANGE);
-        return mPASDBManager.updateActiveProfileSettings(contentValues);
+        return mPASDBManager.updateActiveProfileSettings(activeProfileId,contentValues);
     }
 
     /**
@@ -200,6 +202,18 @@ public class PAServiceManager {
         }catch(Exception e){
 
         }
+    }
+
+    public void updateProfileAvatar(String newAvatar) {
+        int activeProfileId = mActiveList.getActiveId();
+        mPASDBManager.updateActiveProfileAvatar(activeProfileId,newAvatar);
+        broadCastCallBack(PROFILE_DATA_CHANGE);
+    }
+
+    public void updateProfileName(String newName) {
+        int activeProfileId = mActiveList.getActiveId();
+        mPASDBManager.updateActiveProfileName(activeProfileId,newName);
+        broadCastCallBack(PROFILE_DATA_CHANGE);
     }
 }
 

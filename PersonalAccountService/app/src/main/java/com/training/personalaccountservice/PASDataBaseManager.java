@@ -49,10 +49,6 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
      */
     private static final String COLUMN_SETTINGS ="profile_settings";
 
-    /**
-     * Declaring context.
-     */
-    private final Context context;
 
     /**
      * Variable that hold object of PASDataBaseManager.
@@ -80,7 +76,6 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
      */
     private PASDataBaseManager(@Nullable Context context) {
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
-        this.context = context;
     }
 
     /**
@@ -159,10 +154,10 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
 
     /**
      * @brief: To read settings column of active profile.
-     * @return : Returns Cursor containing Settings value
+     * @param activeProfileId : Profile id of current active profile.
+     * @return : Returns Cursor containing Settings value.
      */
-    public Cursor readActiveProfileSettings() {
-        int activeProfileId = PAServicePreference.getInstance(context).getActiveId();
+    public Cursor readActiveProfileSettings(int activeProfileId) {
         String arg = String.valueOf(activeProfileId);
         Log.i("content provider", "activeprofile " + activeProfileId);
         String query = "SELECT " + COLUMN_SETTINGS + " FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + " = ?";
@@ -176,14 +171,49 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
 
     /**
      * @brief: Update setting details received to setting column of active profile of database Table .
+     * @param activeProfileId : Profile id of current active profile.
      * @param cv : Content value contains Column name and value to update into Table.
      * @return : Returns integer value of how many columns effected on update action.
      */
-    public int updateActiveProfileSettings(ContentValues cv) {
-        int activeProfileId = PAServicePreference.getInstance(context).getActiveId();
+    public int updateActiveProfileSettings(int activeProfileId,ContentValues cv) {
         SQLiteDatabase db = this.getWritableDatabase();
-
         return db.update(TABLE_NAME, cv, COLUMN_ID + " = ?", new String[]{String.valueOf(activeProfileId)});
     }
 
+    /**
+     * @brief: To update profile avatar of received profile id with new avatar.
+     * @param activeProfileId : Profile id of current active profile.
+     * @param newAvatar : New avatar to update.
+     */
+    public void updateActiveProfileAvatar(int activeProfileId,String newAvatar){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_AVATAR, newAvatar);
+        int count = db.update(TABLE_NAME, cv, COLUMN_ID + " = ?", new String[]{String.valueOf(activeProfileId)});
+        if(count==-1){
+            Log.i("UPDATE_PROFILE_AVATAR","FAILED");
+        }else{
+            Log.i("UPDATE_PROFILE_AVATAR","SUCCESS");
+        }
+    }
+
+    /**
+     *  @brief: To update profile name of received profile id with new name.
+     * @param activeProfileId : Profile id of current active profile.
+     * @param newName : New name to update.
+     */
+    public void updateActiveProfileName(int activeProfileId, String newName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_NAME, newName);
+        int count = db.update(TABLE_NAME, cv, COLUMN_ID + " = ?", new String[]{String.valueOf(activeProfileId)});
+
+        if(count==-1){
+            Log.i("UPDATE_PROFILE_NAME","FAILED");
+        }else {
+            Log.i("UPDATE_PROFILE_NAME","SUCCESS");
+        }
+    }
 }
