@@ -1,0 +1,28 @@
+common/IPersonalAccount.java
+ common.IPersonalAccount
+ common.IPersonalAccount$Default
+ common.IPersonalAccount$Stub
+ common.IPersonalAccount$Stub$Proxy
+com/example/settingsapplication/Common/SettingsConstants.java
+ com.example.settingsapplication.Common.SettingsConstants
+com/example/settingsapplication/ProfileData.java
+ com.example.settingsapplication.ProfileData
+ com.example.settingsapplication.ProfileData$1
+com/example/settingsapplication/BuildConfig.java
+ com.example.settingsapplication.BuildConfig
+com/example/settingsapplication/MainAcitivityContract.java
+ com.example.settingsapplication.MainAcitivityContract
+ com.example.settingsapplication.MainAcitivityContract$MainActivityModel
+ com.example.settingsapplication.MainAcitivityContract$Presenter
+ com.example.settingsapplication.MainAcitivityContract$View
+com/example/settingsapplication/Presenter/MainActivityPresenter.java
+ com.example.settingsapplication.Presenter.MainActivityPresenter
+com/example/settingsapplication/Model/MainActivityModel.java
+ com.example.settingsapplication.Model.MainActivityModel
+com/example/settingsapplication/ContentProvider/SettingsProvider.java
+ com.example.settingsapplication.ContentProvider.SettingsProvider
+com/example/settingsapplication/MainActivity.java
+ com.example.settingsapplication.MainActivity
+ com.example.settingsapplication.MainActivity$1
+ com.example.settingsapplication.MainActivity$2
+ com.example.settingsapplication.MainActivity$3
