@@ -7,6 +7,7 @@
 package com.example.settingsapplication.Presenter;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.settingsapplication.MainAcitivityContract;
 import com.example.settingsapplication.Model.MainActivityModel;
@@ -41,6 +42,7 @@ public class MainActivityPresenter implements MainAcitivityContract.Presenter {
     @Override
     public void doRefresh() {
         mMainActivityModel.getSettings();
+        Log.i("do refresh in presenter","modelget settings");
     }
 
 

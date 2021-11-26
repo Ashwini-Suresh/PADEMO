@@ -37,6 +37,7 @@ import com.example.settingsapplication.Presenter.MainActivityPresenter;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 import common.IPersonalAccount;
@@ -50,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
      * creating object for presenter class
      */
     private static MainAcitivityContract.Presenter presenter;
-    private static IPersonalAccount mCommon;
     /**
      * Intitializing Buttons
      */
@@ -63,8 +63,6 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
     private Button mTheme3;
     private Button mDisplayManual;
     private Button mDisplayAutomatic;
-    private Button mSave;
-    private Button mRefresh;
     private Button mFM1;
     private Button mFM2;
     private Button mFM3;
@@ -78,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
          */
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_main);
 
 
@@ -92,32 +90,20 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
          * Finding all the ui elements
          */
 
-        mAutoPlayStatusON = (Button) findViewById(R.id.buttonAutoPlayStatusOn);
-        mAutoplayStatusOFF = (Button) findViewById(R.id.buttonAutoPlayStatusOff);
-        mTimeON = (Button) findViewById(R.id.buttonTimeOn);
-        mTimeOFF = (Button) findViewById(R.id.buttonTimeOFF);
-        mTheme1 = (Button) findViewById(R.id.buttonTheme1);
-        mTheme2 = (Button) findViewById(R.id.buttonTheme2);
-        mTheme3 = (Button) findViewById(R.id.buttonTheme3);
-        mDisplayAutomatic = (Button) findViewById(R.id.buttonDisplay_Automatic);
-        mDisplayManual = (Button) findViewById(R.id.buttonDisplay_manual);
-        mFM1 = (Button) findViewById(R.id.buttonFM1);
-        mFM2 = (Button) findViewById(R.id.buttonFM2);
-        mFM3 = (Button) findViewById(R.id.buttonFM3);
-        mSave = (Button) findViewById(R.id.buttonSave);
-        mRefresh = (Button) findViewById(R.id.buttonRefresh);
-
-
-        //defining function to bind with service
-
-        Intent intent = new Intent();
-        intent.setClassName("com.example.servicelist", "com.example.servicelist.MyService");
-        //bindService(intent,serviceConnection,BIND_AUTO_CREATE);
-        if (getApplicationContext().bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE)) {
-            Log.i("Binding", "Success");
-        } else {
-            Log.i("Binding", "failed");
-        }
+        mAutoPlayStatusON =findViewById(R.id.buttonAutoPlayStatusOn);
+        mAutoplayStatusOFF =findViewById(R.id.buttonAutoPlayStatusOff);
+        mTimeON =findViewById(R.id.buttonTimeOn);
+        mTimeOFF =findViewById(R.id.buttonTimeOFF);
+        mTheme1 = findViewById(R.id.buttonTheme1);
+        mTheme2 = findViewById(R.id.buttonTheme2);
+        mTheme3 =findViewById(R.id.buttonTheme3);
+        mDisplayAutomatic =findViewById(R.id.buttonDisplay_Automatic);
+        mDisplayManual =findViewById(R.id.buttonDisplay_manual);
+        mFM1 =findViewById(R.id.buttonFM1);
+        mFM2 =findViewById(R.id.buttonFM2);
+        mFM3 =findViewById(R.id.buttonFM3);
+        Button mSave = findViewById(R.id.buttonSave);
+        Button mRefresh =findViewById(R.id.buttonRefresh);
 
         /**
          * @brief When click on ave button it calls a  function in presenter class to save the updated settings.
@@ -126,7 +112,6 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
             @Override
             public void onClick(View view) {
                 presenter.doSave();
-
             }
         });
         /**
@@ -135,27 +120,11 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
         mRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                presenter.doRefresh();
+                loadSettings();
             }
         });
 
     }
-
-    private ServiceConnection serviceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            mCommon = IPersonalAccount.Stub.asInterface(service);
-
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-
-        }
-
-    };
-
     /**
      * @param selected       : This is a selected Button in the ui
      * @param notSelectedOne : This is the unSelected Button in the ui
@@ -208,14 +177,16 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
 
 
     /**
-     * @param selected       : This is a selected Button in the ui
-     * @param notSelectedOne : This is the unSelected Button in the ui
-     * @param notSelectedTwo : This is the unSelected Button in the ui
-     * @brief The setStatus function having 3 parameters to set the ui status
+     * @brief :The setStatus function having 3 parameters to set the ui status
      * where one parameter is selected button and other two buttons are unselected.
      * when click on one button the status of that button indicated in green color
      * and others are in black color.
+     * @param selected       : This is a selected Button in the ui
+     * @param notSelectedOne : This is the unSelected Button in the ui
+     * @param notSelectedTwo : This is the unSelected Button in the ui
+
      */
+
     public void setStatus(Button selected, Button notSelectedOne, Button notSelectedTwo) {
         selected.setBackgroundColor(Color.parseColor(SettingsConstants.GREEN_COLOR));
         selected.setSelected(true);
@@ -282,7 +253,7 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
 
     /**
      * @brief The onResume method calls the LoadSettings function to load the current
-                setting of SettingsApplication
+     * setting of SettingsApplication
      */
     protected void onResume() {
 
@@ -297,9 +268,8 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
         HashMap<String, String> mSettingsMap = presenter.getSettings();
 
         Set set = mSettingsMap.entrySet();
-        Iterator iterator = set.iterator();
-        while (iterator.hasNext()) {
-            Map.Entry mentry = (Map.Entry) iterator.next();
+        for (Object o : set) {
+            Map.Entry mentry = (Map.Entry) o;
             System.out.print("key is: " + mentry.getKey() + " & Value is: ");
             System.out.println(mentry.getValue());
             if (mentry.getKey().equals(AUTO_PLAY_STATUS)) {
@@ -315,35 +285,30 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
                     setStatus(mTimeOFF, mTimeON, null);
 
                 }
+            } else if (mentry.getKey().equals(ACTIVE_THEME)) {
+                if (mentry.getValue().equals("THEME1")) {
+                    setStatus(mTheme1, mTheme2, mTheme3);
 
-                if (mentry.getKey().equals(ACTIVE_THEME)) {
-                    if (mentry.getValue().equals("THEME1")) {
-                        setStatus(mTheme1, mTheme2, mTheme3);
 
-
-                    } else if (mentry.getValue().equals("THEME2")) {
-                        setStatus(mTheme2, mTheme1, mTheme3);
-                    } else {
-                        setStatus(mTheme3, mTheme2, mTheme1);
-                    }
+                } else if (mentry.getValue().equals("THEME2")) {
+                    setStatus(mTheme2, mTheme1, mTheme3);
+                } else {
+                    setStatus(mTheme3, mTheme2, mTheme1);
                 }
-                if (mentry.getKey().equals(DISPLAY)) {
-                    if (mentry.getValue().equals("MANUAL")) {
-                        setStatus(mDisplayManual, mDisplayAutomatic, null);
-                    } else {
-                        setStatus(mDisplayAutomatic, mDisplayManual, null);
-                    }
+            } else if (mentry.getKey().equals(DISPLAY)) {
+                if (mentry.getValue().equals("MANUAL")) {
+                    setStatus(mDisplayManual, mDisplayAutomatic, null);
+                } else {
+                    setStatus(mDisplayAutomatic, mDisplayManual, null);
                 }
-                if (mentry.getKey().equals(FM)) {
-                    if (mentry.getValue().equals("BIG_FM")) {
-                        setStatus(mFM1, mFM2, mFM3);
+            } else if (mentry.getKey().equals(FM)) {
+                if (mentry.getValue().equals("BIG_FM")) {
+                    setStatus(mFM1, mFM2, mFM3);
 
-
-                    } else if (mentry.getValue().equals("RADIO_CITY")) {
-                        setStatus(mFM2, mFM1, mFM3);
-                    } else {
-                        setStatus(mFM3, mFM1, mFM2);
-                    }
+                } else if (mentry.getValue().equals("RADIO_CITY")) {
+                    setStatus(mFM2, mFM1, mFM3);
+                } else {
+                    setStatus(mFM3, mFM1, mFM2);
                 }
             }
         }

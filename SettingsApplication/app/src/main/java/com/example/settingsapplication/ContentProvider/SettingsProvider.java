@@ -7,59 +7,59 @@
 package com.example.settingsapplication.ContentProvider;
 
 import android.content.ContentResolver;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.util.Log;
 
-import com.example.settingsapplication.MainAcitivityContract;
-import com.example.settingsapplication.Model.MainActivityModel;
-import com.example.settingsapplication.Presenter.MainActivityPresenter;
-
 
 public class SettingsProvider {
     /**
-     * creating a object for SettingsProvider class and initialized to null
-     */
-    private static SettingsProvider mSettingsProvider = null;
-    /**
-     * Creating an object for Context.
-     */
-    private static Context mContext;
-    /**
      * creating an object for Context
      */
-    private ContentResolver mContenetResolver;
+    private final ContentResolver mContentResolver;
+
+    private static volatile SettingsProvider INSTANCE = null;
+
 
     /**
      * Content Provider
      */
 
     public static final Uri CONTENT_URI = Uri.parse("content://com.training.personalaccountservice/ACTIVE_PROFILE_SETTINGS");
-    private String mSetings;
+
 
     /**
-     * @param context
+     * @param context:
      * @return returns singletonInstance
      * @brief this is a instance method of Settings provider which takes the context and creating instance
      */
     public static SettingsProvider getInstance(Context context) {
-        if (mSettingsProvider == null) {
-            mSettingsProvider = new SettingsProvider();
-            mContext = context;
+        if (INSTANCE == null) {
+            synchronized (SettingsProvider.class) {
+                if (INSTANCE == null)
+                    INSTANCE = new SettingsProvider(context);
+            }
+
         }
-        return mSettingsProvider;
+        return INSTANCE;
+
+    }
+
+    private SettingsProvider(Context context) {
+        mContentResolver = context.getContentResolver();
     }
 
     /**
      * @return settings: returns settings which is in a json String
      * @brief
      */
-    public String getsettings() {
-        ContentResolver mContenetResolver = mContext.getContentResolver();
-        Cursor cursor = mContenetResolver.query(CONTENT_URI, null, null, null);
+
+    public String getSettings() {
+        String mSetings = null;
+
+        Cursor cursor = mContentResolver.query(CONTENT_URI, null, null, null);
         while (cursor != null && cursor.moveToNext()) {
             mSetings = cursor.getString(0);
         }
@@ -67,22 +67,23 @@ public class SettingsProvider {
 
     }
 
+
     /**
      * @param settings :it is a String in json format
-     * @return returns a boolean value
      * @brief this function takes a json string and stored in Service application
      */
 
-    public boolean updateSettings(String settings) {
+    public void updateSettings(String settings) {
         //update content provider settings.
         if (settings != null) {
             ContentValues cv = new ContentValues();
-            cv.put("profile_settings", mSetings);
-            int updateCount = mContenetResolver.update(CONTENT_URI, cv, null, null);
-            Log.i("updatecount", " " + updateCount);
+            cv.put("profile_settings", settings);
+            int updateCount = mContentResolver.update(CONTENT_URI, cv, null, null);
+            if (updateCount < 0) {
+                Log.i("update ", "failed");
+            }
         }
 
-        return true;
     }
 
 
