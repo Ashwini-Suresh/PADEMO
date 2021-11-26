@@ -2,6 +2,11 @@ com/training/personalaccountservice/PAServiceManager.java
  com.training.personalaccountservice.PAServiceManager
 com/training/personalaccountservice/PAServicePreference.java
  com.training.personalaccountservice.PAServicePreference
+common/IPersonalAccountListener.java
+ common.IPersonalAccountListener
+ common.IPersonalAccountListener$Default
+ common.IPersonalAccountListener$Stub
+ common.IPersonalAccountListener$Stub$Proxy
 com/training/personalaccountservice/ProfileData.java
  com.training.personalaccountservice.ProfileData
  com.training.personalaccountservice.ProfileData$1

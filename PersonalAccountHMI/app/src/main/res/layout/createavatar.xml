@@ -5,18 +5,96 @@
     android:id="@+id/createavatar"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <Button
-        android:id="@+id/button"
+    <ImageButton
+        android:id="@+id/close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="307dp"
-        android:layout_marginTop="171dp"
-        android:layout_marginEnd="336dp"
-        android:layout_marginBottom="192dp"
-        android:text="Button"
+        android:layout_marginStart="651dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="344dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_dialog"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="187dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="310dp"
+        android:text="Select Avatar Image"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/close"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="119dp"
+        android:layout_marginBottom="70dp"
+        android:text="SAVE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="187dp"
+        android:layout_marginEnd="285dp"
+        android:layout_marginBottom="75dp"
+        android:text="BACK"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/save"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/avatar1"
+        android:layout_width="80dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="67dp"
+        app:layout_constraintEnd_toStartOf="@+id/avatar2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/avatar1" />
+
+    <ImageView
+        android:id="@+id/avatar2"
+        android:layout_width="62dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="73dp"
+        app:layout_constraintBottom_toTopOf="@+id/back"
+        app:layout_constraintEnd_toStartOf="@+id/avatar3"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@mipmap/avatar2" />
+
+    <ImageView
+        android:id="@+id/avatar3"
+        android:layout_width="67dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="312dp"
+        android:layout_marginBottom="191dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@mipmap/avatar3" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

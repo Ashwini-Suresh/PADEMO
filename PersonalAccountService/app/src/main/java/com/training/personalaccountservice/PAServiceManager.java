@@ -9,10 +9,14 @@ package com.training.personalaccountservice;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.os.RemoteCallbackList;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import common.IPersonalAccountListener;
 
 /**
  * @brief: PAServiceManager manages the functionalities of service.
@@ -20,34 +24,51 @@ import java.util.List;
 public class PAServiceManager {
 
     /**
-     * Declaring object of PASDataBaseManager
+     * Declaring object of PASDataBaseManager.
      */
     private PASDataBaseManager mPASDBManager;
 
     /**
-     * Declaring object of PAServicePreference
+     * Declaring object of PAServicePreference.
      */
     private PAServicePreference mActiveList;
 
     /**
-     * new arrayList for adding profile object and return it to ServiceInterface
+     * New arrayList for adding profile object and return it to ServiceInterface.
      */
     private List<ProfileData> mProfileDataList =new ArrayList<>();
 
     /**
-     * profile id for newly added profiles this will addToPreference to database and sharedPreference
+     * Profile id for newly added profiles this will addToPreference to database and sharedPreference.
      */
     private int mNewProfileId;
 
     /**
-     * variable that hold object of PAServiceManager
+     * Declaring RemoteCallbackList of IPersonalAccountListener.
+     */
+    private RemoteCallbackList<IPersonalAccountListener> mCallback=new RemoteCallbackList<>();
+
+    /**
+     * Initialising value for notifying Profile change.
+     */
+    private static final int PROFILE_CHANGE=7;
+    /**
+     * Initialising value for notifying Profile data change.
+     */
+    private static final int PROFILE_DATA_CHANGE=11;
+    /**
+     * Initialising value for notifying Profile settings change.
+     */
+    private static final int PROFILE_SETTINGS_CHANGE=10;
+    /**
+     * Variable that hold object of PAServiceManager.
      */
     private static volatile PAServiceManager INSTANCE=null;
 
     /**
-     * @brief: singleton instance for PAServiceManager
-     * @param context:this context is required for calling database and sharedPreference Instance
-     * @return : return current instance
+     * @brief: Singleton instance for PAServiceManager.
+     * @param context:This context is required for calling database and sharedPreference Instance.
+     * @return : Return current instance.
      */
     public static PAServiceManager getInstance(Context context){
         if (INSTANCE==null){
@@ -61,8 +82,8 @@ public class PAServiceManager {
     }
 
     /**
-     * @brief: private constructor to make this class singleton
-     * @param context:this context is required for calling database and sharedPreference Instance
+     * @brief: Private constructor to make this class singleton.
+     * @param context:This context is required for calling database and sharedPreference Instance.
      */
     private PAServiceManager(Context context){
         mActiveList = PAServicePreference.getInstance(context);
@@ -73,9 +94,9 @@ public class PAServiceManager {
     }
 
     /**
-     * @brief: get profile data from database and addToPreference this to profileList for
-     * showing all profiles present in ui of client
-     * @return : returns List of profileData
+     * @brief: Get profile data from database and addToPreference this to profileList for
+     * showing all profiles present in ui of client.
+     * @return : Returns List of profileData.
      */
     public List<ProfileData> getProfileListFromDatabase() {
 
@@ -99,46 +120,100 @@ public class PAServiceManager {
 
 
     /**
-     * @brief: addToPreference new profile to database and id in shared preference
-     * @param pName : profile name of new profile
-     * @param pAvatar : profile avatar of new profile
+     * @brief: AddToPreference new profile to database and id in shared preference.
+     * @param pName : Profile name of new profile.
+     * @param pAvatar : Profile avatar of new profile.
      */
     public void addNewProfileToDataBase(String pName, String pAvatar){
         mPASDBManager.addProfile(mNewProfileId,pName,pAvatar);
         mActiveList.addToPreference(mNewProfileId);
         mNewProfileId++;
+        broadCastCallBack(PROFILE_CHANGE);
     }
 
 
     /**
-     * @brief: adding given profile id to shared preference where we store profile id of active profile
-     * @param activeProfileId: profile id of selected profile
+     * @brief: Adding given profile id to shared preference where we store profile id of active profile.
+     * @param activeProfileId: Profile id of selected profile.
      */
     public void switchProfile(int activeProfileId) {
         Log.i("ChangeActiveProfile","Profile id " +activeProfileId);
         Log.i("ActiveProfile","Before changing "+ mActiveList.getActiveId());
         if(mActiveList.getActiveId()!=activeProfileId){
             mActiveList.addToPreference(activeProfileId);
+            broadCastCallBack(PROFILE_CHANGE);
             Log.i("ActiveProfile","After changing "+ mActiveList.getActiveId());
         }
     }
 
     /**
-     * @brief: getting settings column of active profile id and returning same
-     * @return :returns settings, TYPE:Cursor
+     * @brief: Getting settings column of active profile id and returning same.
+     * @return :Returns Cursor containing settings.
      */
     public Cursor readActiveProfileSettings() {
+        int activeProfileId = mActiveList.getActiveId();
         Cursor cursor;
-        cursor= mPASDBManager.readActiveProfileSettings();
+        cursor= mPASDBManager.readActiveProfileSettings(activeProfileId);
         return cursor;
     }
 
     /**
-     * @brief: updating settings column of active profile
-     * @param contentValues : settings column name and settings value
-     * @return : update count, return type:integer
+     * @brief: Updating settings column of active profile.
+     * @param contentValues : Settings column name and settings value.
+     * @return : Returns Update count.
      */
     public int updateActiveProfileSettings(ContentValues contentValues) {
-        return mPASDBManager.updateActiveProfileSettings(contentValues);
+        int activeProfileId = mActiveList.getActiveId();
+        broadCastCallBack(PROFILE_SETTINGS_CHANGE);
+        return mPASDBManager.updateActiveProfileSettings(activeProfileId,contentValues);
+    }
+
+    /**
+     * @brief: To get available avatar by removing selected avatar from all profile avatar list.
+     * @return : Return a list of avatar.
+     */
+    public List<String> getAvailableAvatar() {
+        List<String> avatarList = Arrays.asList( "avatar1", "avatar2", "avatar3", "avatar4", "avatar5", "avatar6", "avatar7", "avatar8");
+        Cursor cursor = mPASDBManager.readAllData();
+        while (cursor.moveToNext()) {
+            avatarList.remove(cursor.getString(2));
+        }
+        return avatarList;
+    }
+
+    /**
+     *
+     * @param callback
+     */
+    public void registerCallback(IPersonalAccountListener callback) {
+        mCallback.register(callback);
+    }
+
+    /**
+     *
+     * @param notificationType
+     */
+    private void broadCastCallBack(int notificationType){
+        int broadCastCount = mCallback.beginBroadcast();
+        try{
+            for (int i = 0; i < broadCastCount; i++) {
+                mCallback.getBroadcastItem(i).notifyChange(notificationType);
+            }
+        }catch(Exception e){
+
+        }
+    }
+
+    public void updateProfileAvatar(String newAvatar) {
+        int activeProfileId = mActiveList.getActiveId();
+        mPASDBManager.updateActiveProfileAvatar(activeProfileId,newAvatar);
+        broadCastCallBack(PROFILE_DATA_CHANGE);
+    }
+
+    public void updateProfileName(String newName) {
+        int activeProfileId = mActiveList.getActiveId();
+        mPASDBManager.updateActiveProfileName(activeProfileId,newName);
+        broadCastCallBack(PROFILE_DATA_CHANGE);
     }
 }
+

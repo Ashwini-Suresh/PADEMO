@@ -3,20 +3,26 @@ package com.example.personalaccounthmi;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.sql.SQLOutput;
+public class ProfileData implements Parcelable {
+    private int id;
+    private String name;
+    private String avatar;
+    private boolean isActive;
 
-public class ProfileData implements Parcelable{
+    public ProfileData(int id,String name, String avatar, boolean isActive){
+        this.name=name;
+        this.avatar=avatar;
+        this.id=id;
+        this.isActive=isActive;
 
-    int id;
-    String name;
-    String avatar;
+    }
+
 
     protected ProfileData(Parcel in) {
         id = in.readInt();
         name = in.readString();
         avatar = in.readString();
-      //  settings = in.readString();
-       // isActive = in.readByte() != 0;
+        isActive = in.readByte() != 0;
     }
 
     public static final Creator<ProfileData> CREATOR = new Creator<ProfileData>() {
@@ -55,18 +61,19 @@ public class ProfileData implements Parcelable{
         this.avatar = avatar;
     }
 
-    public ProfileData() {
-        id = 1;
-        name = "Driver1";
-        avatar = "avatar1";
+
+
+
+    public boolean isActive() {
+        return isActive;
     }
 
-    public ProfileData(int id,String name, String avatar){
-        this.name=name;
-        this.avatar=avatar;
-        this.id=id;
-
+    public void setActive(boolean active) {
+        isActive = active;
     }
+
+
+
 
     @Override
     public int describeContents() {
@@ -74,10 +81,10 @@ public class ProfileData implements Parcelable{
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        Parcel parcel = null;
+    public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(id);
         parcel.writeString(name);
         parcel.writeString(avatar);
+        parcel.writeByte((byte) (isActive ? 1 : 0));
     }
 }

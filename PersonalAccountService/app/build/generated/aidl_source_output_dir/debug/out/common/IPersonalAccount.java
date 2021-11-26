@@ -17,6 +17,19 @@ public interface IPersonalAccount extends android.os.IInterface
     @Override public void changeActiveProfile(int pId) throws android.os.RemoteException
     {
     }
+    @Override public java.util.List<java.lang.String> getAvailableAvatarList() throws android.os.RemoteException
+    {
+      return null;
+    }
+    @Override public void updateProfileName(java.lang.String newName) throws android.os.RemoteException
+    {
+    }
+    @Override public void updateProfileAvatar(java.lang.String newAvatar) throws android.os.RemoteException
+    {
+    }
+    @Override public void registerCallback(common.IPersonalAccountListener callback) throws android.os.RemoteException
+    {
+    }
     @Override
     public android.os.IBinder asBinder() {
       return null;
@@ -85,6 +98,41 @@ public interface IPersonalAccount extends android.os.IInterface
           int _arg0;
           _arg0 = data.readInt();
           this.changeActiveProfile(_arg0);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_getAvailableAvatarList:
+        {
+          data.enforceInterface(descriptor);
+          java.util.List<java.lang.String> _result = this.getAvailableAvatarList();
+          reply.writeNoException();
+          reply.writeStringList(_result);
+          return true;
+        }
+        case TRANSACTION_updateProfileName:
+        {
+          data.enforceInterface(descriptor);
+          java.lang.String _arg0;
+          _arg0 = data.readString();
+          this.updateProfileName(_arg0);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_updateProfileAvatar:
+        {
+          data.enforceInterface(descriptor);
+          java.lang.String _arg0;
+          _arg0 = data.readString();
+          this.updateProfileAvatar(_arg0);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_registerCallback:
+        {
+          data.enforceInterface(descriptor);
+          common.IPersonalAccountListener _arg0;
+          _arg0 = common.IPersonalAccountListener.Stub.asInterface(data.readStrongBinder());
+          this.registerCallback(_arg0);
           reply.writeNoException();
           return true;
         }
@@ -168,11 +216,92 @@ public interface IPersonalAccount extends android.os.IInterface
           _data.recycle();
         }
       }
+      @Override public java.util.List<java.lang.String> getAvailableAvatarList() throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        java.util.List<java.lang.String> _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getAvailableAvatarList, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getAvailableAvatarList();
+          }
+          _reply.readException();
+          _result = _reply.createStringArrayList();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public void updateProfileName(java.lang.String newName) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeString(newName);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_updateProfileName, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().updateProfileName(newName);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void updateProfileAvatar(java.lang.String newAvatar) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeString(newAvatar);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_updateProfileAvatar, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().updateProfileAvatar(newAvatar);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void registerCallback(common.IPersonalAccountListener callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_registerCallback, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().registerCallback(callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
       public static common.IPersonalAccount sDefaultImpl;
     }
     static final int TRANSACTION_getAllProfile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
     static final int TRANSACTION_addProfile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
     static final int TRANSACTION_changeActiveProfile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 2);
+    static final int TRANSACTION_getAvailableAvatarList = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
+    static final int TRANSACTION_updateProfileName = (android.os.IBinder.FIRST_CALL_TRANSACTION + 4);
+    static final int TRANSACTION_updateProfileAvatar = (android.os.IBinder.FIRST_CALL_TRANSACTION + 5);
+    static final int TRANSACTION_registerCallback = (android.os.IBinder.FIRST_CALL_TRANSACTION + 6);
     public static boolean setDefaultImpl(common.IPersonalAccount impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
@@ -193,4 +322,8 @@ public interface IPersonalAccount extends android.os.IInterface
   public java.util.List<com.training.personalaccountservice.ProfileData> getAllProfile() throws android.os.RemoteException;
   public void addProfile(java.lang.String profileName, java.lang.String profileAvatar) throws android.os.RemoteException;
   public void changeActiveProfile(int pId) throws android.os.RemoteException;
+  public java.util.List<java.lang.String> getAvailableAvatarList() throws android.os.RemoteException;
+  public void updateProfileName(java.lang.String newName) throws android.os.RemoteException;
+  public void updateProfileAvatar(java.lang.String newAvatar) throws android.os.RemoteException;
+  public void registerCallback(common.IPersonalAccountListener callback) throws android.os.RemoteException;
 }
