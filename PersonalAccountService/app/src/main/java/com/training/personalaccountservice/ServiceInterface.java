@@ -12,6 +12,7 @@ import android.os.RemoteException;
 import java.util.List;
 
 import common.IPersonalAccount;
+import common.IPersonalAccountListener;
 
 /**
  * @brief: serviceInterface implements aidl functions.
@@ -68,5 +69,9 @@ public class ServiceInterface extends IPersonalAccount.Stub {
     @Override
     public List<String> getAvailableAvatarList() {
         return mPASManager.getAvailableAvatar();
+    }
+
+    public void registerCallback(IPersonalAccountListener callback){
+        mPASManager.registerCallback(callback);
     }
 }
