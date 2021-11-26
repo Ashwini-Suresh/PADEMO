@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.personalaccounthmi.R;
+import com.example.personalaccounthmi.dialogfragment.DeletaProfile_Dialog;
 import com.example.personalaccounthmi.dialogfragment.EditAvatar_Dialog;
 import com.example.personalaccounthmi.dialogfragment.EditUsername_dialog;
 
@@ -49,9 +50,31 @@ public class Fragment_editprofile extends Fragment {
             }
         });
 
+        //on clicking delete profile button the selected profile will be deleted from the database
+        btn_deleteprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { openDeleteProfileDialog();}
+        });
+
+        //on clicking go to settings button the settings app will be opened
+        btn_gotosettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
         // Inflate the layout for this fragment
         return fragmentview;
+    }
+
+    /**
+     * @brief The function creates an object of Delete Profile class and show method is called to show the dialog fragment for delete profile
+     */
+    private void openDeleteProfileDialog() {
+        DeletaProfile_Dialog deletaProfile_dialog = new DeletaProfile_Dialog();
+        deletaProfile_dialog.show(getFragmentManager(),"DeleteProfile_Dislog");
     }
 
     /**

@@ -10,27 +10,21 @@ import com.example.personalaccounthmi.MainActivityInterface;
 import com.example.personalaccounthmi.R;
 import com.example.personalaccounthmi.presenter.MainActivityPresenter;
 import com.example.personalaccounthmi.util.VPAdapter;
-import com.example.personalaccounthmi.view.Fragment_allProfile;
-import com.example.personalaccounthmi.view.Fragment_editprofile;
 import com.google.android.material.tabs.TabLayout;
-
-import Common.IMyAidlInterface;
+import common.IPersonalAccount;
 
 /**
  * @author Karthika V T
  */
 
-public class MainActivity extends AppCompatActivity implements MainActivityInterface.View {
+public class MainActivity extends AppCompatActivity{
 
     //creating presenter objects
-    MainActivityInterface.Presenter presenter;
+    MainActivityInterface presenter;
 
     //declaring layout elements
     private TabLayout tabLayout;
     private ViewPager viewPager;
-
-
-    private IMyAidlInterface mCommon;
 
 
     @Override
@@ -39,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityInter
         setContentView(R.layout.activity_main);
 
         //creating presenter object
-        presenter = new MainActivityPresenter(this);
+     //   presenter = new MainActivityPresenter(this);
 
         //get reference of tab layout and adapter class
         tabLayout = findViewById(R.id.tabLayout);
