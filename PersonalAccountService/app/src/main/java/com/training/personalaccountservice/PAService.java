@@ -19,7 +19,7 @@ public class PAService extends Service {
     /**
      * Initialising context.
      */
-    private Context context = this;
+    private final Context context = this;
 
     /**
      * @brief: Performs service binding.

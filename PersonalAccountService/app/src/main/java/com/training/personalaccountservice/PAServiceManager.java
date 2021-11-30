@@ -46,7 +46,7 @@ public class PAServiceManager {
     /**
      * Declaring RemoteCallbackList of IPersonalAccountListener.
      */
-    private RemoteCallbackList<IPersonalAccountListener> mCallback=new RemoteCallbackList<>();
+    private final RemoteCallbackList<IPersonalAccountListener> mCallback=new RemoteCallbackList<>();
 
     /**
      * Initialising value for notifying Profile change.
@@ -183,7 +183,7 @@ public class PAServiceManager {
 
     /**
      *
-     * @param callback
+     * @param callback :
      */
     public void registerCallback(IPersonalAccountListener callback) {
         mCallback.register(callback);
@@ -191,7 +191,7 @@ public class PAServiceManager {
 
     /**
      *
-     * @param notificationType
+     * @param notificationType :
      */
     private void broadCastCallBack(int notificationType){
         int broadCastCount = mCallback.beginBroadcast();
@@ -200,7 +200,7 @@ public class PAServiceManager {
                 mCallback.getBroadcastItem(i).notifyChange(notificationType);
             }
         }catch(Exception e){
-
+            Log.i("Exception",e+" @broadCastCallBack-line 200 PAServiceManager");
         }
     }
 
