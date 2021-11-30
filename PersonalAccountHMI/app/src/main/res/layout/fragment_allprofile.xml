@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_allprofile"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:layout_height="match_parent"
+    tools:context=".view.FragmentAllProfile">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="110dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclarview"
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_marginStart="52dp"
+            android:horizontalSpacing="5dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <ImageButton
+            android:id="@+id/create"
+            android:layout_width="80dp"
+            android:background="@android:color/transparent"
+            android:layout_height="80dp"
+            android:layout_marginStart="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_add_circle_outline_black_24dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>
