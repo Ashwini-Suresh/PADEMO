@@ -173,10 +173,14 @@ public class PAServiceManager {
      * @return : Return a list of avatar.
      */
     public List<String> getAvailableAvatar() {
-        List<String> avatarList = Arrays.asList( "avatar1", "avatar2", "avatar3", "avatar4", "avatar5", "avatar6", "avatar7", "avatar8");
+        List<String> avatarList = new ArrayList<>(Arrays.asList( "avatar1", "avatar2", "avatar3", "avatar4", "avatar5", "avatar6", "avatar7", "avatar8"));
         Cursor cursor = mPASDBManager.readAllData();
         while (cursor.moveToNext()) {
-            avatarList.remove(cursor.getString(2));
+            String avatar= cursor.getString(2);
+            if(avatarList.contains(avatar)){
+                avatarList.remove(avatar);
+                Log.i("avatarList"," "+avatarList);
+            }
         }
         return avatarList;
     }
