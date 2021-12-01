@@ -52,6 +52,11 @@ public class FragmentAllProfileModel implements MainActivityContract.Model , IPe
     @Override
     public void notifyPersonalAccountChange(int propertyType, int data) {
         Log.i("fragment","hi"+propertyType);
-
+        switch (propertyType) {
+            case 7:
+            Log.i("fragment","hi2222"+propertyType);
+            mfragmentAllProfilePresenter.refreshAllProfiles();
+            default:
+        }
     }
 }
