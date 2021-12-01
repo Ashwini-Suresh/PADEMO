@@ -5,7 +5,7 @@
  */
 package com.example.personalaccounthmi.dialogfragment;
 
-import com.example.personalaccounthmi.dialogfragment.PersonalAccountDialog;
+import androidx.fragment.app.DialogFragment;
 
-public class DeletaProfileDialog extends PersonalAccountDialog {
+public class DeletaProfileDialog extends DialogFragment {
 }

@@ -6,6 +6,7 @@
     android:orientation="vertical"
     app:cardCornerRadius="10dp"
     android:id="@+id/card"
+    app:cardElevation="30dp"
     app:cardBackgroundColor="@android:color/transparent"
     android:layout_height="wrap_content"
     tools:ignore="InvalidId">

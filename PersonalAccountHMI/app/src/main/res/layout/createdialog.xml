@@ -5,6 +5,8 @@
     android:id="@+id/createdialog"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:minWidth="1000dp"
+    android:minHeight="1000dp"
     android:orientation="vertical">
 
     <FrameLayout
@@ -54,11 +56,12 @@
         android:textSize="20dp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
+        android:id="@+id/avatarList"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
         android:layout_height="80dp"
-        android:layout_marginStart="50dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="50dp" />
+        />
 
 
     <FrameLayout

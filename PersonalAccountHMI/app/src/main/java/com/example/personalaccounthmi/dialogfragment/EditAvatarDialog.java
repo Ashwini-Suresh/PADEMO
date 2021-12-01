@@ -15,10 +15,11 @@ import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 
 import com.example.personalaccounthmi.R;
 
-public class EditAvatarDialog extends PersonalAccountDialog{
+public class EditAvatarDialog extends DialogFragment {
 
     @Nullable
     @Override

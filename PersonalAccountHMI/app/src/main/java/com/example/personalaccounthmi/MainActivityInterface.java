@@ -15,6 +15,7 @@ import android.util.Log;
 
 import com.example.personalaccounthmi.util.PersonalAccountNotificationManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import common.IPersonalAccount;
@@ -76,6 +77,18 @@ public class MainActivityInterface {
             e.printStackTrace();
         }
     }
+
+    public List<String> getAvatarList(){
+        List<String> list = new ArrayList<>();
+        try {
+            list=mIPersonalAccount.getAvailableAvatarList();
+            Log.i("avatar list ",""+list);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
 
 
     private final ServiceConnection serviceConnection = new ServiceConnection() {

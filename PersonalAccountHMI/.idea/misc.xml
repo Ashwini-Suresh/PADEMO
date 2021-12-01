@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/avatarviewlayout.xml" value="0.1852355072463768" />
         <entry key="app/src/main/res/layout/createdialog.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/editavatarlayout.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/editusernamelayout.xml" value="0.12952898550724637" />
+        <entry key="app/src/main/res/layout/profilelist_layout.xml" value="0.1" />
       </map>
     </option>
   </component>

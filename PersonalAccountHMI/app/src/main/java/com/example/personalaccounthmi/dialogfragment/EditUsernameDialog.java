@@ -15,11 +15,11 @@ import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 
-import com.example.personalaccounthmi.dialogfragment.PersonalAccountDialog;
 import com.example.personalaccounthmi.R;
 
-public class EditUsernameDialog extends PersonalAccountDialog {
+public class EditUsernameDialog extends DialogFragment {
 
 
     @Nullable
