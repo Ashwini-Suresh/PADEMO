@@ -20,6 +20,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
     private Button mFM1;
     private Button mFM2;
     private Button mFM3;
+    private Button mGoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
         mFM3 =findViewById(R.id.buttonFM3);
         Button mSave = findViewById(R.id.buttonSave);
         Button mRefresh =findViewById(R.id.buttonRefresh);
+        mGoto=findViewById(R.id.buttonGoto);
 
         /**
          * @brief When click on ave button it calls a  function in presenter class to save the updated settings.
@@ -121,6 +124,22 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
             @Override
             public void onClick(View view) {
                 loadSettings();
+            }
+        });
+        mGoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i;
+               PackageManager manager = getPackageManager();
+                try {
+                    i = manager.getLaunchIntentForPackage("com.example.personalaccounthmi");
+                    if (i == null)
+                        throw new PackageManager.NameNotFoundException();
+                    i.addCategory(Intent.CATEGORY_LAUNCHER);
+                    startActivity(i);
+                } catch (PackageManager.NameNotFoundException e) {
+
+                }
             }
         });
 

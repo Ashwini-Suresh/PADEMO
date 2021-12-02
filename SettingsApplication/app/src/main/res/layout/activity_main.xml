@@ -253,6 +253,16 @@
             android:onClick="onClick"
             android:text="Save"
             android:textColor="@color/white"></Button>
+        <Button
+            android:id="@+id/buttonGoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/buttonRefresh"
+            android:backgroundTint="@color/black"
+            android:onClick="onClick"
+            android:text="GoTo HMI"
+            android:textColor="@color/white"></Button>
     </LinearLayout>
 
 </RelativeLayout>
