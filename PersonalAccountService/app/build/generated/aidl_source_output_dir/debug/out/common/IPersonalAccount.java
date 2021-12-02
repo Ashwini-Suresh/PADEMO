@@ -30,6 +30,17 @@ public interface IPersonalAccount extends android.os.IInterface
     @Override public void registerCallback(common.IPersonalAccountListener callback) throws android.os.RemoteException
     {
     }
+    @Override public com.training.personalaccountservice.ProfileData activeProfileData() throws android.os.RemoteException
+    {
+      return null;
+    }
+    @Override public void deleteProfile() throws android.os.RemoteException
+    {
+    }
+    @Override public int profileCount() throws android.os.RemoteException
+    {
+      return 0;
+    }
     @Override
     public android.os.IBinder asBinder() {
       return null;
@@ -134,6 +145,35 @@ public interface IPersonalAccount extends android.os.IInterface
           _arg0 = common.IPersonalAccountListener.Stub.asInterface(data.readStrongBinder());
           this.registerCallback(_arg0);
           reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_activeProfileData:
+        {
+          data.enforceInterface(descriptor);
+          com.training.personalaccountservice.ProfileData _result = this.activeProfileData();
+          reply.writeNoException();
+          if ((_result!=null)) {
+            reply.writeInt(1);
+            _result.writeToParcel(reply, android.os.Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
+          }
+          else {
+            reply.writeInt(0);
+          }
+          return true;
+        }
+        case TRANSACTION_deleteProfile:
+        {
+          data.enforceInterface(descriptor);
+          this.deleteProfile();
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_profileCount:
+        {
+          data.enforceInterface(descriptor);
+          int _result = this.profileCount();
+          reply.writeNoException();
+          reply.writeInt(_result);
           return true;
         }
         default:
@@ -293,6 +333,69 @@ public interface IPersonalAccount extends android.os.IInterface
           _data.recycle();
         }
       }
+      @Override public com.training.personalaccountservice.ProfileData activeProfileData() throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        com.training.personalaccountservice.ProfileData _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_activeProfileData, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().activeProfileData();
+          }
+          _reply.readException();
+          if ((0!=_reply.readInt())) {
+            _result = com.training.personalaccountservice.ProfileData.CREATOR.createFromParcel(_reply);
+          }
+          else {
+            _result = null;
+          }
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public void deleteProfile() throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_deleteProfile, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().deleteProfile();
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public int profileCount() throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        int _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_profileCount, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().profileCount();
+          }
+          _reply.readException();
+          _result = _reply.readInt();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
       public static common.IPersonalAccount sDefaultImpl;
     }
     static final int TRANSACTION_getAllProfile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
@@ -302,6 +405,9 @@ public interface IPersonalAccount extends android.os.IInterface
     static final int TRANSACTION_updateProfileName = (android.os.IBinder.FIRST_CALL_TRANSACTION + 4);
     static final int TRANSACTION_updateProfileAvatar = (android.os.IBinder.FIRST_CALL_TRANSACTION + 5);
     static final int TRANSACTION_registerCallback = (android.os.IBinder.FIRST_CALL_TRANSACTION + 6);
+    static final int TRANSACTION_activeProfileData = (android.os.IBinder.FIRST_CALL_TRANSACTION + 7);
+    static final int TRANSACTION_deleteProfile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 8);
+    static final int TRANSACTION_profileCount = (android.os.IBinder.FIRST_CALL_TRANSACTION + 9);
     public static boolean setDefaultImpl(common.IPersonalAccount impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
@@ -326,4 +432,7 @@ public interface IPersonalAccount extends android.os.IInterface
   public void updateProfileName(java.lang.String newName) throws android.os.RemoteException;
   public void updateProfileAvatar(java.lang.String newAvatar) throws android.os.RemoteException;
   public void registerCallback(common.IPersonalAccountListener callback) throws android.os.RemoteException;
+  public com.training.personalaccountservice.ProfileData activeProfileData() throws android.os.RemoteException;
+  public void deleteProfile() throws android.os.RemoteException;
+  public int profileCount() throws android.os.RemoteException;
 }

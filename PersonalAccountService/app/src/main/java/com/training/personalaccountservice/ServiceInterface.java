@@ -96,4 +96,30 @@ public class ServiceInterface extends IPersonalAccount.Stub {
     public void registerCallback(IPersonalAccountListener callback){
         mPASManager.registerCallback(callback);
     }
+
+    /**
+     * @brief: To get active profile name and avatar
+     * @return : Returns profile object
+     */
+    @Override
+    public ProfileData activeProfileData(){
+        return mPASManager.getActiveProfile();
+    }
+
+    /**
+     * @brief: To delete current active profile
+     */
+    @Override
+    public void deleteProfile() {
+
+    }
+
+    /**
+     * @brief: To get number of profiles present in dataBase
+     * @return : Returns count of profiles
+     */
+    @Override
+    public int profileCount() {
+        return 0;
+    }
 }

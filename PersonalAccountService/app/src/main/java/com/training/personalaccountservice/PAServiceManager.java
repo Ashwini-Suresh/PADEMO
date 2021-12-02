@@ -210,16 +210,35 @@ public class PAServiceManager {
         }
     }
 
+    /**
+     * @brief: To update active profiles avatar with new selected one.
+     * @param newAvatar: New selected avatar to update current active profile
+     */
     public void updateProfileAvatar(String newAvatar) {
         int activeProfileId = mActiveList.getActiveId();
         mPASDBManager.updateActiveProfileAvatar(activeProfileId,newAvatar);
         broadCastCallBack(PROFILE_DATA_CHANGE);
     }
 
+    /**
+     * @brief: To update active profiles name with new one.
+     * @param newName: New profile name to update current active profile
+     */
     public void updateProfileName(String newName) {
         int activeProfileId = mActiveList.getActiveId();
         mPASDBManager.updateActiveProfileName(activeProfileId,newName);
         broadCastCallBack(PROFILE_DATA_CHANGE);
+    }
+
+    public ProfileData getActiveProfile() {
+        int activeProfileId = mActiveList.getActiveId();
+        Cursor c = mPASDBManager.getActiveProfile(activeProfileId);
+        while (c.moveToNext()) {
+            String name= c.getString(0);
+            String avatar= c.getString(1);
+            return new ProfileData(activeProfileId,name,avatar,true);
+        }
+        return null;
     }
 }
 

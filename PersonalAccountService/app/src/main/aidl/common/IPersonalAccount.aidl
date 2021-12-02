@@ -12,4 +12,7 @@ interface IPersonalAccount {
   void updateProfileName(String newName);
   void updateProfileAvatar(String newAvatar);
   void registerCallback(IPersonalAccountListener callback);
+  ProfileData activeProfileData();
+  void deleteProfile();
+  int profileCount();
   }

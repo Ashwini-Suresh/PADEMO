@@ -13,7 +13,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import androidx.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * @brief: PASDataBaseManager manages the functionalities of DataBase.
@@ -215,5 +215,17 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
         }else {
             Log.i("UPDATE_PROFILE_NAME","SUCCESS");
         }
+    }
+
+    public Cursor getActiveProfile(int activeProfileId) {
+        String arg = String.valueOf(activeProfileId);
+        Log.i("content provider", "activeprofile " + activeProfileId);
+        String query = "SELECT " + COLUMN_NAME+", "+COLUMN_AVATAR + " FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + " = ?";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        if (db != null) {
+            cursor = db.rawQuery(query, new String[]{arg});
+        }
+        return cursor;
     }
 }
