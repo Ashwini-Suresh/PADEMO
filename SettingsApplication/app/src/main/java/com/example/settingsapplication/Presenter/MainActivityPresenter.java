@@ -16,9 +16,22 @@ import java.util.HashMap;
 
 public class MainActivityPresenter implements MainAcitivityContract.Presenter {
 
+    /**
+     * creating an object for View Interface in the MainActivityContract
+     */
     MainAcitivityContract.View view;
+
+    /**
+     * Creating an object for the model interface in the MainActivityContract
+     */
     MainAcitivityContract.MainActivityModel mMainActivityModel;
 
+
+    /**
+     * @brief: Creating a constructor for this class
+     * @param view :Object of View interface
+     * @param context: passing context to model class from view
+     */
     public MainActivityPresenter(MainAcitivityContract.View view, Context context) {
         this.view = view;
 
@@ -42,7 +55,7 @@ public class MainActivityPresenter implements MainAcitivityContract.Presenter {
     @Override
     public void doRefresh() {
         mMainActivityModel.getSettings();
-        Log.i("do refresh in presenter","modelget settings");
+        Log.i("do refresh in presenter", "modelget settings");
     }
 
 
@@ -58,10 +71,11 @@ public class MainActivityPresenter implements MainAcitivityContract.Presenter {
 
     /**
      * @return null: it return null value
-     * @brief this function calls a function in model class .
+     * @brief : This function calls a function in model class .
      */
     @Override
     public HashMap<String, String> getSettings() {
+
         return mMainActivityModel.getSettings();
     }
 

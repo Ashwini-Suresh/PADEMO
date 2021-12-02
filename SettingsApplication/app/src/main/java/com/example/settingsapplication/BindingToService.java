@@ -13,14 +13,27 @@ import common.IPersonalAccount;
 
 public class BindingToService {
 
+    /**
+     * Creating an Instance for the  BindingToService class
+     */
     private static volatile BindingToService INSTANCE = null;
+
+    /**
+     * Creating an object for Context
+     */
     private final Context context;
 
+    /**
+     * Creating an object for the AIDL Interface
+     */
     public IPersonalAccount mIPersonalAccount;
 
 
-
-
+    /**
+     * @brief: Instance class of the BindingToService
+     * @param context :
+     * @return :Returns an Instance
+     */
     public static BindingToService getInstance(Context context) {
         if (INSTANCE == null) {
             synchronized (SettingsProvider.class) {
@@ -33,6 +46,10 @@ public class BindingToService {
 
     }
 
+    /**
+     * @brief: Constructor of the BindingToService class
+     * @param context
+     */
     private BindingToService(Context context){
         this.context = context;
         bindTOAIDLService();
@@ -48,6 +65,9 @@ public class BindingToService {
         context.bindService(intent,serviceConnection,Context.BIND_AUTO_CREATE);
     }
 
+    /**
+     * @brief: One of the method of binding sevice and here establishes a connection with the service application
+     */
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -56,6 +76,10 @@ public class BindingToService {
 
         }
 
+        /**
+         * @brief: Another method of Binding service this is for to Disconnection.
+         * @param name
+         */
         @Override
         public void onServiceDisconnected(ComponentName name) {
 

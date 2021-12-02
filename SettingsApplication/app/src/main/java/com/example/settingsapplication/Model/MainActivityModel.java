@@ -38,6 +38,10 @@ public class MainActivityModel implements MainAcitivityContract.MainActivityMode
      * Initializing a context object as null
      */
     Context mContext;
+
+    /**
+     * Initializing an object for SettingsProvider classs
+     */
     SettingsProvider mSettingsProvider;
 
 
@@ -49,11 +53,23 @@ public class MainActivityModel implements MainAcitivityContract.MainActivityMode
 
     public MainActivityModel(MainActivityPresenter mainActivityPresenter, Context context) {
 
-
+        /**
+         * creating an object for Mainactivity Presenter
+         */
         mMainActivityPresenter = mainActivityPresenter;
-
+        /**
+         * creating an object for Context
+         */
         mContext = context;
+        /**
+         * Assinging SettingsProvider instance in an object of SettingsProvider class
+         */
         mSettingsProvider = SettingsProvider.getInstance(context);
+
+        /**
+         * String variable to store the settings data which calls a
+         * function in settings provider class
+         */
         String settingsData = mSettingsProvider.getSettings();
         if (settingsData != null && !settingsData.isEmpty()) {
             //Json parsing and assign to mSettingsMap
@@ -68,6 +84,10 @@ public class MainActivityModel implements MainAcitivityContract.MainActivityMode
 
     }
 
+    /**
+     * @brief: function to get the default settings for the settings application.
+     * @return : returns a HashMap value
+     */
     private HashMap<String, String> getDefaultSettings() {
         HashMap<String, String> settingsMap = new HashMap<>();
         settingsMap.put(SettingsConstants.AUTO_PLAY_STATUS, "ON");
@@ -88,6 +108,11 @@ public class MainActivityModel implements MainAcitivityContract.MainActivityMode
         mSettingsMap.replace(settingsKey, settingsValue);
     }
 
+    /**
+     * @brief: this is used for to get new settings that is stored
+     * in the service application and performs JSonParsing
+     * @return :it returns mSettingsMap which is a HashMap
+     */
     public HashMap<String, String> getSettings() {
         String settingsData = mSettingsProvider.getSettings();
         if (settingsData != null && !settingsData.isEmpty()) {
@@ -102,13 +127,16 @@ public class MainActivityModel implements MainAcitivityContract.MainActivityMode
         return mSettingsMap;
     }
 
+    /**
+     * @brief: it calls save settings function to save the settings
+     */
     @Override
     public void onSave() {
         saveSettings();
     }
 
     /**
-     * @breif : this function makes a Json String and stored as a json variable
+     * @breif: this function makes a Json String and stored as a json variable and call the update settings function
      */
     public void saveSettings() {
 
@@ -116,6 +144,12 @@ public class MainActivityModel implements MainAcitivityContract.MainActivityMode
         SettingsProvider.getInstance(mContext).updateSettings(settingsJson.toString());
     }
 
+    /**
+     *
+     * @param t: it is a String variable
+     * @return : retuns a HashMap
+     * @throws: JSONException
+     */
     public HashMap<String, String> jsonToMap(String t) throws JSONException {
 
         HashMap<String, String> map = new HashMap<>();

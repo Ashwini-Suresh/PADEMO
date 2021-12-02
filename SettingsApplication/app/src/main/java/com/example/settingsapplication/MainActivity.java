@@ -92,24 +92,24 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
          * Finding all the ui elements
          */
 
-        mAutoPlayStatusON =findViewById(R.id.buttonAutoPlayStatusOn);
-        mAutoplayStatusOFF =findViewById(R.id.buttonAutoPlayStatusOff);
-        mTimeON =findViewById(R.id.buttonTimeOn);
-        mTimeOFF =findViewById(R.id.buttonTimeOFF);
+        mAutoPlayStatusON = findViewById(R.id.buttonAutoPlayStatusOn);
+        mAutoplayStatusOFF = findViewById(R.id.buttonAutoPlayStatusOff);
+        mTimeON = findViewById(R.id.buttonTimeOn);
+        mTimeOFF = findViewById(R.id.buttonTimeOFF);
         mTheme1 = findViewById(R.id.buttonTheme1);
         mTheme2 = findViewById(R.id.buttonTheme2);
-        mTheme3 =findViewById(R.id.buttonTheme3);
-        mDisplayAutomatic =findViewById(R.id.buttonDisplay_Automatic);
-        mDisplayManual =findViewById(R.id.buttonDisplay_manual);
-        mFM1 =findViewById(R.id.buttonFM1);
-        mFM2 =findViewById(R.id.buttonFM2);
-        mFM3 =findViewById(R.id.buttonFM3);
+        mTheme3 = findViewById(R.id.buttonTheme3);
+        mDisplayAutomatic = findViewById(R.id.buttonDisplay_Automatic);
+        mDisplayManual = findViewById(R.id.buttonDisplay_manual);
+        mFM1 = findViewById(R.id.buttonFM1);
+        mFM2 = findViewById(R.id.buttonFM2);
+        mFM3 = findViewById(R.id.buttonFM3);
         Button mSave = findViewById(R.id.buttonSave);
-        Button mRefresh =findViewById(R.id.buttonRefresh);
-        mGoto=findViewById(R.id.buttonGoto);
+        Button mRefresh = findViewById(R.id.buttonRefresh);
+        mGoto = findViewById(R.id.buttonGoto);
 
         /**
-         * @brief When click on ave button it calls a  function in presenter class to save the updated settings.
+         *  When click on ave button it calls a  function in presenter class to save the updated settings.
          */
         mSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
             }
         });
         /**
-         * @brief Click on a Refresh button ,it calls a function in presenter class to get saved settings
+         *  Click on a Refresh button ,it calls a function in presenter class to get saved settings
          */
         mRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,11 +126,15 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
                 loadSettings();
             }
         });
+
+        /**
+         * when click on the goto HMI button it will takes the application to PersonalAccountHMI
+         */
         mGoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i;
-               PackageManager manager = getPackageManager();
+                PackageManager manager = getPackageManager();
                 try {
                     i = manager.getLaunchIntentForPackage("com.example.personalaccounthmi");
                     if (i == null)
@@ -144,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
         });
 
     }
+
     /**
      * @param selected       : This is a selected Button in the ui
      * @param notSelectedOne : This is the unSelected Button in the ui
@@ -196,14 +201,13 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
 
 
     /**
+     * @param selected       : This is a selected Button in the ui
+     * @param notSelectedOne : This is the unSelected Button in the ui
+     * @param notSelectedTwo : This is the unSelected Button in the ui
      * @brief :The setStatus function having 3 parameters to set the ui status
      * where one parameter is selected button and other two buttons are unselected.
      * when click on one button the status of that button indicated in green color
      * and others are in black color.
-     * @param selected       : This is a selected Button in the ui
-     * @param notSelectedOne : This is the unSelected Button in the ui
-     * @param notSelectedTwo : This is the unSelected Button in the ui
-
      */
 
     public void setStatus(Button selected, Button notSelectedOne, Button notSelectedTwo) {
@@ -271,7 +275,7 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
 
 
     /**
-     * @brief The onResume method calls the LoadSettings function to load the current
+     * @brief: The onResume method calls the LoadSettings function to load the current
      * setting of SettingsApplication
      */
     protected void onResume() {
@@ -304,29 +308,31 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
                     setStatus(mTimeOFF, mTimeON, null);
 
                 }
-            } else if (mentry.getKey().equals(ACTIVE_THEME)) {
-                if (mentry.getValue().equals("THEME1")) {
-                    setStatus(mTheme1, mTheme2, mTheme3);
+            }
+            else if (mentry.getKey().equals(DISPLAY)) {
+                if (mentry.getValue().equals("Manual")) {
 
-
-                } else if (mentry.getValue().equals("THEME2")) {
-                    setStatus(mTheme2, mTheme1, mTheme3);
-                } else {
-                    setStatus(mTheme3, mTheme2, mTheme1);
-                }
-            } else if (mentry.getKey().equals(DISPLAY)) {
-                if (mentry.getValue().equals("MANUAL")) {
-                    setStatus(mDisplayManual, mDisplayAutomatic, null);
+                   setStatus(mDisplayManual, mDisplayAutomatic, null);
                 } else {
                     setStatus(mDisplayAutomatic, mDisplayManual, null);
                 }
-            } else if (mentry.getKey().equals(FM)) {
-                if (mentry.getValue().equals("BIG_FM")) {
+            }
+            else if (mentry.getKey().equals(ACTIVE_THEME)) {
+                if (mentry.getValue().equals("Theme 1")) {
+                    setStatus(mTheme1, mTheme2, mTheme3);
+                } else if (mentry.getValue().equals("Theme 2")) {
+                    setStatus(mTheme2, mTheme1, mTheme3);
+                } else  {
+                    setStatus(mTheme3, mTheme2, mTheme1);
+                }
+            }
+            else if (mentry.getKey().equals(FM)) {
+                if (mentry.getValue().equals("BIG FM")) {
                     setStatus(mFM1, mFM2, mFM3);
 
-                } else if (mentry.getValue().equals("RADIO_CITY")) {
+                } else if (mentry.getValue().equals("RADIO CITY")) {
                     setStatus(mFM2, mFM1, mFM3);
-                } else {
+                } else if (mentry.getValue().equals("RADIO FM")) {
                     setStatus(mFM3, mFM1, mFM2);
                 }
             }

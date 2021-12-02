@@ -1932,6 +1932,7 @@ id buttonDisplay_manual
 id buttonFM1
 id buttonFM2
 id buttonFM3
+id buttonGoto
 id buttonPanel
 id buttonRefresh
 id buttonSave

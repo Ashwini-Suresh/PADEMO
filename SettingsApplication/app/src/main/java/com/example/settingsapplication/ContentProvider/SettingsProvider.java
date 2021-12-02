@@ -20,6 +20,9 @@ public class SettingsProvider {
      */
     private final ContentResolver mContentResolver;
 
+    /**
+     * Creating an Instance for the SettingsProvider class
+     */
     private static volatile SettingsProvider INSTANCE = null;
 
 
@@ -47,13 +50,17 @@ public class SettingsProvider {
 
     }
 
+    /**
+     * @brief: Constructor for the SettingsProvider class
+     * @param context
+     */
     private SettingsProvider(Context context) {
         mContentResolver = context.getContentResolver();
     }
 
     /**
      * @return settings: returns settings which is in a json String
-     * @brief
+     * @brief : fetching the saved data from the service app and stored in a string variable
      */
 
     public String getSettings() {
