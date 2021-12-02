@@ -5,6 +5,8 @@
  */
 package com.example.personalaccounthmi.view;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -46,6 +48,17 @@ public class FragmentEditProfile extends Fragment {
 
 
         btn_gotoSettings.setOnClickListener(v -> {
+            Intent i;
+            PackageManager manager = getActivity().getPackageManager();
+            try {
+                i = manager.getLaunchIntentForPackage("com.example.settingsapplication");
+                if (i== null)
+                    throw new PackageManager.NameNotFoundException();
+                i.addCategory(Intent.CATEGORY_LAUNCHER);
+                startActivity(i);
+            } catch (PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+            }
 
         });
 

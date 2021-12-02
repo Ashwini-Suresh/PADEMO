@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalaccounthmi.MainActivityContract;
@@ -33,7 +34,7 @@ public class FragmentAllProfile extends Fragment implements MainActivityContract
 
 
     private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
+    private LinearLayoutManager layoutManager;
     public CustomAdapter adapter;
     private ArrayList<ProfileData> list;
     private Context mContext;
@@ -46,8 +47,7 @@ public class FragmentAllProfile extends Fragment implements MainActivityContract
         ImageButton create = rootView.findViewById(R.id.create);
         mContext = rootView.getContext();
         presenter = new FragmentAllProfilePresenter(this, mContext);
-        layoutManager = new GridLayoutManager(mContext, 4);
-        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(mContext,LinearLayoutManager.HORIZONTAL,false);
         Handler handler = new Handler();
         handler.postDelayed(() -> {
             loadUI();

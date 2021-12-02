@@ -1953,6 +1953,7 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel
+id cancelAvatar
 id cancel_action
 id cancel_button
 id cancelbtn
@@ -1977,6 +1978,7 @@ id clip_horizontal
 id clip_vertical
 id clockwise
 id close
+id closeAvatar
 id closebutton
 id closest
 id collapseActionView
@@ -2002,6 +2004,8 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id deleteProfileNo
+id deleteProfileYes
 id deleteprofile
 id deltaRelative
 id dependency_ordering
@@ -2031,6 +2035,8 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id editAvatarLayout
+id editAvatarList
 id edit_query
 id editavatar
 id editname
@@ -2077,7 +2083,6 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageButton2
 id imageclose
 id immediateStop
 id included
@@ -2211,6 +2216,7 @@ id right_side
 id rounded
 id row_index_key
 id save
+id saveAvatar
 id save_non_transition_alpha
 id save_overlay_view
 id savebtn
@@ -2427,6 +2433,7 @@ layout avatarviewlayout
 layout createavatar
 layout createdialog
 layout custom_dialog
+layout deleteprofilelayout
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

@@ -78,6 +78,23 @@ public class MainActivityInterface {
         }
     }
 
+    public void updateProfileName(String newName){
+        try {
+            mIPersonalAccount.updateProfileName(newName);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void updateProfileAvatar(String newAvatar){
+        try {
+            mIPersonalAccount.updateProfileAvatar(newAvatar);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public List<String> getAvatarList(){
         List<String> list = new ArrayList<>();
         try {
