@@ -20,13 +20,13 @@ public interface MainActivityContract {
         ArrayList<ProfileData> getProfileList();
 
 
+        void refreshAllProfiles();
     }
     interface View{
-        void loadUI(Context context);
+        void loadUI();
         void openDialog();
-
-
-        }
+        void refreshAllProfiles();
+    }
     interface EditProfilePresenter{
         void editUsername();
     }

@@ -30,4 +30,9 @@ public class FragmentAllProfilePresenter implements MainActivityContract.Present
         return fragmentAllProfileModel.toGetProfile();
 
     }
+
+    @Override
+    public void refreshAllProfiles() {
+        view.refreshAllProfiles();
+    }
 }

@@ -205,6 +205,8 @@ public class PAServiceManager {
             }
         }catch(Exception e){
             Log.i("Exception",e+" @broadCastCallBack-line 200 PAServiceManager");
+        } finally {
+            mCallback.finishBroadcast();
         }
     }
 
