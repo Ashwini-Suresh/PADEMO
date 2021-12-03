@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Quest.SettingsApplication.iml" filepath="$PROJECT_DIR$/.idea/modules/Quest.SettingsApplication.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Quest.SettingsApplication.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Quest.SettingsApplication.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SettingsApplication.iml" filepath="$PROJECT_DIR$/.idea/modules/SettingsApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SettingsApplication.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SettingsApplication.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/new.SettingsApplication.iml" filepath="$PROJECT_DIR$/.idea/modules/new.SettingsApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/new.SettingsApplication.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/new.SettingsApplication.app.iml" />
     </modules>
   </component>
 </project>

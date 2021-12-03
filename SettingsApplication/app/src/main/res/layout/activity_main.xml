@@ -4,18 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
+    android:gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/bbbb"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#FF9800"
+        android:background="#0022190D"
         android:gravity="center"
-        android:text="Settings"
-        android:textSize="20dp"></TextView>
+        android:text="SETTINGS"
+        android:layout_marginStart="50dp"
+        android:textColor="@color/head"
+        android:textSize="40dp"></TextView>
 
     <LinearLayout
         android:id="@+id/layoutAutoPlayStatus"
@@ -23,7 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/header"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <TextView
@@ -32,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/header"
             android:text="Auto Play Status"
+            android:textColor="@color/head"
             android:textSize="20dp"></TextView>
 
         <Button
@@ -39,7 +44,6 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="37dp"
-
             android:onClick="onClick"
             android:text="ON"
             android:textColor="@color/white"></Button>
@@ -59,6 +63,7 @@
         android:id="@+id/layoutTimeFormat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
         android:layout_below="@id/layoutAutoPlayStatus"
         android:layout_marginLeft="30dp"
         android:orientation="horizontal">
@@ -68,6 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Time Format"
+            android:textColor="@color/head"
             android:textSize="20dp"></TextView>
 
         <Button
@@ -96,6 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/layoutTimeFormat"
         android:layout_marginLeft="30dp"
+        android:layout_marginStart="200dp"
         android:orientation="horizontal">
 
         <TextView
@@ -103,6 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Active Theme"
+            android:textColor="@color/head"
             android:textSize="20dp"></TextView>
 
         <Button
@@ -144,6 +152,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/layoutTActiveTheme"
         android:layout_marginLeft="30dp"
+        android:layout_marginStart="200dp"
         android:orientation="horizontal">
 
         <TextView
@@ -151,6 +160,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Display"
+            android:textColor="@color/head"
             android:textSize="20dp"></TextView>
 
         <Button
@@ -181,6 +191,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/layoutDisplay"
         android:layout_marginLeft="30dp"
+        android:layout_marginStart="200dp"
         android:orientation="horizontal">
 
         <TextView
@@ -188,6 +199,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="FM Radio"
+            android:textColor="@color/head"
             android:textSize="20dp"></TextView>
 
         <Button
@@ -217,7 +229,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_toRightOf="@id/buttonFM2"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="#41000000"
             android:onClick="onClick"
             android:text="RADIO FM"
             android:textColor="@color/white"></Button>
@@ -229,6 +241,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/layoutFm"
+        android:layout_marginStart="150dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="15dp"
         android:gravity="center"
@@ -238,7 +251,7 @@
             android:id="@+id/buttonRefresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/head"
             android:onClick="onClick"
             android:text="Refresh"
             android:textColor="@color/white"></Button>
@@ -249,17 +262,18 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@id/buttonRefresh"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/head"
             android:onClick="onClick"
             android:text="Save"
             android:textColor="@color/white"></Button>
+
         <Button
             android:id="@+id/buttonGoto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@id/buttonRefresh"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/head"
             android:onClick="onClick"
             android:text="GoTo HMI"
             android:textColor="@color/white"></Button>

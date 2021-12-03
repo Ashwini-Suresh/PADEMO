@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Quest\\SettingsApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "D:\\Quest_Projects\\new\\SettingsApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
                     "source": "D:\\work\\New folder\\caches\\transforms-3\\f794c157ce27c216c504b2261e60ef5d\\transformed\\material-1.4.0\\res\\values-night-v8\\values-night-v8.xml",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "D:\\Quest\\SettingsApplication\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "D:\\Quest_Projects\\new\\SettingsApplication\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

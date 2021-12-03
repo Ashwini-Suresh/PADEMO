@@ -159,13 +159,13 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
      * and others are in black color.
      */
     private void changeStatus(Button selected, Button notSelectedOne, Button notSelectedTwo) {
-        selected.setBackgroundColor(Color.parseColor(SettingsConstants.GREEN_COLOR));
+        selected.setBackgroundColor(Color.parseColor(SettingsConstants.GOLD_COLOR));
         selected.setSelected(true);
 
-        notSelectedOne.setBackgroundColor(Color.parseColor(SettingsConstants.BLACK_COLOR));
+        notSelectedOne.setBackgroundColor(Color.parseColor(SettingsConstants.RED_COLOR));
         notSelectedOne.setSelected(false);
         if (notSelectedTwo != null) {
-            notSelectedTwo.setBackgroundColor(Color.parseColor(SettingsConstants.BLACK_COLOR));
+            notSelectedTwo.setBackgroundColor(Color.parseColor(SettingsConstants.RED_COLOR));
             notSelectedTwo.setSelected(false);
         }
         String key = null;
@@ -211,13 +211,13 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
      */
 
     public void setStatus(Button selected, Button notSelectedOne, Button notSelectedTwo) {
-        selected.setBackgroundColor(Color.parseColor(SettingsConstants.GREEN_COLOR));
+        selected.setBackgroundColor(Color.parseColor(SettingsConstants.GOLD_COLOR));
         selected.setSelected(true);
 
-        notSelectedOne.setBackgroundColor(Color.parseColor(SettingsConstants.BLACK_COLOR));
+        notSelectedOne.setBackgroundColor(Color.parseColor(SettingsConstants.RED_COLOR));
         notSelectedOne.setSelected(false);
         if (notSelectedTwo != null) {
-            notSelectedTwo.setBackgroundColor(Color.parseColor(SettingsConstants.BLACK_COLOR));
+            notSelectedTwo.setBackgroundColor(Color.parseColor(SettingsConstants.RED_COLOR));
             notSelectedTwo.setSelected(false);
         }
     }
