@@ -7,6 +7,7 @@
 package com.example.personalaccounthmi;
 
 import android.content.Context;
+import android.os.RemoteException;
 
 import java.util.ArrayList;
 
@@ -29,5 +30,14 @@ public interface MainActivityContract {
     }
     interface EditProfilePresenter{
         void editUsername();
+        ProfileData getHighlightProfile() throws RemoteException;
+        void refreshHighlightProfile() throws RemoteException;
+    }
+    interface EditProfileModel{
+        ProfileData highlightProfile() throws RemoteException;
+    }
+    interface EditProfileVIew{
+        void showHighlightProfile() throws RemoteException;
+        void refreshHighlightProfile();
     }
 }

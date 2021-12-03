@@ -1,5 +1,5 @@
 /**
- * @file FragmentAllProfilePresenter.java
+ * @file FragmentEditProfilePresenter.java
  * @brief The class represents the presenter class of FragmentAllProfile class
  * @author Karthika V T
  */

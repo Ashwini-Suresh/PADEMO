@@ -106,6 +106,12 @@ public class MainActivityInterface {
         return list;
     }
 
+    public ProfileData activeProfile() throws RemoteException {
+        ProfileData p = mIPersonalAccount.activeProfileData();
+        Log.i("mainactivity interface"," "+p.getName());
+        return p;
+    }
+
 
 
     private final ServiceConnection serviceConnection = new ServiceConnection() {
