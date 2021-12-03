@@ -33,7 +33,6 @@ public class FragmentAllProfileModel implements MainActivityContract.Model , IPe
     public FragmentAllProfileModel(FragmentAllProfilePresenter fragmentAllProfilePresenter, Context context) {
         mainActivityInterface =  MainActivityInterface.getInstance(context);
         mfragmentAllProfilePresenter = fragmentAllProfilePresenter;
-        mainActivityInterface.bindTOAIDLService();
         PersonalAccountNotificationManager.getInstance().registerObserver(this);
 
     }

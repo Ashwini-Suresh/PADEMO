@@ -2077,6 +2077,8 @@ id groups
 id guideline
 id header_title
 id hideable
+id highlightAvatar
+id highlightName
 id home
 id homeAsUp
 id honorRequest
