@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="69dp"
         app:tabTextColor="#B78DEA"
-        app:tabSelectedTextColor="#FF9800"
+        app:tabSelectedTextColor="#DF2214"
         android:background="#0C080B">
 
         <com.google.android.material.tabs.TabItem

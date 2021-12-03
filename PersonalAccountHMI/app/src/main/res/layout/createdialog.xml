@@ -5,6 +5,7 @@
     android:id="@+id/createdialog"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg4"
     android:minWidth="1000dp"
     android:minHeight="1000dp"
     android:orientation="vertical">
@@ -20,7 +21,7 @@
             android:layout_gravity="center|bottom"
             android:padding="5dp"
             android:text="Create Profile"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/white"
             android:textSize="40dp" />
 
         <ImageButton
@@ -28,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|end"
-            android:backgroundTint="@android:color/transparent"
+            android:background="#66FFFFFF"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/close"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -39,11 +40,14 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="50dp"
+        android:background="#4ABF6A42"
         android:ems="10"
         android:hint="Enter Username"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <TextView
         android:id="@+id/textView3"
@@ -52,7 +56,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="25dp"
         android:text="Select Avatar"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20dp" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -74,6 +78,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center_vertical|start"
             android:layout_marginStart="50dp"
+            android:backgroundTint="#CCE34817"
             android:text="CANCEL" />
 
         <Button
@@ -82,6 +87,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center_vertical|end"
             android:layout_marginEnd="50dp"
+            android:backgroundTint="#CC4CC30E"
             android:text="SAVE" />
 
 
