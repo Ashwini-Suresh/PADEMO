@@ -1,15 +1,11 @@
 [
     {
-        "merged": "D:\\Quest_Projects\\new\\SettingsApplication\\app\\build\\intermediates\\merged_res\\debug\\drawable_ssss.png.flat",
-        "source": "D:\\Quest_Projects\\new\\SettingsApplication\\app\\src\\main\\res\\drawable\\ssss.png"
+        "merged": "D:\\Quest_Projects\\new\\SettingsApplication\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "D:\\Quest_Projects\\new\\SettingsApplication\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
         "merged": "D:\\Quest_Projects\\new\\SettingsApplication\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
         "source": "D:\\Quest_Projects\\new\\SettingsApplication\\app\\src\\main\\res\\layout\\activity_main.xml"
-    },
-    {
-        "merged": "D:\\Quest_Projects\\new\\SettingsApplication\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "D:\\Quest_Projects\\new\\SettingsApplication\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
         "merged": "D:\\Quest_Projects\\new\\SettingsApplication\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
