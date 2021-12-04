@@ -11,7 +11,6 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.util.Log;
 
 import com.example.personalaccounthmi.util.PersonalAccountNotificationManager;
 
@@ -35,8 +34,6 @@ public class MainActivityInterface {
                 if (INSTANCE == null)
                     INSTANCE = new MainActivityInterface(context);
             }
-
-
         }
         return INSTANCE;
     }
@@ -99,7 +96,6 @@ public class MainActivityInterface {
         List<String> list = new ArrayList<>();
         try {
             list=mIPersonalAccount.getAvailableAvatarList();
-            Log.i("avatar list ",""+list);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -107,9 +103,7 @@ public class MainActivityInterface {
     }
 
     public ProfileData activeProfile() throws RemoteException {
-        ProfileData p = mIPersonalAccount.activeProfileData();
-        Log.i("mainactivity interface"," "+p.getName());
-        return p;
+        return mIPersonalAccount.activeProfileData();
     }
 
 
@@ -139,11 +133,8 @@ class PersonalAccountListener extends IPersonalAccountListener.Stub {
 
     @Override
     public void notifyChange(int status) throws RemoteException {
-        Log.i("notifyChange called", "" + status);
         PersonalAccountNotificationManager.getInstance().notifyObservers(status,0);
-
     }
-
 
 }
 

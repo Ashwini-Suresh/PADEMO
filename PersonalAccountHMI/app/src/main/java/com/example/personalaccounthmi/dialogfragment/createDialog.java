@@ -18,7 +18,6 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.fragment.app.DialogFragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,8 +33,8 @@ public class createDialog extends DialogFragment implements AvatarSelectListener
 
     private EditText name;
     private String avatar;
-    ArrayList<String> mAvatarList;
-    RecyclerView recyclerView1;
+    private  ArrayList<String> mAvatarList;
+    private RecyclerView mRecyclerView;
     private LinearLayoutManager layoutManager;
     private AvatarAdapter avatarAdapter;
 
@@ -49,19 +48,18 @@ public class createDialog extends DialogFragment implements AvatarSelectListener
         Button cancel = rootView.findViewById(R.id.cancelbtn);
         Button save = rootView.findViewById(R.id.savebtn);
         name = rootView.findViewById(R.id.Name);
-        recyclerView1 = rootView.findViewById(R.id.avatarList);
+        mRecyclerView = rootView.findViewById(R.id.avatarList);
 
         Context context = getContext();
 
         layoutManager = new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false);
-       // recyclerView1.setHasFixedSize(true);
+
 
 
 
         MainActivityInterface mainActivityInterface = MainActivityInterface.getInstance(getContext());
         try {
             mAvatarList = (ArrayList<String>) mainActivityInterface.getAvatarList();
-            Log.i("avatarList "," "+mAvatarList);
         } catch (Exception e) {
             Log.i("Exception","did not get avatar list");
         }
@@ -69,9 +67,9 @@ public class createDialog extends DialogFragment implements AvatarSelectListener
         handler.postDelayed(() -> {
 
             avatarAdapter = new AvatarAdapter(context,mAvatarList, this);
-            recyclerView1.setAdapter(avatarAdapter);
-            recyclerView1.setLayoutManager(layoutManager);
-        }, 1000);
+            mRecyclerView.setAdapter(avatarAdapter);
+            mRecyclerView.setLayoutManager(layoutManager);
+        }, 200);
 
 
 
@@ -86,10 +84,12 @@ public class createDialog extends DialogFragment implements AvatarSelectListener
 
         save.setOnClickListener(v -> {
             String username = String.valueOf(name.getText());
-            mainActivityInterface.addProfile(username , avatar);
-            Toast.makeText(getContext(), "Profile Saved successfully", Toast.LENGTH_SHORT).show();
-            dismiss();
-
+            if(!username.isEmpty()&&avatar!=null){
+                mainActivityInterface.addProfile(username , avatar);
+                Toast.makeText(getContext(), "Profile Saved successfully", Toast.LENGTH_SHORT).show();
+                dismiss();
+            }else
+                Toast.makeText(getContext(), "YOU CANNOT HAVE FIELDS EMPTY" , Toast.LENGTH_SHORT).show();
 
         });
 
@@ -102,6 +102,4 @@ public class createDialog extends DialogFragment implements AvatarSelectListener
 
     }
 
-//    public void show(Fragment parentFragment, String createDialog) {
-//    }
 }

@@ -6,27 +6,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalaccounthmi.AvatarSelectListener;
-import com.example.personalaccounthmi.MainActivityInterface;
-import com.example.personalaccounthmi.ProfileData;
 import com.example.personalaccounthmi.R;
 
 import java.util.ArrayList;
 
 public class AvatarAdapter extends RecyclerView.Adapter<AvatarAdapter.MyViewHolder>{
-    private Context context;
-    private ArrayList mAvatarList;
+    private  Context mContext;
+    private  ArrayList mAvatarList;
     private AvatarSelectListener mCallback;
+    private int selectedPosition=-1;
 
 
     public AvatarAdapter(Context context, ArrayList avatarList, AvatarSelectListener listener){
-        this.context=context;
+        this.mContext =context;
         mAvatarList =avatarList;
         mCallback = listener;
     }
@@ -34,7 +32,7 @@ public class AvatarAdapter extends RecyclerView.Adapter<AvatarAdapter.MyViewHold
     @NonNull
     @Override
     public AvatarAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater=LayoutInflater.from(context);
+        LayoutInflater inflater=LayoutInflater.from(mContext);
         View v= inflater.inflate(R.layout.avatarviewlayout,parent,false);
         return new AvatarAdapter.MyViewHolder(v);
     }
@@ -61,10 +59,16 @@ public class AvatarAdapter extends RecyclerView.Adapter<AvatarAdapter.MyViewHold
             case "avatar8" : holder.avatar.setImageResource(R.mipmap.avatar8);
                 break;
         }
-        holder.avatar.setOnClickListener(v -> {
+        if(selectedPosition==position){
             holder.cardView.setCardBackgroundColor(Color.parseColor("#66FFFF00"));
+        }
+        else{
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#00FFFFFF"));
+        }
+        holder.avatar.setOnClickListener(v -> {
             mCallback.onAvatarClick(avatar);
-
+            selectedPosition=holder.getAdapterPosition();
+            notifyDataSetChanged();
         });
 
     }

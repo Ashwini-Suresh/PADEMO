@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class VPAdapter extends FragmentPagerAdapter {
     private final ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
-    private final ArrayList<String> fragmenttitle = new ArrayList<>();
+    private final ArrayList<String> fragmentTitle = new ArrayList<>();
 
 
     public VPAdapter(@NonNull FragmentManager fm, int behavior) {
@@ -27,14 +27,14 @@ public class VPAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return fragmentArrayList.size();
     }
-    public <title> void addFragment(Fragment fragment , String title) {
+    public void addFragment(Fragment fragment , String title) {
         fragmentArrayList.add(fragment);
-        fragmenttitle.add(title);
+        fragmentTitle.add(title);
 
     }
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return fragmenttitle.get(position);
+        return fragmentTitle.get(position);
     }
 }

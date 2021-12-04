@@ -39,7 +39,5 @@ public class FragmentEditProfilePresenter implements MainActivityContract.EditPr
     @Override
     public void refreshHighlightProfile() throws RemoteException {
         view.showHighlightProfile();
-
-
     }
 }

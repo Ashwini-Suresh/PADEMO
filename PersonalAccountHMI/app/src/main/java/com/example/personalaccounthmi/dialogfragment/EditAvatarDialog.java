@@ -13,8 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -42,11 +42,11 @@ public class EditAvatarDialog extends DialogFragment implements AvatarSelectList
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View fragmentview = inflater.inflate(R.layout.editavatarlayout,container,false);
-        ImageButton close = fragmentview.findViewById(R.id.closeAvatar);
-        Button cancel = fragmentview.findViewById(R.id.cancelAvatar);
-        Button save = fragmentview.findViewById(R.id.saveAvatar);
-        recyclerView1 = fragmentview.findViewById(R.id.editAvatarList);
+        View fragmentView = inflater.inflate(R.layout.editavatarlayout,container,false);
+        ImageButton close = fragmentView.findViewById(R.id.closeAvatar);
+        Button cancel = fragmentView.findViewById(R.id.cancelAvatar);
+        Button save = fragmentView.findViewById(R.id.saveAvatar);
+        recyclerView1 = fragmentView.findViewById(R.id.editAvatarList);
         Context context = getContext();
 
         layoutManager = new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false);
@@ -56,7 +56,6 @@ public class EditAvatarDialog extends DialogFragment implements AvatarSelectList
         MainActivityInterface mainActivityInterface = MainActivityInterface.getInstance(getContext());
         try {
             mAvatarList = (ArrayList<String>) mainActivityInterface.getAvatarList();
-            Log.i("avatarList editavatar"," "+mAvatarList);
         } catch (Exception e) {
             Log.i("Exception","did not get avatar list");
         }
@@ -66,7 +65,7 @@ public class EditAvatarDialog extends DialogFragment implements AvatarSelectList
             avatarAdapter = new AvatarAdapter(context,mAvatarList, this);
             recyclerView1.setAdapter(avatarAdapter);
             recyclerView1.setLayoutManager(layoutManager);
-        }, 1000);
+        }, 200);
 
 
 
@@ -77,20 +76,23 @@ public class EditAvatarDialog extends DialogFragment implements AvatarSelectList
 
         cancel.setOnClickListener(v -> dismiss());
 
-        // save.setOnClickListener(v -> mainActivityInterface.updateProfileAvatar(mAvatar));
+
         save.setOnClickListener(v -> {
-            mainActivityInterface.updateProfileAvatar(mAvatar);
+            if(mAvatar!=null){
+                mainActivityInterface.updateProfileAvatar(mAvatar);
+                Toast.makeText(getContext(), "AVATAR UPDATED SUCCESSFULLY", Toast.LENGTH_SHORT).show();
+                dismiss();
+            }else
+                Toast.makeText(getContext(), "SELECT AVATAR", Toast.LENGTH_SHORT).show();
         });
 
 
-        return fragmentview;
+        return fragmentView;
     }
 
     @Override
     public void onAvatarClick(String avatar) {
         mAvatar =avatar;
-
-
     }
 }
 

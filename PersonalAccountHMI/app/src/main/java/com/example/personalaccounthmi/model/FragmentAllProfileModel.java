@@ -13,12 +13,10 @@ import com.example.personalaccounthmi.MainActivityContract;
 import com.example.personalaccounthmi.MainActivityInterface;
 import com.example.personalaccounthmi.ProfileData;
 import com.example.personalaccounthmi.presenter.FragmentAllProfilePresenter;
-import com.example.personalaccounthmi.presenter.MainActivityPresenter;
 import com.example.personalaccounthmi.util.IPersonalAccountNotificationObserver;
 import com.example.personalaccounthmi.util.PersonalAccountNotificationManager;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class FragmentAllProfileModel implements MainActivityContract.Model , IPersonalAccountNotificationObserver {
 
@@ -28,11 +26,11 @@ public class FragmentAllProfileModel implements MainActivityContract.Model , IPe
 
 
     MainActivityInterface mainActivityInterface;
-    private FragmentAllProfilePresenter mfragmentAllProfilePresenter;
+    private FragmentAllProfilePresenter mFragmentAllProfilePresenter;
 
     public FragmentAllProfileModel(FragmentAllProfilePresenter fragmentAllProfilePresenter, Context context) {
         mainActivityInterface =  MainActivityInterface.getInstance(context);
-        mfragmentAllProfilePresenter = fragmentAllProfilePresenter;
+        mFragmentAllProfilePresenter = fragmentAllProfilePresenter;
         PersonalAccountNotificationManager.getInstance().registerObserver(this);
 
     }
@@ -41,7 +39,6 @@ public class FragmentAllProfileModel implements MainActivityContract.Model , IPe
     public ArrayList<ProfileData> toGetProfile(){
         try {
             list=(ArrayList<ProfileData>) mainActivityInterface.getAllProfile();
-            Log.i("fragment","get");
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -50,12 +47,8 @@ public class FragmentAllProfileModel implements MainActivityContract.Model , IPe
 
     @Override
     public void notifyPersonalAccountChange(int propertyType, int data) {
-        Log.i("fragment","hi"+propertyType);
-        switch (propertyType) {
-            case 7:
-            Log.i("fragment","hi2222"+propertyType);
-            mfragmentAllProfilePresenter.refreshAllProfiles();
-            default:
+        if (propertyType == 7) {
+            mFragmentAllProfilePresenter.refreshAllProfiles();
         }
     }
 }

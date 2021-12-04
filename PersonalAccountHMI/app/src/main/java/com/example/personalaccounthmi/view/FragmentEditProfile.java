@@ -12,8 +12,8 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.os.RemoteException;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,9 +31,11 @@ import com.example.personalaccounthmi.dialogfragment.EditUsernameDialog;
 import com.example.personalaccounthmi.presenter.FragmentEditProfilePresenter;
 
 
+
 public class FragmentEditProfile extends Fragment implements MainActivityContract.EditProfileVIew {
-    FragmentEditProfilePresenter fragmentEditProfilePresenter;
-    private Context mContext;
+    FragmentEditProfilePresenter mFragmentEditProfilePresenter;
+    ImageView highlightImage;
+    TextView highlightText;
 
 
 
@@ -43,18 +45,21 @@ public class FragmentEditProfile extends Fragment implements MainActivityContrac
 
 
         View fragmentView = inflater.inflate(R.layout.fragment_editprofile, container, false);
-        mContext = fragmentView.getContext();
+        Context mContext = fragmentView.getContext();
 
-        fragmentEditProfilePresenter = new FragmentEditProfilePresenter(this,mContext);
+        mFragmentEditProfilePresenter = new FragmentEditProfilePresenter(this, mContext);
 
 
         Button btn_editUsername = fragmentView.findViewById(R.id.btn_editusername);
         Button btn_editAvatar = fragmentView.findViewById(R.id.editavatar);
         Button btn_deleteProfile = fragmentView.findViewById(R.id.deleteprofile);
         Button btn_gotoSettings = fragmentView.findViewById(R.id.settingsbutton);
-        ImageView highlightImage = fragmentView.findViewById(R.id.highlightAvatar);
-        TextView highlightText = fragmentView.findViewById(R.id.highlightName);
-        refreshHighlightProfile();
+        highlightImage = fragmentView.findViewById(R.id.highlightAvatar);
+        highlightText = fragmentView.findViewById(R.id.highlightName);
+
+
+        Handler handler= new Handler();
+        handler.postDelayed(this::refreshHighlightProfile,200);
 
         btn_editUsername.setOnClickListener(v -> openEditUsernameDialog());
 
@@ -65,7 +70,7 @@ public class FragmentEditProfile extends Fragment implements MainActivityContrac
 
         btn_gotoSettings.setOnClickListener(v -> {
             Intent i;
-            PackageManager manager = getActivity().getPackageManager();
+            PackageManager manager = requireActivity().getPackageManager();
             try {
                 i = manager.getLaunchIntentForPackage("com.example.settingsapplication");
                 if (i== null)
@@ -99,11 +104,28 @@ public class FragmentEditProfile extends Fragment implements MainActivityContrac
 
     @Override
     public void showHighlightProfile() throws RemoteException {
-
-         ProfileData profileData = fragmentEditProfilePresenter.getHighlightProfile();
-         String name= profileData.getName();
-         String avatar = profileData.getAvatar();
-        Log.i("get","highlight "+name+" "+avatar);
+        ProfileData profileData = mFragmentEditProfilePresenter.getHighlightProfile();
+        String name= profileData.getName();
+        String avatar = profileData.getAvatar();
+        highlightText.setText(name);
+        switch (avatar){
+            case "avatar1" : highlightImage.setImageResource(R.mipmap.avatar1);
+                break;
+            case "avatar2" : highlightImage.setImageResource(R.mipmap.avatar2);
+                break;
+            case "avatar3" : highlightImage.setImageResource(R.mipmap.avatar3);
+                break;
+            case "avatar4" : highlightImage.setImageResource(R.mipmap.avatar4);
+                break;
+            case "avatar5" : highlightImage.setImageResource(R.mipmap.avatar5);
+                break;
+            case "avatar6" : highlightImage.setImageResource(R.mipmap.avatar6);
+                break;
+            case "avatar7" : highlightImage.setImageResource(R.mipmap.avatar7);
+                break;
+            case "avatar8" : highlightImage.setImageResource(R.mipmap.avatar8);
+                break;
+        }
     }
 
     @Override

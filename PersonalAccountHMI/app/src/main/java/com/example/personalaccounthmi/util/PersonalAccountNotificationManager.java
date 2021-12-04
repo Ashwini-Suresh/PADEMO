@@ -1,10 +1,8 @@
 package com.example.personalaccounthmi.util;
 
 import android.os.RemoteException;
-import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class PersonalAccountNotificationManager {
@@ -18,14 +16,11 @@ public class PersonalAccountNotificationManager {
 
         if (sInstance == null) {
             sInstance = new PersonalAccountNotificationManager();
-        } else {
-
         }
         return sInstance;
     }
 
     private PersonalAccountNotificationManager() {
-
 
     }
 
@@ -54,8 +49,7 @@ public class PersonalAccountNotificationManager {
     }
 
     public void notifyObservers(int property, int data ) throws RemoteException {
-        for (Iterator<IPersonalAccountNotificationObserver> iterator = mObservers.iterator(); iterator.hasNext(); ) {
-            IPersonalAccountNotificationObserver value = iterator.next();
+        for (IPersonalAccountNotificationObserver value : mObservers) {
             if (value != null) {
                 value.notifyPersonalAccountChange(property, data);
             }

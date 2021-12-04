@@ -25,13 +25,13 @@ public class EditUsernameDialog extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View fragmentview = inflater.inflate(R.layout.editusernamelayout,container,false);
+        View fragmentView = inflater.inflate(R.layout.editusernamelayout,container,false);
 
 
-        ImageButton close = fragmentview.findViewById(R.id.imageclose);
-        EditText editName = fragmentview.findViewById(R.id.editname);
-        Button cancel = fragmentview.findViewById(R.id.cancel);
-        Button save = fragmentview.findViewById(R.id.cancel);
+        ImageButton close = fragmentView.findViewById(R.id.imageclose);
+        EditText editName = fragmentView.findViewById(R.id.editname);
+        Button cancel = fragmentView.findViewById(R.id.cancel);
+        Button save = fragmentView.findViewById(R.id.cancel);
 
 
         close.setOnClickListener(v -> dismiss());
@@ -43,6 +43,6 @@ public class EditUsernameDialog extends DialogFragment {
 
         });
 
-        return fragmentview;
+        return fragmentView;
     }
 }

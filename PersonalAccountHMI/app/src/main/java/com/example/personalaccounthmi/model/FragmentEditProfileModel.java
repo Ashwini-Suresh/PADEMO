@@ -38,15 +38,12 @@ public class FragmentEditProfileModel implements MainActivityContract.EditProfil
 
     @Override
     public void notifyPersonalAccountChange(int propertyType, int data) throws RemoteException {
-        Log.i("fragment","hi"+propertyType);
+
         switch (propertyType) {
             case 7:
             case 11:
-                Log.i("fragment","hi2222"+propertyType);
                 mFragmentEditProfilePresenter.refreshHighlightProfile();
                 break;
-
-
             default:
         }
 
