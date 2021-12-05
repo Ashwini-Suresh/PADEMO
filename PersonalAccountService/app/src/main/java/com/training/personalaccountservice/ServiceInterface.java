@@ -119,7 +119,7 @@ public class ServiceInterface extends IPersonalAccount.Stub {
      * @return : Returns count of profiles
      */
     @Override
-    public int profileCount() {
-        return 0;
+    public long profileCount() {
+        return mPASManager.getProfileCount();
     }
 }

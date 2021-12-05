@@ -14,5 +14,5 @@ interface IPersonalAccount {
   void registerCallback(IPersonalAccountListener callback);
   ProfileData activeProfileData();
   void deleteProfile();
-  int profileCount();
+  long profileCount();
   }

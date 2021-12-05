@@ -230,6 +230,10 @@ public class PAServiceManager {
         broadCastCallBack(PROFILE_DATA_CHANGE);
     }
 
+    /**
+     * @brief: To get active profiles data
+     * @return : returns ProfileData object
+     */
     public ProfileData getActiveProfile() {
         int activeProfileId = mActiveList.getActiveId();
         Cursor c = mPASDBManager.getActiveProfile(activeProfileId);
@@ -239,6 +243,10 @@ public class PAServiceManager {
             return new ProfileData(activeProfileId,name,avatar,true);
         }
         return null;
+    }
+
+    public long getProfileCount() {
+        return mPASDBManager.getRowCount();
     }
 }
 

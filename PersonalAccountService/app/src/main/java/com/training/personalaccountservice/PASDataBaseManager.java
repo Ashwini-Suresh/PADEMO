@@ -9,6 +9,7 @@ package com.training.personalaccountservice;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -149,6 +150,8 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
         if (db != null) {
             cursor = db.rawQuery(query, null);
         }
+        assert db != null;
+        db.close();
         return cursor;
     }
 
@@ -159,13 +162,13 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
      */
     public Cursor readActiveProfileSettings(int activeProfileId) {
         String arg = String.valueOf(activeProfileId);
-        Log.i("content provider", "activeprofile " + activeProfileId);
         String query = "SELECT " + COLUMN_SETTINGS + " FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + " = ?";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
         if (db != null) {
             cursor = db.rawQuery(query, new String[]{arg});
         }
+
         return cursor;
     }
 
@@ -196,6 +199,7 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
         }else{
             Log.i("UPDATE_PROFILE_AVATAR","SUCCESS");
         }
+        db.close();
     }
 
     /**
@@ -215,17 +219,26 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
         }else {
             Log.i("UPDATE_PROFILE_NAME","SUCCESS");
         }
+        db.close();
     }
 
     public Cursor getActiveProfile(int activeProfileId) {
         String arg = String.valueOf(activeProfileId);
-        Log.i("content provider", "activeprofile " + activeProfileId);
+
         String query = "SELECT " + COLUMN_NAME+", "+COLUMN_AVATAR + " FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + " = ?";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
         if (db != null) {
             cursor = db.rawQuery(query, new String[]{arg});
         }
+
         return cursor;
+    }
+
+    public long getRowCount() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        long count = DatabaseUtils.queryNumEntries(db,TABLE_NAME);
+        db.close();
+        return count;
     }
 }
