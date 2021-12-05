@@ -26,11 +26,13 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import com.example.settingsapplication.Common.SettingsConstants;
 import com.example.settingsapplication.Presenter.MainActivityPresenter;
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
     private Button mFM2;
     private Button mFM3;
     private Button mGoto;
+    private RelativeLayout lyot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
         Button mSave = findViewById(R.id.buttonSave);
         Button mRefresh = findViewById(R.id.buttonRefresh);
         mGoto = findViewById(R.id.buttonGoto);
+       lyot=(RelativeLayout)findViewById(R.id.reltve1);
 
         /**
          *  When click on ave button it calls a  function in presenter class to save the updated settings.
@@ -245,12 +249,15 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
                 break;
             case R.id.buttonTheme1:
                 changeStatus(mTheme1, mTheme2, mTheme3);
+                lyot.setBackgroundResource(R.drawable.img);
                 break;
             case R.id.buttonTheme2:
                 changeStatus(mTheme2, mTheme1, mTheme3);
+                lyot.setBackgroundResource(R.drawable.theme2);
                 break;
             case R.id.buttonTheme3:
                 changeStatus(mTheme3, mTheme2, mTheme1);
+                lyot.setBackgroundResource(R.drawable.theme3);
                 break;
             case R.id.buttonDisplay_manual:
                 changeStatus(mDisplayManual, mDisplayAutomatic, null);
@@ -320,10 +327,14 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
             else if (mentry.getKey().equals(ACTIVE_THEME)) {
                 if (mentry.getValue().equals("Theme 1")) {
                     setStatus(mTheme1, mTheme2, mTheme3);
+                    lyot.setBackgroundResource(R.drawable.img);
+
                 } else if (mentry.getValue().equals("Theme 2")) {
                     setStatus(mTheme2, mTheme1, mTheme3);
+                    lyot.setBackgroundResource(R.drawable.theme2);
                 } else  {
                     setStatus(mTheme3, mTheme2, mTheme1);
+                    lyot.setBackgroundResource(R.drawable.theme3);
                 }
             }
             else if (mentry.getKey().equals(FM)) {
