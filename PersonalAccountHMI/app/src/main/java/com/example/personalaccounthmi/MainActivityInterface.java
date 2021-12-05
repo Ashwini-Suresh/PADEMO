@@ -126,6 +126,15 @@ public class MainActivityInterface {
         }
     };
 
+    public long getProfileCount() {
+        long count=0;
+        try {
+            count = mIPersonalAccount.profileCount();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
 }
 
 class PersonalAccountListener extends IPersonalAccountListener.Stub {

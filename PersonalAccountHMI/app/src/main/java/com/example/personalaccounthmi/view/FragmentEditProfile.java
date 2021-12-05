@@ -59,7 +59,12 @@ public class FragmentEditProfile extends Fragment implements MainActivityContrac
 
 
         Handler handler= new Handler();
-        handler.postDelayed(this::refreshHighlightProfile,200);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                refreshHighlightProfile();
+            }
+        },1000);
 
         btn_editUsername.setOnClickListener(v -> openEditUsernameDialog());
 

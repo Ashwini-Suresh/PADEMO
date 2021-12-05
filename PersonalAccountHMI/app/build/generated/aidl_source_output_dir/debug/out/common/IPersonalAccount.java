@@ -39,9 +39,9 @@ public interface IPersonalAccount extends android.os.IInterface
     @Override public void deleteProfile() throws android.os.RemoteException
     {
     }
-    @Override public int profileCount() throws android.os.RemoteException
+    @Override public long profileCount() throws android.os.RemoteException
     {
-      return 0;
+      return 0L;
     }
     @Override
     public android.os.IBinder asBinder() {
@@ -173,9 +173,9 @@ public interface IPersonalAccount extends android.os.IInterface
         case TRANSACTION_profileCount:
         {
           data.enforceInterface(descriptor);
-          int _result = this.profileCount();
+          long _result = this.profileCount();
           reply.writeNoException();
-          reply.writeInt(_result);
+          reply.writeLong(_result);
           return true;
         }
         default:
@@ -378,11 +378,11 @@ public interface IPersonalAccount extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public int profileCount() throws android.os.RemoteException
+      @Override public long profileCount() throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
-        int _result;
+        long _result;
         try {
           _data.writeInterfaceToken(DESCRIPTOR);
           boolean _status = mRemote.transact(Stub.TRANSACTION_profileCount, _data, _reply, 0);
@@ -390,7 +390,7 @@ public interface IPersonalAccount extends android.os.IInterface
             return getDefaultImpl().profileCount();
           }
           _reply.readException();
-          _result = _reply.readInt();
+          _result = _reply.readLong();
         }
         finally {
           _reply.recycle();
@@ -436,5 +436,5 @@ public interface IPersonalAccount extends android.os.IInterface
   public void registerCallback(common.IPersonalAccountListener callback) throws android.os.RemoteException;
   public com.example.personalaccounthmi.ProfileData activeProfileData() throws android.os.RemoteException;
   public void deleteProfile() throws android.os.RemoteException;
-  public int profileCount() throws android.os.RemoteException;
+  public long profileCount() throws android.os.RemoteException;
 }

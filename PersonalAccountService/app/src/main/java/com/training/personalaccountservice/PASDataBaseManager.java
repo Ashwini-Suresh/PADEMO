@@ -151,7 +151,7 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
             cursor = db.rawQuery(query, null);
         }
         assert db != null;
-        db.close();
+
         return cursor;
     }
 
@@ -199,7 +199,7 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
         }else{
             Log.i("UPDATE_PROFILE_AVATAR","SUCCESS");
         }
-        db.close();
+
     }
 
     /**
@@ -219,7 +219,7 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
         }else {
             Log.i("UPDATE_PROFILE_NAME","SUCCESS");
         }
-        db.close();
+
     }
 
     public Cursor getActiveProfile(int activeProfileId) {
@@ -238,7 +238,8 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
     public long getRowCount() {
         SQLiteDatabase db = this.getReadableDatabase();
         long count = DatabaseUtils.queryNumEntries(db,TABLE_NAME);
-        db.close();
+
+        Log.i("PROFILE COUNT",""+count);
         return count;
     }
 }

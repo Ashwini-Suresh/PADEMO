@@ -51,4 +51,8 @@ public class FragmentAllProfileModel implements MainActivityContract.Model , IPe
             mFragmentAllProfilePresenter.refreshAllProfiles();
         }
     }
+
+    public long getProfileCount() {
+        return mainActivityInterface.getProfileCount();
+    }
 }

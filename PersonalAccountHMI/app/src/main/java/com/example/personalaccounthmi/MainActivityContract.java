@@ -19,8 +19,7 @@ public interface MainActivityContract {
 
     interface Presenter {
         ArrayList<ProfileData> getProfileList();
-
-
+        long getProfileCount();
         void refreshAllProfiles();
     }
     interface View{

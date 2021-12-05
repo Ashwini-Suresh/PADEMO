@@ -38,27 +38,24 @@ public class FragmentAllProfile extends Fragment implements MainActivityContract
     public CustomAdapter adapter;
     private ArrayList<ProfileData> mProfileList;
     private Context mContext;
-    private int mCount =1;
+    private long mCount;
+    private  ImageButton create;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_allprofile, container, false);
         mRecyclerView = rootView.findViewById(R.id.recyclarview);
-        ImageButton create = rootView.findViewById(R.id.create);
+        create = rootView.findViewById(R.id.create);
         mContext = rootView.getContext();
         presenter = new FragmentAllProfilePresenter(this, mContext);
         mLayoutManager = new LinearLayoutManager(mContext,LinearLayoutManager.HORIZONTAL,false);
         Handler handler = new Handler();
-        handler.postDelayed(this::loadUI, 200);
+        handler.postDelayed(() -> {
+            loadUI();
+        }, 1000);
         create.setOnClickListener(v ->{
-            if(mCount ==4){
-                Toast.makeText(getContext(), "MAXIMUM PROFILE REACHED", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                mCount++;
                 openDialog();
-            }
         });
         return rootView;
     }
@@ -68,12 +65,18 @@ public class FragmentAllProfile extends Fragment implements MainActivityContract
 
         try {
             mProfileList = presenter.getProfileList();
+            mCount = presenter.getProfileCount();
         } catch (Exception e) {
             Log.i("Exception", "" + e);
         }
         adapter = new CustomAdapter(mContext, mProfileList);
         mRecyclerView.setAdapter(adapter);
         mRecyclerView.setLayoutManager(mLayoutManager);
+        if(mCount==4){
+            create.setEnabled(false);
+        }else{
+            create.setEnabled(true);
+        }
     }
 
     public void openDialog() {

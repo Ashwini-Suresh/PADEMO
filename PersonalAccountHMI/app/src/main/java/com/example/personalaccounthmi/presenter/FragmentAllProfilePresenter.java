@@ -32,6 +32,11 @@ public class FragmentAllProfilePresenter implements MainActivityContract.Present
     }
 
     @Override
+    public long getProfileCount() {
+        return fragmentAllProfileModel.getProfileCount();
+    }
+
+    @Override
     public void refreshAllProfiles() {
         view.refreshAllProfiles();
     }
