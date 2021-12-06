@@ -1956,8 +1956,8 @@ id btn_editusername
 id buttonPanel
 id cache_measures
 id callMeasure
-id cancel
 id cancelAvatar
+id cancelUsername
 id cancel_action
 id cancel_button
 id cancelbtn
@@ -2043,7 +2043,6 @@ id editAvatarLayout
 id editAvatarList
 id edit_query
 id editavatar
-id editname
 id elastic
 id end
 id endToStart
@@ -2089,7 +2088,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageclose
+id imageClose
 id immediateStop
 id included
 id info
@@ -2180,6 +2179,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id newName
 id noScroll
 id noState
 id none
@@ -2223,6 +2223,7 @@ id rounded
 id row_index_key
 id save
 id saveAvatar
+id saveUsername
 id save_non_transition_alpha
 id save_overlay_view
 id savebtn
@@ -2317,7 +2318,6 @@ id textTop
 id textView
 id textView2
 id textView3
-id textView5
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon

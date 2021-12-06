@@ -28,10 +28,10 @@ public class EditUsernameDialog extends DialogFragment {
         View fragmentView = inflater.inflate(R.layout.editusernamelayout,container,false);
 
 
-        ImageButton close = fragmentView.findViewById(R.id.imageclose);
-        EditText editName = fragmentView.findViewById(R.id.editname);
-        Button cancel = fragmentView.findViewById(R.id.cancel);
-        Button save = fragmentView.findViewById(R.id.cancel);
+        ImageButton close = fragmentView.findViewById(R.id.imageClose);
+        EditText editName = fragmentView.findViewById(R.id.newName);
+        Button cancel = fragmentView.findViewById(R.id.cancelUsername);
+        Button save = fragmentView.findViewById(R.id.saveUsername);
 
 
         close.setOnClickListener(v -> dismiss());

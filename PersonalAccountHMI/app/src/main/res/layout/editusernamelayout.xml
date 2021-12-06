@@ -1,63 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/editAvatarLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg7"
+    android:minWidth="1000dp"
+    android:minHeight="1000dp"
     android:orientation="vertical">
 
-
-    <ImageButton
-        android:id="@+id/imageclose"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_dialog"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/textView5"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:gravity="center"
-        android:text="Edit ProfileName"
-        android:textColor="@color/black"
-        android:textSize="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:padding="5dp"
+            android:text="Edit Username"
+            android:textColor="@color/purple_500"
+            android:textSize="40dp" />
+
+        <ImageButton
+            android:id="@+id/imageClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:backgroundTint="#99958888"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/close"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </FrameLayout>
 
     <EditText
-        android:id="@+id/editname"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="240dp"
+        android:id="@+id/newName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:background="#4ABF6A42"
         android:ems="10"
-        android:hint="Enter new profile name"
+        android:hint="Enter Username"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        tools:ignore="TouchTargetSizeCheck" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
-    <Button
-        android:id="@+id/cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="126dp"
-        android:layout_marginBottom="81dp"
-        android:text="cancel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="165dp"
-        android:text="save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editname" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+
+        <Button
+            android:id="@+id/cancelUsername"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginStart="100dp"
+            android:backgroundTint="#CC8E8787"
+            android:text="CANCEL" />
+
+        <Button
+            android:id="@+id/saveUsername"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#CC2129BA"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="100dp"
+            android:text="SAVE" />
+
+
+    </FrameLayout>
+
+</LinearLayout>

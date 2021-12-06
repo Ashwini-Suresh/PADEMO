@@ -1955,8 +1955,8 @@ int id btn_editusername 0x7f08006a
 int id buttonPanel 0x7f08006b
 int id cache_measures 0x7f08006c
 int id callMeasure 0x7f08006d
-int id cancel 0x7f08006e
 int id cancelAvatar 0x7f08006f
+int id cancelUsername 0x7f080209
 int id cancel_action 0x7f080070
 int id cancel_button 0x7f080071
 int id cancelbtn 0x7f080072
@@ -2042,7 +2042,6 @@ int id editAvatarLayout 0x7f0800c1
 int id editAvatarList 0x7f0800c2
 int id edit_query 0x7f0800c3
 int id editavatar 0x7f0800c4
-int id editname 0x7f0800c5
 int id elastic 0x7f0800c6
 int id end 0x7f0800c7
 int id endToStart 0x7f0800c8
@@ -2088,7 +2087,7 @@ int id ifRoom 0x7f0800ef
 int id ignore 0x7f0800f0
 int id ignoreRequest 0x7f0800f1
 int id image 0x7f0800f2
-int id imageclose 0x7f0800f3
+int id imageClose 0x7f08020a
 int id immediateStop 0x7f0800f4
 int id included 0x7f0800f5
 int id info 0x7f0800f6
@@ -2179,6 +2178,7 @@ int id navigation_header_container 0x7f08014a
 int id never 0x7f08014b
 int id neverCompleteToEnd 0x7f08014c
 int id neverCompleteToStart 0x7f08014d
+int id newName 0x7f08020b
 int id noScroll 0x7f08014e
 int id noState 0x7f08014f
 int id none 0x7f080150
@@ -2222,6 +2222,7 @@ int id rounded 0x7f080175
 int id row_index_key 0x7f080176
 int id save 0x7f080177
 int id saveAvatar 0x7f080178
+int id saveUsername 0x7f08020c
 int id save_non_transition_alpha 0x7f080179
 int id save_overlay_view 0x7f08017a
 int id savebtn 0x7f08017b
@@ -2316,7 +2317,6 @@ int id textTop 0x7f0801d3
 int id textView 0x7f0801d4
 int id textView2 0x7f0801d5
 int id textView3 0x7f0801d6
-int id textView5 0x7f0801d7
 int id text_input_end_icon 0x7f0801d8
 int id text_input_error_icon 0x7f0801d9
 int id text_input_start_icon 0x7f0801da
