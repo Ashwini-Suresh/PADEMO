@@ -31,6 +31,9 @@ import java.util.ArrayList;
 
 public class EditAvatarDialog extends DialogFragment implements AvatarSelectListener {
 
+    /**
+     * declaring layout elements and avatar list
+     */
     ArrayList<String> mAvatarList;
     RecyclerView recyclerView1;
     private LinearLayoutManager layoutManager;
@@ -42,18 +45,29 @@ public class EditAvatarDialog extends DialogFragment implements AvatarSelectList
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        /**
+         * creating object of the view and inflate editavatarlayout to the fragment
+         */
         View fragmentView = inflater.inflate(R.layout.editavatarlayout,container,false);
+
+        /**
+         * finding all UI elements
+         */
         ImageButton close = fragmentView.findViewById(R.id.closeAvatar);
         Button cancel = fragmentView.findViewById(R.id.cancelAvatar);
         Button save = fragmentView.findViewById(R.id.saveAvatar);
         recyclerView1 = fragmentView.findViewById(R.id.editAvatarList);
         Context context = getContext();
-
         layoutManager = new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false);
 
-
-
+        /**
+         *  assigning single instance to mainActivityInterface
+         */
         MainActivityInterface mainActivityInterface = MainActivityInterface.getInstance(getContext());
+
+        /**
+         * String value of avatar list is assigned to mAvatarList with function getAvatarList
+         */
         try {
             mAvatarList = (ArrayList<String>) mainActivityInterface.getAvatarList();
         } catch (Exception e) {
@@ -61,19 +75,19 @@ public class EditAvatarDialog extends DialogFragment implements AvatarSelectList
         }
         Handler handler = new Handler();
         handler.postDelayed(() -> {
-
             avatarAdapter = new AvatarAdapter(context,mAvatarList, this);
             recyclerView1.setAdapter(avatarAdapter);
             recyclerView1.setLayoutManager(layoutManager);
         }, 200);
 
-
-
-
-
-
+        /**
+         * onClicking close button the dialog dismisses
+         */
         close.setOnClickListener(v -> dismiss());
 
+        /**
+         * onClicking cancel button the dialog dismisses
+         */
         cancel.setOnClickListener(v -> dismiss());
 
 

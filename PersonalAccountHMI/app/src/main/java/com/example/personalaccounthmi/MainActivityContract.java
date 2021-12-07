@@ -28,15 +28,21 @@ public interface MainActivityContract {
         void refreshAllProfiles();
     }
     interface EditProfilePresenter{
-        void editUsername();
         ProfileData getHighlightProfile() throws RemoteException;
-        void refreshHighlightProfile() throws RemoteException;
+        void refreshEditProfile() throws RemoteException;
+        void deleteProfileSelected();
+        long getProfileCount();
+
+
     }
     interface EditProfileModel{
         ProfileData highlightProfile() throws RemoteException;
+        void deleteSelectedProfile();
+        long getProfileCountModel();
     }
     interface EditProfileVIew{
-        void showHighlightProfile() throws RemoteException;
-        void refreshHighlightProfile();
+        void loadEditProfileUI() throws RemoteException;
+        void refreshEditProfile();
+        void openDeleteProfileDialog();
     }
 }

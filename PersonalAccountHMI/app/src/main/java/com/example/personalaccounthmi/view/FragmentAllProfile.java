@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.personalaccounthmi.MainActivityContract;
 import com.example.personalaccounthmi.ProfileData;
 import com.example.personalaccounthmi.R;
-import com.example.personalaccounthmi.dialogfragment.createDialog;
+import com.example.personalaccounthmi.dialogfragment.CreateDialog;
 import com.example.personalaccounthmi.presenter.FragmentAllProfilePresenter;
 
 import java.util.ArrayList;
@@ -52,6 +51,7 @@ public class FragmentAllProfile extends Fragment implements MainActivityContract
         mLayoutManager = new LinearLayoutManager(mContext,LinearLayoutManager.HORIZONTAL,false);
         Handler handler = new Handler();
         handler.postDelayed(() -> {
+           // refreshAllProfiles();
             loadUI();
         }, 1000);
         create.setOnClickListener(v ->{
@@ -74,13 +74,15 @@ public class FragmentAllProfile extends Fragment implements MainActivityContract
         mRecyclerView.setLayoutManager(mLayoutManager);
         if(mCount==4){
             create.setEnabled(false);
+            create.setVisibility(View.INVISIBLE);
         }else{
             create.setEnabled(true);
+            create.setVisibility(View.VISIBLE);
         }
     }
 
     public void openDialog() {
-        createDialog dialog = new createDialog();
+        CreateDialog dialog = new CreateDialog();
         dialog.show(getFragmentManager(), "CreateDialog");
     }
 

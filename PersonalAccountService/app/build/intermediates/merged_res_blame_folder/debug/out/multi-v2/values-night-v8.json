@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/quest/Documents/PADEMO/PersonalAccountService/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountService/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/home/quest/.gradle/caches/transforms-3/f794c157ce27c216c504b2261e60ef5d/transformed/material-1.4.0/res/values-night-v8/values-night-v8.xml",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/quest/Documents/PADEMO/PersonalAccountService/app/src/main/res/values-night/themes.xml",
+                    "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountService/app/src/main/res/values-night/themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

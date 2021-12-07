@@ -47,7 +47,7 @@ public class FragmentAllProfileModel implements MainActivityContract.Model , IPe
 
     @Override
     public void notifyPersonalAccountChange(int propertyType, int data) {
-        if (propertyType == 7) {
+        if (propertyType == 7|| propertyType == 11) {
             mFragmentAllProfilePresenter.refreshAllProfiles();
         }
     }

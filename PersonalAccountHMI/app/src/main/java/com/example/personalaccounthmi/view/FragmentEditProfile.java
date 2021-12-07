@@ -5,6 +5,7 @@
  */
 package com.example.personalaccounthmi.view;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -20,12 +21,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.personalaccounthmi.MainActivityContract;
+import com.example.personalaccounthmi.MainActivityInterface;
 import com.example.personalaccounthmi.ProfileData;
 import com.example.personalaccounthmi.R;
 
-import com.example.personalaccounthmi.dialogfragment.DeletaProfileDialog;
 import com.example.personalaccounthmi.dialogfragment.EditAvatarDialog;
 import com.example.personalaccounthmi.dialogfragment.EditUsernameDialog;
 import com.example.personalaccounthmi.presenter.FragmentEditProfilePresenter;
@@ -36,6 +38,10 @@ public class FragmentEditProfile extends Fragment implements MainActivityContrac
     FragmentEditProfilePresenter mFragmentEditProfilePresenter;
     ImageView highlightImage;
     TextView highlightText;
+    private long mCount;
+    Button btn_deleteProfile;
+
+
 
 
 
@@ -48,11 +54,9 @@ public class FragmentEditProfile extends Fragment implements MainActivityContrac
         Context mContext = fragmentView.getContext();
 
         mFragmentEditProfilePresenter = new FragmentEditProfilePresenter(this, mContext);
-
-
         Button btn_editUsername = fragmentView.findViewById(R.id.btn_editusername);
         Button btn_editAvatar = fragmentView.findViewById(R.id.editavatar);
-        Button btn_deleteProfile = fragmentView.findViewById(R.id.deleteprofile);
+        btn_deleteProfile = fragmentView.findViewById(R.id.deleteprofile);
         Button btn_gotoSettings = fragmentView.findViewById(R.id.settingsbutton);
         highlightImage = fragmentView.findViewById(R.id.highlightAvatar);
         highlightText = fragmentView.findViewById(R.id.highlightName);
@@ -62,9 +66,18 @@ public class FragmentEditProfile extends Fragment implements MainActivityContrac
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                refreshHighlightProfile();
+                try {
+                    loadEditProfileUI();
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+
+                //refreshEditProfile();
+
             }
         },1000);
+
+
 
         btn_editUsername.setOnClickListener(v -> openEditUsernameDialog());
 
@@ -91,9 +104,18 @@ public class FragmentEditProfile extends Fragment implements MainActivityContrac
         return fragmentView;
     }
 
-    private void openDeleteProfileDialog() {
-        DeletaProfileDialog deleteProfile_dialog = new DeletaProfileDialog();
-        deleteProfile_dialog.show(getFragmentManager(), "DeleteProfile_Dialog");
+    public void openDeleteProfileDialog() {
+        final Dialog dialog = new Dialog(getContext());
+        dialog.setContentView(R.layout.deleteprofilelayout);
+        Button deleteYes = (Button) dialog.findViewById(R.id.delete_yes);
+        Button deleteNO = (Button) dialog.findViewById(R.id.delete_no);
+        deleteNO.setOnClickListener(v -> dialog.dismiss());
+        deleteYes.setOnClickListener(v -> {
+            mFragmentEditProfilePresenter.deleteProfileSelected();
+            dialog.dismiss();
+            Toast.makeText(getContext(), "PROFILE DELETED SUCCESSFULLY", Toast.LENGTH_SHORT).show();
+        });
+        dialog.show();
     }
 
 
@@ -108,10 +130,12 @@ public class FragmentEditProfile extends Fragment implements MainActivityContrac
     }
 
     @Override
-    public void showHighlightProfile() throws RemoteException {
+    public void loadEditProfileUI() throws RemoteException {
         ProfileData profileData = mFragmentEditProfilePresenter.getHighlightProfile();
         String name= profileData.getName();
         String avatar = profileData.getAvatar();
+        mCount = mFragmentEditProfilePresenter.getProfileCount();
+
         highlightText.setText(name);
         switch (avatar){
             case "avatar1" : highlightImage.setImageResource(R.mipmap.avatar1);
@@ -131,15 +155,23 @@ public class FragmentEditProfile extends Fragment implements MainActivityContrac
             case "avatar8" : highlightImage.setImageResource(R.mipmap.avatar8);
                 break;
         }
+
+        if ( mCount == 1){
+            btn_deleteProfile.setEnabled(false);
+        }else {
+            btn_deleteProfile.setEnabled(true);
+        }
     }
 
     @Override
-    public void refreshHighlightProfile() {
+    public void refreshEditProfile() {
         try {
-            showHighlightProfile();
+            loadEditProfileUI();
         } catch (RemoteException e) {
             e.printStackTrace();
         }
 
     }
+
+
 }

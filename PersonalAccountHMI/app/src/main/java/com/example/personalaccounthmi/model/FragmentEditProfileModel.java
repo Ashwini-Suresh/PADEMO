@@ -7,7 +7,6 @@ package com.example.personalaccounthmi.model;
 
 import android.content.Context;
 import android.os.RemoteException;
-import android.util.Log;
 
 import com.example.personalaccounthmi.MainActivityContract;
 import com.example.personalaccounthmi.MainActivityInterface;
@@ -37,12 +36,23 @@ public class FragmentEditProfileModel implements MainActivityContract.EditProfil
     }
 
     @Override
+    public void deleteSelectedProfile() {
+        mainActivityInterface.deleteProfile();
+
+    }
+
+    @Override
+    public long getProfileCountModel() {
+        return mainActivityInterface.getProfileCount();
+    }
+
+    @Override
     public void notifyPersonalAccountChange(int propertyType, int data) throws RemoteException {
 
         switch (propertyType) {
             case 7:
             case 11:
-                mFragmentEditProfilePresenter.refreshHighlightProfile();
+                mFragmentEditProfilePresenter.refreshEditProfile();
                 break;
             default:
         }

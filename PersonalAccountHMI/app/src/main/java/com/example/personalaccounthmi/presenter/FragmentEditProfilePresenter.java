@@ -10,7 +10,6 @@ import android.os.RemoteException;
 
 import com.example.personalaccounthmi.MainActivityContract;
 import com.example.personalaccounthmi.ProfileData;
-import com.example.personalaccounthmi.model.FragmentAllProfileModel;
 import com.example.personalaccounthmi.model.FragmentEditProfileModel;
 
 public class FragmentEditProfilePresenter implements MainActivityContract.EditProfilePresenter {
@@ -26,10 +25,7 @@ public class FragmentEditProfilePresenter implements MainActivityContract.EditPr
     }
 
 
-    @Override
-    public void editUsername() {
 
-    }
 
     @Override
     public ProfileData getHighlightProfile() throws RemoteException {
@@ -37,7 +33,18 @@ public class FragmentEditProfilePresenter implements MainActivityContract.EditPr
     }
 
     @Override
-    public void refreshHighlightProfile() throws RemoteException {
-        view.showHighlightProfile();
+    public void refreshEditProfile() throws RemoteException {
+        view.loadEditProfileUI();
+    }
+
+    @Override
+    public void deleteProfileSelected() {
+        fragmentEditProfileModel.deleteSelectedProfile();
+
+    }
+
+    @Override
+    public long getProfileCount() {
+        return fragmentEditProfileModel.getProfileCountModel();
     }
 }

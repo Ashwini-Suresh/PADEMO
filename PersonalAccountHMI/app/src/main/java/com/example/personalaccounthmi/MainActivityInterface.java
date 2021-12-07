@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.widget.Toast;
 
 import com.example.personalaccounthmi.util.PersonalAccountNotificationManager;
 
@@ -49,7 +50,12 @@ public class MainActivityInterface {
     public void bindTOAIDLService() {
         Intent intent = new Intent();
         intent.setClassName("com.training.personalaccountservice", "com.training.personalaccountservice.PAService");
-        context.bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
+        if (context.bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE)){
+            Toast.makeText(context, "Service connected", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Service not Connected", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 
@@ -134,6 +140,14 @@ public class MainActivityInterface {
             e.printStackTrace();
         }
         return count;
+    }
+
+    public void deleteProfile(){
+        try {
+            mIPersonalAccount.deleteProfile();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 }
 

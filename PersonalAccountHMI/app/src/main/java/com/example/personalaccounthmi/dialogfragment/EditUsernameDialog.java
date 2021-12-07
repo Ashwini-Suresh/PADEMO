@@ -12,11 +12,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import com.example.personalaccounthmi.MainActivityInterface;
 import com.example.personalaccounthmi.R;
 
 public class EditUsernameDialog extends DialogFragment {
@@ -33,6 +35,9 @@ public class EditUsernameDialog extends DialogFragment {
         Button cancel = fragmentView.findViewById(R.id.cancelUsername);
         Button save = fragmentView.findViewById(R.id.saveUsername);
 
+        MainActivityInterface mainActivityInterface = MainActivityInterface.getInstance(getContext());
+
+
 
         close.setOnClickListener(v -> dismiss());
 
@@ -40,6 +45,15 @@ public class EditUsernameDialog extends DialogFragment {
         cancel.setOnClickListener(v -> dismiss());
 
         save.setOnClickListener(v -> {
+            String name = editName.getText().toString().trim();
+            if (name == null){
+                Toast.makeText(getContext(), "ENTER USERNAME", Toast.LENGTH_SHORT).show();
+            }else {
+                mainActivityInterface.updateProfileName(name);
+                dismiss();
+                Toast.makeText(getContext(), "PROFILE NAME SAVED SUCCESSFULLY", Toast.LENGTH_SHORT).show();
+
+            }
 
         });
 

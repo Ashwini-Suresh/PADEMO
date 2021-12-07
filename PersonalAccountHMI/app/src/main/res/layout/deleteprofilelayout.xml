@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp"
+    android:id="@+id/deleteCard"
+    app:cardElevation="30dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    android:layout_height="wrap_content"
+    tools:ignore="InvalidId">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:background="#C9000000"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/layoutText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="3dp"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            android:text="@string/are_you_sure_you_want_to_delete"
+            android:textColor="@color/white"
+            android:textSize="40dp" />
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/delete_yes"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="YEs"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/no"
+                android:id="@+id/delete_no"
+                android:layout_marginStart="100dp"
+                style="?android:attr/buttonBarButtonStyle"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
