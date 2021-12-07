@@ -6,53 +6,53 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="27"
-8-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+8-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="31" />
-9-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+9-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
 10
 11    <queries>
-11-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:4:5-6:15
+11-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:4:5-6:15
 12        <package android:name="com.training.personalaccountservice" />
-12-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:5:9-79
-12-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:5:18-68
+12-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:5:9-79
+12-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:5:18-68
 13    </queries>
 14
 15    <application
-15-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:8:5-25:19
+15-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:8:5-25:19
 16        android:allowBackup="true"
-16-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:9:9-35
+16-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:9:9-35
 17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 17-->[androidx.core:core:1.7.0] /home/quest/.gradle/caches/transforms-3/21249a56641fb0309777a5ae16ce99ff/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
 18        android:debuggable="true"
 19        android:extractNativeLibs="false"
 20        android:icon="@mipmap/ic_launcher"
-20-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:10:9-43
+20-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:10:9-43
 21        android:label="@string/app_name"
-21-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:11:9-41
+21-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:11:9-41
 22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:12:9-54
+22-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:12:9-54
 23        android:supportsRtl="true"
-23-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:13:9-35
+23-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:13:9-35
 24        android:testOnly="true"
 25        android:theme="@style/Theme.PersonalAccountHMI" >
-25-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:14:9-56
+25-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:14:9-56
 26        <activity
-26-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:15:9-24:20
+26-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:15:9-24:20
 27            android:name="com.example.personalaccounthmi.view.MainActivity"
-27-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:16:13-46
+27-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:16:13-46
 28            android:exported="true"
-28-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:17:13-36
+28-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:17:13-36
 29            android:screenOrientation="landscape" >
-29-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:18:13-50
+29-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:18:13-50
 30            <intent-filter>
-30-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:19:13-23:29
+30-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:19:13-23:29
 31                <action android:name="android.intent.action.MAIN" />
-31-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:20:17-69
-31-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:20:25-66
+31-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:20:17-69
+31-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:20:25-66
 32
 33                <category android:name="android.intent.category.LAUNCHER" />
-33-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:22:17-77
-33-->/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:22:27-74
+33-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:22:17-77
+33-->/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:22:27-74
 34            </intent-filter>
 35        </activity>
 36

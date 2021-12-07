@@ -1,290 +1,290 @@
 [
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar8.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar8.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_close.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/close.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar4.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar4.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar7.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar7.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_profilelist_layout.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/layout/profilelist_layout.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar5.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar5.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar2.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar2.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_addbutton.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/addbutton.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_bg1.jpg.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/bg1.jpg"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar6.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar6.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar2.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar2.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar7.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar7.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar4.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar4.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar6.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar6.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar2.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar2.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar7.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar7.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar8.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar8.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar6.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar6.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar1.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar1.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_bg4.jpg.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/bg4.jpg"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar3.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar3.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_addbutton.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/addbutton.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar3.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar3.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar1.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar1.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar6.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar6.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar7.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar7.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar7.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar7.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar1.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar1.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_bg7.jpg.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/bg7.jpg"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar7.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar7.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar5.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar5.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar5.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar5.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/layout/activity_main.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar6.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar6.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar5.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar5.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/ic_launcher.webp"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_avatarviewlayout.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/layout/avatarviewlayout.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar3.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar3.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar8.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar8.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar2.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar2.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_avatarviewlayout.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/layout/avatarviewlayout.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar1.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar1.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar8.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar8.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar3.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar3.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar4.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar4.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_createdialog.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/layout/createdialog.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar2.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar2.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar8.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar8.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar4.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar4.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar5.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar5.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar4.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar4.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar8.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar8.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar5.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar5.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar1.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar1.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_createavatar.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/layout/createavatar.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar1.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar1.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_deleteprofilelayout.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/layout/deleteprofilelayout.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_close.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/close.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_bg1.jpg.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/bg1.jpg"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar4.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar4.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar6.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar6.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar8.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar8.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar2.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar2.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar8.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar8.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/ic_launcher.webp"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar1.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar1.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar1.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar1.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar7.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar7.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar2.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar2.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar7.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar7.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar1.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar1.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/layout/activity_main.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar8.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar8.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar3.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar3.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar4.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar4.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_bg4.jpg.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/bg4.jpg"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_fragment_allprofile.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/layout/fragment_allprofile.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_cardbg.jpg.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/cardbg.jpg"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar2.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar2.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar4.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar4.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar4.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar4.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_ic_add_circle_outline_black_24dp.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/ic_add_circle_outline_black_24dp.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_bg2.jpg.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/bg2.jpg"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar3.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar3.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar1.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar1.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_fragment_allprofile.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/layout/fragment_allprofile.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar3.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar3.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_fragment_editprofile.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/layout/fragment_editprofile.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_deleteprofilelayout.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/layout/deleteprofilelayout.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar5.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar5.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_ic_launcher_background.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/ic_launcher_background.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_editusernamelayout.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/layout/editusernamelayout.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar3.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar3.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar4.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar4.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_cardbg.jpg.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/cardbg.jpg"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_ic_launcher_background.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_bg7.jpg.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/bg7.jpg"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar6.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar6.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar5.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar5.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_profilelist_layout.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/layout/profilelist_layout.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_createavatar.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/layout/createavatar.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar8.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar8.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_editavatarlayout.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/layout/editavatarlayout.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_editusernamelayout.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/layout/editusernamelayout.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar6.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar6.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_editavatarlayout.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/layout/editavatarlayout.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar7.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar7.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_fragment_editprofile.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/layout/fragment_editprofile.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar2.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar2.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar3.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar3.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_bg2.jpg.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/bg2.jpg"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_avatar6.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/avatar6.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar3.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar3.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar2.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar2.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/layout_createdialog.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/layout/createdialog.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_avatar6.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxxhdpi/avatar6.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_avatar7.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-xxhdpi/avatar7.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/drawable_ic_add_circle_outline_black_24dp.xml.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/drawable/ic_add_circle_outline_black_24dp.xml"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-hdpi_avatar5.png.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-hdpi/avatar5.png"
     },
     {
-        "merged": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_avatar5.png.flat",
-        "source": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/avatar5.png"
+        "merged": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/res/mipmap-mdpi/ic_launcher.webp"
     }
 ]

@@ -129,5 +129,12 @@ public class PAServicePreference {
             editor.apply();
         }
     }
+
+    /**
+     * @brief: To remove Last id which is active profile.
+     */
+    public void removeCurrentId() {
+        mLatest--;
+    }
 }
 

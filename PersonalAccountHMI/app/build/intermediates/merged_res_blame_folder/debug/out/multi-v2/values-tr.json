@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-tr/values-tr.xml",
+            "outputFile": "/home/quest/Documents/PADEMO/PersonalAccountHMI/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-tr/values-tr.xml",
             "map": [
                 {
                     "source": "/home/quest/.gradle/caches/transforms-3/f794c157ce27c216c504b2261e60ef5d/transformed/material-1.4.0/res/values-tr/values-tr.xml",

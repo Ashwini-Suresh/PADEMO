@@ -100,7 +100,7 @@ public class PAServiceManager {
      */
     public List<ProfileData> getProfileListFromDatabase() {
 
-        int aId = mActiveList.getActiveId();
+        int aId = getActiveId();
         mProfileDataList.clear();
         Cursor cursor = mPASDBManager.readAllData();
 
@@ -116,6 +116,10 @@ public class PAServiceManager {
         }
 
         return mProfileDataList;
+    }
+
+    private int getActiveId() {
+        return mActiveList.getActiveId();
     }
 
 
@@ -151,7 +155,7 @@ public class PAServiceManager {
      * @return :Returns Cursor containing settings.
      */
     public Cursor readActiveProfileSettings() {
-        int activeProfileId = mActiveList.getActiveId();
+        int activeProfileId = getActiveId();
         Cursor cursor;
         cursor= mPASDBManager.readActiveProfileSettings(activeProfileId);
         return cursor;
@@ -163,9 +167,8 @@ public class PAServiceManager {
      * @return : Returns Update count.
      */
     public int updateActiveProfileSettings(ContentValues contentValues) {
-        int activeProfileId = mActiveList.getActiveId();
         broadCastCallBack(PROFILE_SETTINGS_CHANGE);
-        return mPASDBManager.updateActiveProfileSettings(activeProfileId,contentValues);
+        return mPASDBManager.updateActiveProfileSettings(getActiveId(),contentValues);
     }
 
     /**
@@ -212,41 +215,55 @@ public class PAServiceManager {
 
     /**
      * @brief: To update active profiles avatar with new selected one.
-     * @param newAvatar: New selected avatar to update current active profile
+     * @param newAvatar: New selected avatar to update current active profile.
      */
     public void updateProfileAvatar(String newAvatar) {
-        int activeProfileId = mActiveList.getActiveId();
-        mPASDBManager.updateActiveProfileAvatar(activeProfileId,newAvatar);
+        mPASDBManager.updateActiveProfileAvatar(getActiveId(),newAvatar);
         broadCastCallBack(PROFILE_DATA_CHANGE);
     }
 
     /**
      * @brief: To update active profiles name with new one.
-     * @param newName: New profile name to update current active profile
+     * @param newName: New profile name to update current active profile.
      */
     public void updateProfileName(String newName) {
-        int activeProfileId = mActiveList.getActiveId();
-        mPASDBManager.updateActiveProfileName(activeProfileId,newName);
+        mPASDBManager.updateActiveProfileName(getActiveId(),newName);
         broadCastCallBack(PROFILE_DATA_CHANGE);
     }
 
     /**
-     * @brief: To get active profiles data
-     * @return : returns ProfileData object
+     * @brief: To get active profiles data.
+     * @return : returns ProfileData object.
      */
     public ProfileData getActiveProfile() {
-        int activeProfileId = mActiveList.getActiveId();
-        Cursor c = mPASDBManager.getActiveProfile(activeProfileId);
+
+        Cursor c = mPASDBManager.getActiveProfile(getActiveId());
         while (c.moveToNext()) {
             String name= c.getString(0);
             String avatar= c.getString(1);
-            return new ProfileData(activeProfileId,name,avatar,true);
+            return new ProfileData(getActiveId(),name,avatar,true);
         }
         return null;
     }
 
+    /**
+     * @brief: To get number of profile present in database.
+     * @return : Returns profile count.
+     */
     public long getProfileCount() {
         return mPASDBManager.getRowCount();
+    }
+
+    /**
+     * @brief: To remove profile from Database and to change active profile.
+     */
+    public void deleteActiveProfile() {
+        if(mPASDBManager.deleteProfile(getActiveId())){
+            mActiveList.removeCurrentId();
+            broadCastCallBack(PROFILE_CHANGE);
+            Log.i("Delete Profile","SUCCESS");
+        }else
+            Log.i("Delete Profile","FAILED");
     }
 }
 

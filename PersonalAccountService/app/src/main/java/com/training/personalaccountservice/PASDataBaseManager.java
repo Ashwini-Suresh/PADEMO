@@ -222,6 +222,11 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * @brief: To get Row containing data of current active profile.
+     * @param activeProfileId : Active profiles Id to check with COLUMN_ID to get row.
+     * @return : Returns Cursor containing values of that row.
+     */
     public Cursor getActiveProfile(int activeProfileId) {
         String arg = String.valueOf(activeProfileId);
 
@@ -238,8 +243,16 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
     public long getRowCount() {
         SQLiteDatabase db = this.getReadableDatabase();
         long count = DatabaseUtils.queryNumEntries(db,TABLE_NAME);
-
-        Log.i("PROFILE COUNT",""+count);
         return count;
+    }
+
+    /**
+     * @brief: To delete row containing profile to delete.
+     * @param activeId : Active profiles Id to check with COLUMN_ID to delete row.
+     * @return : Returns boolean whether deletion is performed or not.
+     */
+    public boolean deleteProfile(int activeId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.delete(TABLE_NAME,COLUMN_ID + " = ?",new String[]{String.valueOf(activeId)})>0;
     }
 }

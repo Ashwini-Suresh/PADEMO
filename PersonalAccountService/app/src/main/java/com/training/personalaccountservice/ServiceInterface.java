@@ -107,16 +107,16 @@ public class ServiceInterface extends IPersonalAccount.Stub {
     }
 
     /**
-     * @brief: To delete current active profile
+     * @brief: To delete current active profile.
      */
     @Override
     public void deleteProfile() {
-
+        mPASManager.deleteActiveProfile();
     }
 
     /**
-     * @brief: To get number of profiles present in dataBase
-     * @return : Returns count of profiles
+     * @brief: To get number of profiles present in dataBase.
+     * @return : Returns count of profiles.
      */
     @Override
     public long profileCount() {

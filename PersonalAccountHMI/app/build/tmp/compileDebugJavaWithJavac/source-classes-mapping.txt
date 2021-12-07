@@ -6,13 +6,13 @@ com/example/personalaccounthmi/view/FragmentAllProfile.java
  com.example.personalaccounthmi.view.FragmentAllProfile
 com/example/personalaccounthmi/view/MainActivity.java
  com.example.personalaccounthmi.view.MainActivity
+com/example/personalaccounthmi/model/MainActivityModel.java
+ com.example.personalaccounthmi.model.MainActivityModel
 common/IPersonalAccountListener.java
  common.IPersonalAccountListener
  common.IPersonalAccountListener$Default
  common.IPersonalAccountListener$Stub
  common.IPersonalAccountListener$Stub$Proxy
-com/example/personalaccounthmi/model/MainActivityModel.java
- com.example.personalaccounthmi.model.MainActivityModel
 com/example/personalaccounthmi/dialogfragment/createDialog.java
  com.example.personalaccounthmi.dialogfragment.createDialog
 com/example/personalaccounthmi/presenter/FragmentAllProfilePresenter.java

@@ -2008,8 +2008,6 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
-id deleteProfileNo
-id deleteProfileYes
 id deleteprofile
 id deltaRelative
 id dependency_ordering
@@ -2439,7 +2437,6 @@ layout avatarviewlayout
 layout createavatar
 layout createdialog
 layout custom_dialog
-layout deleteprofilelayout
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
