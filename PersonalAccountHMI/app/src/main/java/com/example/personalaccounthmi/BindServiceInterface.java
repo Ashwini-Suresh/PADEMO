@@ -21,26 +21,26 @@ import java.util.List;
 import common.IPersonalAccount;
 import common.IPersonalAccountListener;
 
-public class MainActivityInterface {
-    private static volatile MainActivityInterface INSTANCE = null;
+public class BindServiceInterface {
+    private static volatile BindServiceInterface INSTANCE = null;
     private final Context context;
 
 
     public IPersonalAccount mIPersonalAccount;
 
 
-    public static MainActivityInterface getInstance(Context context) {
+    public static BindServiceInterface getInstance(Context context) {
         if (INSTANCE == null) {
-            synchronized (MainActivityInterface.class) {
+            synchronized (BindServiceInterface.class) {
                 if (INSTANCE == null)
-                    INSTANCE = new MainActivityInterface(context);
+                    INSTANCE = new BindServiceInterface(context);
             }
         }
         return INSTANCE;
     }
 
 
-    private MainActivityInterface(Context context) {
+    private BindServiceInterface(Context context) {
         this.context = context;
         bindTOAIDLService();
 

@@ -1,5 +1,5 @@
-com/example/personalaccounthmi/view/MainActivity.java
- com.example.personalaccounthmi.view.MainActivity
+com/example/personalaccounthmi/model/MainActivityModel.java
+ com.example.personalaccounthmi.model.MainActivityModel
 com/example/personalaccounthmi/MainActivityContract.java
  com.example.personalaccounthmi.MainActivityContract
  com.example.personalaccounthmi.MainActivityContract$EditProfileModel
@@ -36,31 +36,31 @@ com/example/personalaccounthmi/BuildConfig.java
  com.example.personalaccounthmi.BuildConfig
 com/example/personalaccounthmi/util/PersonalAccountNotificationManager.java
  com.example.personalaccounthmi.util.PersonalAccountNotificationManager
-com/example/personalaccounthmi/model/MainActivityModel.java
- com.example.personalaccounthmi.model.MainActivityModel
-com/example/personalaccounthmi/dialogfragment/EditUsernameDialog.java
- com.example.personalaccounthmi.dialogfragment.EditUsernameDialog
-com/example/personalaccounthmi/model/FragmentEditProfileModel.java
- com.example.personalaccounthmi.model.FragmentEditProfileModel
-com/example/personalaccounthmi/view/FragmentAllProfile.java
- com.example.personalaccounthmi.view.FragmentAllProfile
-com/example/personalaccounthmi/view/FragmentEditProfile.java
- com.example.personalaccounthmi.view.FragmentEditProfile
- com.example.personalaccounthmi.view.FragmentEditProfile$1
-com/example/personalaccounthmi/presenter/FragmentAllProfilePresenter.java
- com.example.personalaccounthmi.presenter.FragmentAllProfilePresenter
-com/example/personalaccounthmi/MainActivityInterface.java
- com.example.personalaccounthmi.MainActivityInterface
- com.example.personalaccounthmi.MainActivityInterface$1
+com/example/personalaccounthmi/BindServiceInterface.java
+ com.example.personalaccounthmi.BindServiceInterface
+ com.example.personalaccounthmi.BindServiceInterface$1
  com.example.personalaccounthmi.PersonalAccountListener
+com/example/personalaccounthmi/model/FragmentAllProfileModel.java
+ com.example.personalaccounthmi.model.FragmentAllProfileModel
 com/example/personalaccounthmi/view/CustomAdapter.java
  com.example.personalaccounthmi.view.CustomAdapter
  com.example.personalaccounthmi.view.CustomAdapter$MyViewHolder
-com/example/personalaccounthmi/model/FragmentAllProfileModel.java
- com.example.personalaccounthmi.model.FragmentAllProfileModel
-com/example/personalaccounthmi/dialogfragment/CreateDialog.java
- com.example.personalaccounthmi.dialogfragment.CreateDialog
-com/example/personalaccounthmi/presenter/FragmentEditProfilePresenter.java
- com.example.personalaccounthmi.presenter.FragmentEditProfilePresenter
+com/example/personalaccounthmi/dialogfragment/EditUsernameDialog.java
+ com.example.personalaccounthmi.dialogfragment.EditUsernameDialog
 com/example/personalaccounthmi/dialogfragment/EditAvatarDialog.java
  com.example.personalaccounthmi.dialogfragment.EditAvatarDialog
+com/example/personalaccounthmi/presenter/FragmentAllProfilePresenter.java
+ com.example.personalaccounthmi.presenter.FragmentAllProfilePresenter
+com/example/personalaccounthmi/dialogfragment/CreateDialog.java
+ com.example.personalaccounthmi.dialogfragment.CreateDialog
+com/example/personalaccounthmi/model/FragmentEditProfileModel.java
+ com.example.personalaccounthmi.model.FragmentEditProfileModel
+com/example/personalaccounthmi/presenter/FragmentEditProfilePresenter.java
+ com.example.personalaccounthmi.presenter.FragmentEditProfilePresenter
+com/example/personalaccounthmi/view/FragmentEditProfile.java
+ com.example.personalaccounthmi.view.FragmentEditProfile
+ com.example.personalaccounthmi.view.FragmentEditProfile$1
+com/example/personalaccounthmi/view/FragmentAllProfile.java
+ com.example.personalaccounthmi.view.FragmentAllProfile
+com/example/personalaccounthmi/view/MainActivity.java
+ com.example.personalaccounthmi.view.MainActivity

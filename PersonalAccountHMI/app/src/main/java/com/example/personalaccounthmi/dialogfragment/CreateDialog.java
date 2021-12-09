@@ -22,12 +22,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalaccounthmi.AvatarSelectListener;
-import com.example.personalaccounthmi.MainActivityInterface;
+import com.example.personalaccounthmi.BindServiceInterface;
 import com.example.personalaccounthmi.R;
 import com.example.personalaccounthmi.view.AvatarAdapter;
 
 import java.util.ArrayList;
 
+/**
+ * @brief The Dialog fragment class which includes the profile creating functionality. THe username and avatar image is selected and saved to DB via this fragment
+ */
 public class CreateDialog extends DialogFragment implements AvatarSelectListener {
 
     /**
@@ -63,15 +66,15 @@ public class CreateDialog extends DialogFragment implements AvatarSelectListener
         layoutManager = new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false);
 
         /**
-         * assigning single instance to mainActivityInterface
+         * Assigning BindServiceInterface instance in an object of BindServiceInterface class
          */
-        MainActivityInterface mainActivityInterface = MainActivityInterface.getInstance(getContext());
+        BindServiceInterface bindServiceInterface = BindServiceInterface.getInstance(getContext());
 
         /**
          * getAvatarList function is called to get the list of string corresponding to the avatar images
          */
         try {
-            mAvatarList = (ArrayList<String>) mainActivityInterface.getAvatarList();
+            mAvatarList = (ArrayList<String>) bindServiceInterface.getAvatarList();
         } catch (Exception e) {
             Log.i("Exception","did not get avatar list");
         }
@@ -104,7 +107,7 @@ public class CreateDialog extends DialogFragment implements AvatarSelectListener
             String name1 = String.valueOf(name.getText());
             String username = name1.trim();
             if(!username.isEmpty()&&avatar!=null){
-                mainActivityInterface.addProfile(username , avatar);
+                bindServiceInterface.addProfile(username , avatar);
                 Toast.makeText(getContext(), "Profile Saved successfully", Toast.LENGTH_SHORT).show();
                 dismiss();
             }else

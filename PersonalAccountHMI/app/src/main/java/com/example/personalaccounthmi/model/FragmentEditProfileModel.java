@@ -9,41 +9,65 @@ import android.content.Context;
 import android.os.RemoteException;
 
 import com.example.personalaccounthmi.MainActivityContract;
-import com.example.personalaccounthmi.MainActivityInterface;
+import com.example.personalaccounthmi.BindServiceInterface;
 import com.example.personalaccounthmi.ProfileData;
 import com.example.personalaccounthmi.presenter.FragmentEditProfilePresenter;
 import com.example.personalaccounthmi.util.IPersonalAccountNotificationObserver;
 import com.example.personalaccounthmi.util.PersonalAccountNotificationManager;
 
+/**
+ * The FragmentEditProfileModel class act as an intermediate class between Presenter and BindServiceInterface to communicate
+ */
 public class FragmentEditProfileModel implements MainActivityContract.EditProfileModel, IPersonalAccountNotificationObserver {
 
+    /**
+     * creating object of BindServiceInterface
+     */
+    BindServiceInterface bindServiceInterface;
 
-    MainActivityInterface mainActivityInterface;
+    /**
+     * creating object of FragmentEditProfilePresenter
+     */
     private FragmentEditProfilePresenter mFragmentEditProfilePresenter;
 
-
+    /**
+     * creating constructor of FragmentEditProfileModel and bind the application with service
+     * @param fragmentEditProfilePresenter
+     * @param context
+     */
     public FragmentEditProfileModel(FragmentEditProfilePresenter fragmentEditProfilePresenter, Context context) {
-        mainActivityInterface =  MainActivityInterface.getInstance(context);
+
+        /**
+         * Assigning BindServiceInterface object with instance of BindServiceInterface
+         */
+        bindServiceInterface =  BindServiceInterface.getInstance(context);
+
+        /**
+         * creating object of FragmentEditProfilePresenter
+         */
         mFragmentEditProfilePresenter = fragmentEditProfilePresenter;
+
+        /**
+         * calling the registerObserver
+         */
         PersonalAccountNotificationManager.getInstance().registerObserver(this);
 
     }
 
     @Override
     public ProfileData highlightProfile() throws RemoteException {
-
-        return mainActivityInterface.activeProfile();
+        return bindServiceInterface.activeProfile();
     }
 
     @Override
     public void deleteSelectedProfile() {
-        mainActivityInterface.deleteProfile();
+        bindServiceInterface.deleteProfile();
 
     }
 
     @Override
     public long getProfileCountModel() {
-        return mainActivityInterface.getProfileCount();
+        return bindServiceInterface.getProfileCount();
     }
 
     @Override

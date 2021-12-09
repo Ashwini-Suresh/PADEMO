@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.personalaccounthmi.MainActivityInterface;
+import com.example.personalaccounthmi.BindServiceInterface;
 import com.example.personalaccounthmi.ProfileData;
 import com.example.personalaccounthmi.R;
 
@@ -24,12 +23,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     private Context context;
     private ArrayList pData;
 
-    MainActivityInterface mainActivityInterface;
+    BindServiceInterface bindServiceInterface;
 
     CustomAdapter(Context context,ArrayList profileData){
         this.context=context;
         pData=profileData;
-        mainActivityInterface = MainActivityInterface.getInstance(context);
+        bindServiceInterface = BindServiceInterface.getInstance(context);
     }
 
     @NonNull
@@ -68,7 +67,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 break;
         }
         holder.avatar.setOnClickListener(v -> {
-            mainActivityInterface.changeActiveProfile(id);
+            bindServiceInterface.changeActiveProfile(id);
 
         });
         if (isActive){

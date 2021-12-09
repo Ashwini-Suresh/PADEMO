@@ -23,12 +23,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalaccounthmi.AvatarSelectListener;
-import com.example.personalaccounthmi.MainActivityInterface;
+import com.example.personalaccounthmi.BindServiceInterface;
 import com.example.personalaccounthmi.R;
 import com.example.personalaccounthmi.view.AvatarAdapter;
 
 import java.util.ArrayList;
 
+/**
+ * @brief The class includes the functionality to edit the avatar image of an existing profile
+ */
 public class EditAvatarDialog extends DialogFragment implements AvatarSelectListener {
 
     /**
@@ -63,13 +66,13 @@ public class EditAvatarDialog extends DialogFragment implements AvatarSelectList
         /**
          *  assigning single instance to mainActivityInterface
          */
-        MainActivityInterface mainActivityInterface = MainActivityInterface.getInstance(getContext());
+        BindServiceInterface bindServiceInterface = BindServiceInterface.getInstance(getContext());
 
         /**
          * String value of avatar list is assigned to mAvatarList with function getAvatarList
          */
         try {
-            mAvatarList = (ArrayList<String>) mainActivityInterface.getAvatarList();
+            mAvatarList = (ArrayList<String>) bindServiceInterface.getAvatarList();
         } catch (Exception e) {
             Log.i("Exception","did not get avatar list");
         }
@@ -90,10 +93,12 @@ public class EditAvatarDialog extends DialogFragment implements AvatarSelectList
          */
         cancel.setOnClickListener(v -> dismiss());
 
-
+        /**
+         * onClicking save button the string value corresponding to the selected avatar will be saved to db.
+         */
         save.setOnClickListener(v -> {
             if(mAvatar!=null){
-                mainActivityInterface.updateProfileAvatar(mAvatar);
+                bindServiceInterface.updateProfileAvatar(mAvatar);
                 Toast.makeText(getContext(), "AVATAR UPDATED SUCCESSFULLY", Toast.LENGTH_SHORT).show();
                 dismiss();
             }else
