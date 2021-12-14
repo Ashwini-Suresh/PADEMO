@@ -1,0 +1,4 @@
+com/training/personalaccountservice/test/BuildConfig.java
+ com.training.personalaccountservice.test.BuildConfig
+com/training/personalaccountservice/ExampleInstrumentedTest.java
+ com.training.personalaccountservice.ExampleInstrumentedTest

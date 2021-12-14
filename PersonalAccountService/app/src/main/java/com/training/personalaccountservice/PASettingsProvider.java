@@ -48,7 +48,7 @@ public class PASettingsProvider extends ContentProvider {
     private static final UriMatcher MATCHER =new UriMatcher(UriMatcher.NO_MATCH);
 
     /**
-     * Matching integer variable with URI.
+     * @brief: Matching integer variable with URI.
      */
     static {
         MATCHER.addURI(AUTHORITY, PATH_ACTIVE_PROFILE_SETTINGS, ACTIVE_PROFILE_SETTINGS);

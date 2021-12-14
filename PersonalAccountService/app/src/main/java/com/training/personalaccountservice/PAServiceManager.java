@@ -26,17 +26,17 @@ public class PAServiceManager {
     /**
      * Declaring object of PASDataBaseManager.
      */
-    private PASDataBaseManager mPASDBManager;
+    private final PASDataBaseManager mPASDBManager;
 
     /**
      * Declaring object of PAServicePreference.
      */
-    private PAServicePreference mActiveList;
+    private final PAServicePreference mActiveList;
 
     /**
      * New arrayList for adding profile object and return it to ServiceInterface.
      */
-    private List<ProfileData> mProfileDataList =new ArrayList<>();
+    private  List<ProfileData> mProfileDataList =new ArrayList<>();
 
     /**
      * Profile id for newly added profiles this will addToPreference to database and sharedPreference.
@@ -118,6 +118,10 @@ public class PAServiceManager {
         return mProfileDataList;
     }
 
+    /**
+     * @brief: To get active profile Id from sharedPreference.
+     * @return : Return active profile Id.
+     */
     private int getActiveId() {
         return mActiveList.getActiveId();
     }
@@ -141,12 +145,10 @@ public class PAServiceManager {
      * @param activeProfileId: Profile id of selected profile.
      */
     public void switchProfile(int activeProfileId) {
-        Log.i("ChangeActiveProfile","Profile id " +activeProfileId);
-        Log.i("ActiveProfile","Before changing "+ mActiveList.getActiveId());
+
         if(mActiveList.getActiveId()!=activeProfileId){
             mActiveList.addToPreference(activeProfileId);
             broadCastCallBack(PROFILE_CHANGE);
-            Log.i("ActiveProfile","After changing "+ mActiveList.getActiveId());
         }
     }
 
@@ -155,10 +157,7 @@ public class PAServiceManager {
      * @return :Returns Cursor containing settings.
      */
     public Cursor readActiveProfileSettings() {
-        int activeProfileId = getActiveId();
-        Cursor cursor;
-        cursor= mPASDBManager.readActiveProfileSettings(activeProfileId);
-        return cursor;
+        return mPASDBManager.readActiveProfileSettings(getActiveId());
     }
 
     /**
@@ -180,10 +179,7 @@ public class PAServiceManager {
         Cursor cursor = mPASDBManager.readAllData();
         while (cursor.moveToNext()) {
             String avatar= cursor.getString(2);
-            if(avatarList.contains(avatar)){
-                avatarList.remove(avatar);
-                Log.i("avatarList"," "+avatarList);
-            }
+            avatarList.remove(avatar);
         }
         return avatarList;
     }
@@ -238,12 +234,9 @@ public class PAServiceManager {
     public ProfileData getActiveProfile() {
 
         Cursor c = mPASDBManager.getActiveProfile(getActiveId());
-        while (c.moveToNext()) {
-            String name= c.getString(0);
-            String avatar= c.getString(1);
-            return new ProfileData(getActiveId(),name,avatar,true);
-        }
-        return null;
+        String name = c.getString(0);
+        String avatar = c.getString(1);
+        return new ProfileData(getActiveId(), name, avatar, true);
     }
 
     /**

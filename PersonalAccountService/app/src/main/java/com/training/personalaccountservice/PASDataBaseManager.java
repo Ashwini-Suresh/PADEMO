@@ -240,10 +240,13 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
         return cursor;
     }
 
+    /**
+     * @brief: To get count of profiles.
+     * @return : Returns number of rows present in Table.
+     */
     public long getRowCount() {
         SQLiteDatabase db = this.getReadableDatabase();
-        long count = DatabaseUtils.queryNumEntries(db,TABLE_NAME);
-        return count;
+        return DatabaseUtils.queryNumEntries(db, TABLE_NAME);
     }
 
     /**

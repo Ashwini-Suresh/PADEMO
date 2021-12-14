@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/quest/AndroidStudioProjects/PADEMO/PersonalAccountService/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "C:\\Users\\aksha\\Documents\\LearningAndroid\\PADEMO\\PersonalAccountService\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "/home/quest/.gradle/caches/transforms-3/9079c9694b4d4270d7cd62242948af25/transformed/appcompat-1.4.0/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "source": "C:\\Users\\aksha\\.gradle\\caches\\transforms-3\\9079c9694b4d4270d7cd62242948af25\\transformed\\appcompat-1.4.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
