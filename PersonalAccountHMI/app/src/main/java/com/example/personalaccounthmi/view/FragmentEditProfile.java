@@ -86,11 +86,7 @@ public class FragmentEditProfile extends Fragment implements MainActivityContrac
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                try {
-                    loadEditProfileUI();
-                } catch (RemoteException e) {
-                    e.printStackTrace();
-                }
+                refreshEditProfile();
 
             }
         },1000);
