@@ -11,30 +11,30 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
-import com.example.personalaccounthmi.MainActivityContract;
 import com.example.personalaccounthmi.R;
-import com.example.personalaccounthmi.util.VPAdapter;
+import com.example.personalaccounthmi.util.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
-
-
+/**
+ * MainActivity class includes the viewpager to populate the view of fragments
+ */
 public class MainActivity extends AppCompatActivity  {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /**
+         * finding UI elements
+         */
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager viewPager = findViewById(R.id.viewpager);
         tabLayout.setupWithViewPager(viewPager);
-
-
-        VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        vpAdapter.addFragment(new FragmentAllProfile(),"ALL PROFILES");
-        vpAdapter.addFragment(new FragmentEditProfile(),"EDIT PROFILES");
-        viewPager.setAdapter(vpAdapter);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPagerAdapter.addFragment(new FragmentAllProfile(),"ALL PROFILES");
+        viewPagerAdapter.addFragment(new FragmentEditProfile(),"EDIT PROFILES");
+        viewPager.setAdapter(viewPagerAdapter);
 
     }
 

@@ -1,0 +1,66 @@
+com/example/personalaccounthmi/model/MainActivityModel.java
+ com.example.personalaccounthmi.model.MainActivityModel
+com/example/personalaccounthmi/MainActivityContract.java
+ com.example.personalaccounthmi.MainActivityContract
+ com.example.personalaccounthmi.MainActivityContract$EditProfileModel
+ com.example.personalaccounthmi.MainActivityContract$EditProfilePresenter
+ com.example.personalaccounthmi.MainActivityContract$EditProfileVIew
+ com.example.personalaccounthmi.MainActivityContract$Model
+ com.example.personalaccounthmi.MainActivityContract$Presenter
+ com.example.personalaccounthmi.MainActivityContract$View
+com/example/personalaccounthmi/AvatarSelectListener.java
+ com.example.personalaccounthmi.AvatarSelectListener
+com/example/personalaccounthmi/model/FragmentAllProfileModel.java
+ com.example.personalaccounthmi.model.FragmentAllProfileModel
+common/IPersonalAccountListener.java
+ common.IPersonalAccountListener
+ common.IPersonalAccountListener$Default
+ common.IPersonalAccountListener$Stub
+ common.IPersonalAccountListener$Stub$Proxy
+com/example/personalaccounthmi/presenter/MainActivityPresenter.java
+ com.example.personalaccounthmi.presenter.MainActivityPresenter
+com/example/personalaccounthmi/util/PersonalAccountNotificationManager.java
+ com.example.personalaccounthmi.util.PersonalAccountNotificationManager
+common/IPersonalAccount.java
+ common.IPersonalAccount
+ common.IPersonalAccount$Default
+ common.IPersonalAccount$Stub
+ common.IPersonalAccount$Stub$Proxy
+com/example/personalaccounthmi/util/IPersonalAccountNotificationObserver.java
+ com.example.personalaccounthmi.util.IPersonalAccountNotificationObserver
+com/example/personalaccounthmi/ProfileData.java
+ com.example.personalaccounthmi.ProfileData
+ com.example.personalaccounthmi.ProfileData$1
+com/example/personalaccounthmi/BuildConfig.java
+ com.example.personalaccounthmi.BuildConfig
+com/example/personalaccounthmi/dialogfragment/EditUsernameDialog.java
+ com.example.personalaccounthmi.dialogfragment.EditUsernameDialog
+com/example/personalaccounthmi/presenter/FragmentEditProfilePresenter.java
+ com.example.personalaccounthmi.presenter.FragmentEditProfilePresenter
+com/example/personalaccounthmi/view/AvatarAdapter.java
+ com.example.personalaccounthmi.view.AvatarAdapter
+ com.example.personalaccounthmi.view.AvatarAdapter$MyViewHolder
+com/example/personalaccounthmi/model/FragmentEditProfileModel.java
+ com.example.personalaccounthmi.model.FragmentEditProfileModel
+com/example/personalaccounthmi/BindServiceInterface.java
+ com.example.personalaccounthmi.BindServiceInterface
+ com.example.personalaccounthmi.BindServiceInterface$1
+ com.example.personalaccounthmi.PersonalAccountListener
+com/example/personalaccounthmi/presenter/FragmentAllProfilePresenter.java
+ com.example.personalaccounthmi.presenter.FragmentAllProfilePresenter
+com/example/personalaccounthmi/view/FragmentAllProfile.java
+ com.example.personalaccounthmi.view.FragmentAllProfile
+com/example/personalaccounthmi/dialogfragment/EditAvatarDialog.java
+ com.example.personalaccounthmi.dialogfragment.EditAvatarDialog
+com/example/personalaccounthmi/util/ViewPagerAdapter.java
+ com.example.personalaccounthmi.util.ViewPagerAdapter
+com/example/personalaccounthmi/view/CustomAdapter.java
+ com.example.personalaccounthmi.view.CustomAdapter
+ com.example.personalaccounthmi.view.CustomAdapter$MyViewHolder
+com/example/personalaccounthmi/dialogfragment/CreateDialog.java
+ com.example.personalaccounthmi.dialogfragment.CreateDialog
+com/example/personalaccounthmi/view/FragmentEditProfile.java
+ com.example.personalaccounthmi.view.FragmentEditProfile
+ com.example.personalaccounthmi.view.FragmentEditProfile$1
+com/example/personalaccounthmi/view/MainActivity.java
+ com.example.personalaccounthmi.view.MainActivity
