@@ -8,6 +8,7 @@ package com.example.settingsapplication.Model;
 import android.content.Context;
 import android.util.Log;
 
+import com.example.settingsapplication.BindingToService;
 import com.example.settingsapplication.Common.SettingsConstants;
 import com.example.settingsapplication.ContentProvider.SettingsProvider;
 import com.example.settingsapplication.MainAcitivityContract;
@@ -40,9 +41,14 @@ public class MainActivityModel implements MainAcitivityContract.MainActivityMode
     Context mContext;
 
     /**
-     * Initializing an object for SettingsProvider classs
+     * Initializing an object for SettingsProvider class
      */
     SettingsProvider mSettingsProvider;
+
+    /**
+     * Initializing an object for BindingToService  class
+     */
+    BindingToService mBindingToService;
 
 
     /**
@@ -54,7 +60,7 @@ public class MainActivityModel implements MainAcitivityContract.MainActivityMode
     public MainActivityModel(MainActivityPresenter mainActivityPresenter, Context context) {
 
         /**
-         * creating an object for Mainactivity Presenter
+         * creating an object for Main activity Presenter
          */
         mMainActivityPresenter = mainActivityPresenter;
         /**
@@ -65,6 +71,11 @@ public class MainActivityModel implements MainAcitivityContract.MainActivityMode
          * Assinging SettingsProvider instance in an object of SettingsProvider class
          */
         mSettingsProvider = SettingsProvider.getInstance(context);
+
+        /**
+         * Assigning BindingToService instance in an object of BindingToService class
+         */
+        mBindingToService= BindingToService.getInstance(context);
 
         /**
          * String variable to store the settings data which calls a

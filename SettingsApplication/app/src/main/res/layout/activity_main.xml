@@ -208,7 +208,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/gold"
             android:onClick="onClick"
             android:text="BIG FM"
             android:textColor="@color/white"></Button>
@@ -219,7 +219,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="38dp"
             android:layout_toRightOf="@id/buttonFM1"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/redd"
             android:onClick="onClick"
             android:text="RADIO CITY"
             android:textColor="@color/white"></Button>
@@ -230,7 +230,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_toRightOf="@id/buttonFM2"
-            android:backgroundTint="#41000000"
+            android:backgroundTint="@color/redd"
             android:onClick="onClick"
             android:text="RADIO FM"
             android:textColor="@color/white"></Button>
