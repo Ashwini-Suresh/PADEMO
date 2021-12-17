@@ -102,7 +102,7 @@ public class PAServicePreference {
     private void reArrange(int fromKeyNum) {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         for(int j = fromKeyNum; j<mLatest; j++) {
-            editor.putInt("prev" + j, mSharedPreferences.getInt("prev" + (fromKeyNum + 1), 0));
+            editor.putInt("prev" + j, mSharedPreferences.getInt("prev" + (j + 1), 0));
             editor.apply();
         }
         mLatest--;

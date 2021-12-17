@@ -15,7 +15,7 @@
 12        android:allowBackup="true"
 12-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.7.0] C:\Users\aksha\.gradle\caches\transforms-3\21249a56641fb0309777a5ae16ce99ff\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.7.0] C:\Users\aksha\.gradle\caches\transforms-3\9339927e08badd09bc5459e4ba900d5f\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 14        android:debuggable="true"
 15        android:extractNativeLibs="false"
 16        android:icon="@mipmap/ic_launcher"
@@ -26,50 +26,49 @@
 18-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:9:9-54
 19        android:supportsRtl="true"
 19-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:10:9-35
-20        android:testOnly="true"
-21        android:theme="@style/Theme.PersonalAccountService" >
-21-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:11:9-60
-22        <service
-22-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:12:9-17:19
-23            android:name="com.training.personalaccountservice.PAService"
-23-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:13:13-38
-24            android:enabled="true"
-24-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:14:13-35
-25            android:exported="true" >
-25-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:15:13-36
-26        </service>
-27
-28        <provider
-28-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:18:9-22:38
-29            android:name="com.training.personalaccountservice.PASettingsProvider"
-29-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:20:13-47
-30            android:authorities="com.training.personalaccountservice"
-30-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:19:13-70
-31            android:enabled="true"
-31-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:21:13-35
-32            android:exported="true" />
-32-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:22:13-36
-33        <provider
-33-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-34            android:name="androidx.startup.InitializationProvider"
-34-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-35            android:authorities="com.training.personalaccountservice.androidx-startup"
-35-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
-36            android:exported="false" >
-36-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
-37            <meta-data
-37-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-38                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-38-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
-39                android:value="androidx.startup" />
-39-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
-40            <meta-data
-40-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\aksha\.gradle\caches\transforms-3\4d87c3e3b70abeed5e61faf08f3b9b5b\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-41                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-41-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\aksha\.gradle\caches\transforms-3\4d87c3e3b70abeed5e61faf08f3b9b5b\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-42                android:value="androidx.startup" />
-42-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\aksha\.gradle\caches\transforms-3\4d87c3e3b70abeed5e61faf08f3b9b5b\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-43        </provider>
-44    </application>
-45
-46</manifest>
+20        android:theme="@style/Theme.PersonalAccountService" >
+20-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:11:9-60
+21        <service
+21-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:12:9-17:19
+22            android:name="com.training.personalaccountservice.PAService"
+22-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:13:13-38
+23            android:enabled="true"
+23-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:14:13-35
+24            android:exported="true" >
+24-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:15:13-36
+25        </service>
+26
+27        <provider
+27-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:18:9-22:38
+28            android:name="com.training.personalaccountservice.PASettingsProvider"
+28-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:20:13-47
+29            android:authorities="com.training.personalaccountservice"
+29-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:19:13-70
+30            android:enabled="true"
+30-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:21:13-35
+31            android:exported="true" />
+31-->C:\Users\aksha\Documents\LearningAndroid\PADEMO\PersonalAccountService\app\src\main\AndroidManifest.xml:22:13-36
+32        <provider
+32-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\09b79be83fba3907471fe1de63f439d3\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+33            android:name="androidx.startup.InitializationProvider"
+33-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\09b79be83fba3907471fe1de63f439d3\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+34            android:authorities="com.training.personalaccountservice.androidx-startup"
+34-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\09b79be83fba3907471fe1de63f439d3\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+35            android:exported="false" >
+35-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\09b79be83fba3907471fe1de63f439d3\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+36            <meta-data
+36-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\09b79be83fba3907471fe1de63f439d3\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+37                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+37-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\09b79be83fba3907471fe1de63f439d3\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+38                android:value="androidx.startup" />
+38-->[androidx.emoji2:emoji2:1.0.0] C:\Users\aksha\.gradle\caches\transforms-3\09b79be83fba3907471fe1de63f439d3\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+39            <meta-data
+39-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\aksha\.gradle\caches\transforms-3\0e4a425e61d135d109d64d5f17d999df\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+40                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+40-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\aksha\.gradle\caches\transforms-3\0e4a425e61d135d109d64d5f17d999df\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+41                android:value="androidx.startup" />
+41-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\aksha\.gradle\caches\transforms-3\0e4a425e61d135d109d64d5f17d999df\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+42        </provider>
+43    </application>
+44
+45</manifest>
