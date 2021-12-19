@@ -232,11 +232,13 @@ public class PAServiceManager {
      * @return : returns ProfileData object.
      */
     public ProfileData getActiveProfile() {
-
         Cursor c = mPASDBManager.getActiveProfile(getActiveId());
-        String name = c.getString(0);
-        String avatar = c.getString(1);
-        return new ProfileData(getActiveId(), name, avatar, true);
+        while (c.moveToNext()) {
+            String name= c.getString(0);
+            String avatar= c.getString(1);
+            return new ProfileData(getActiveId(),name,avatar,true);
+        }
+        return null;
     }
 
     /**
