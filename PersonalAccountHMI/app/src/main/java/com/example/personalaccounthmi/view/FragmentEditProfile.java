@@ -222,11 +222,7 @@ public class FragmentEditProfile extends Fragment implements MainActivityContrac
         /**
          * if the number of profiles in the database is one the delete button will be disabled
          */
-        if ( mCount == 1){
-            btn_deleteProfile.setEnabled(false);
-        }else {
-            btn_deleteProfile.setEnabled(true);
-        }
+        btn_deleteProfile.setEnabled(mCount != 1);
     }
 
     @Override

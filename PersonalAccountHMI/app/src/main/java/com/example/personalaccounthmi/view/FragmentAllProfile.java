@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.personalaccounthmi.CustomAdapterListener;
 import com.example.personalaccounthmi.MainActivityContract;
 import com.example.personalaccounthmi.ProfileData;
 import com.example.personalaccounthmi.R;
@@ -30,7 +31,7 @@ import java.util.ArrayList;
 /**
  * @brief The class FragmentAllProfile contains the functionalities of the fragment that lists all the profiles in the view
  */
-public class FragmentAllProfile extends Fragment implements MainActivityContract.View {
+public class FragmentAllProfile extends Fragment implements MainActivityContract.View, CustomAdapterListener {
 
     /**
      * creating object of FragmentAllProfilePresenter class
@@ -101,7 +102,7 @@ public class FragmentAllProfile extends Fragment implements MainActivityContract
         } catch (Exception e) {
             Log.i("Exception", "" + e);
         }
-        adapter = new CustomAdapter(mContext, mProfileList);
+        adapter = new CustomAdapter(mContext, mProfileList,this);
         mRecyclerView.setAdapter(adapter);
         mRecyclerView.setLayoutManager(mLayoutManager);
         if(mCount==4){
@@ -129,5 +130,10 @@ public class FragmentAllProfile extends Fragment implements MainActivityContract
         loadUI();
     }
 
+    @Override
+    public void switchActiveProfile(int id) {
+        presenter.switchActiveProfile(id);
+
+    }
 }
 

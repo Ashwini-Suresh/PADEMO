@@ -19,6 +19,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalaccounthmi.BindServiceInterface;
+import com.example.personalaccounthmi.CustomAdapterListener;
 import com.example.personalaccounthmi.ProfileData;
 import com.example.personalaccounthmi.R;
 
@@ -32,23 +33,23 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     /**
      * declaring variables of Context, Arraylist and BindServiceInterface
      */
-    private Context context;
-    private ArrayList pData;
-    BindServiceInterface bindServiceInterface;
+    private final Context context;
+    private final ArrayList pData;
+    CustomAdapterListener listener;
 
     /**
      * creating constructor of the class
      * @param context
      * @param profileData
      */
-    CustomAdapter(Context context,ArrayList profileData){
+    CustomAdapter(Context context,ArrayList profileData, CustomAdapterListener listener){
         this.context=context;
         pData=profileData;
+        this.listener = listener;
 
         /**
          * Assigning BindServiceInterface instance to the variable
          */
-        bindServiceInterface = BindServiceInterface.getInstance(context);
     }
 
     @NonNull
@@ -102,7 +103,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
          * onClicking the avatar image on the Profile view, the profile is selected
          */
         holder.avatar.setOnClickListener(v -> {
-            bindServiceInterface.changeActiveProfile(id);
+            listener.switchActiveProfile(id);
 
         });
 

@@ -14,18 +14,28 @@ import java.util.ArrayList;
 public interface MainActivityContract {
 
     interface Model{
+        ArrayList<ProfileData> toGetProfile();
+        long getProfileCount();
+        void switchActiveProfile(int id);
 
-    }
+
+
+
+
+
+        }
 
     interface Presenter {
         ArrayList<ProfileData> getProfileList();
         long getProfileCount();
         void refreshAllProfiles();
+        void switchActiveProfile(int id);
     }
     interface View{
         void loadUI();
         void openDialog();
         void refreshAllProfiles();
+
     }
     interface EditProfilePresenter{
         ProfileData getHighlightProfile() throws RemoteException;

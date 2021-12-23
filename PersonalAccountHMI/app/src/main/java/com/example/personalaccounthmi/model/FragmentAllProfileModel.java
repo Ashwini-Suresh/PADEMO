@@ -32,7 +32,7 @@ public class FragmentAllProfileModel implements MainActivityContract.Model , IPe
     /**
      * creating object of FragmentALlProfilePresenter
      */
-    private FragmentAllProfilePresenter mFragmentAllProfilePresenter;
+    private final FragmentAllProfilePresenter mFragmentAllProfilePresenter;
 
     /**
      * creating the constructor and service is bind to the application
@@ -90,5 +90,9 @@ public class FragmentAllProfileModel implements MainActivityContract.Model , IPe
      */
     public long getProfileCount() {
         return bindServiceInterface.getProfileCount();
+    }
+
+    public void switchActiveProfile(int id) {
+        bindServiceInterface.changeActiveProfile(id);
     }
 }

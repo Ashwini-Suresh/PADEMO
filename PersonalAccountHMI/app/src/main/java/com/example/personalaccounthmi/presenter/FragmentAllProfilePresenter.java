@@ -61,4 +61,13 @@ public class FragmentAllProfilePresenter implements MainActivityContract.Present
 
         view.refreshAllProfiles();
     }
+
+
+    @Override
+    public void switchActiveProfile(int id) {
+        fragmentAllProfileModel.switchActiveProfile(id);
+
+
+    }
+
 }

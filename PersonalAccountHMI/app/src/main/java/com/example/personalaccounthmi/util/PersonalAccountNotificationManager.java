@@ -8,7 +8,7 @@ import java.util.List;
 
 public class PersonalAccountNotificationManager {
 
-    private List<IPersonalAccountNotificationObserver> mObservers =  new ArrayList<>(); ;
+    private final List<IPersonalAccountNotificationObserver> mObservers =  new ArrayList<>();
 
     private static PersonalAccountNotificationManager sInstance;
 

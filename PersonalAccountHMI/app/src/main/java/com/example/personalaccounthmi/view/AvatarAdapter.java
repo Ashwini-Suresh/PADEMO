@@ -30,13 +30,13 @@ public class AvatarAdapter extends RecyclerView.Adapter<AvatarAdapter.MyViewHold
     /**
      * declaring object of context
      */
-    private  Context mContext;
-    private  ArrayList mAvatarList;
+    private final Context mContext;
+    private final ArrayList mAvatarList;
 
     /**
      * declaring object of AvatarSelectListener
      */
-    private AvatarSelectListener mCallback;
+    private final AvatarSelectListener mCallback;
 
     /**
      * initializing value of selectedPosition

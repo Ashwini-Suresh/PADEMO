@@ -28,7 +28,7 @@ public class FragmentEditProfileModel implements MainActivityContract.EditProfil
     /**
      * creating object of FragmentEditProfilePresenter
      */
-    private FragmentEditProfilePresenter mFragmentEditProfilePresenter;
+    private final FragmentEditProfilePresenter mFragmentEditProfilePresenter;
 
     /**
      * creating constructor of FragmentEditProfileModel and bind the application with service
@@ -54,22 +54,40 @@ public class FragmentEditProfileModel implements MainActivityContract.EditProfil
 
     }
 
+    /**
+     * function highlightProfile is called to invoke the activeProfile in bindServiceInterface to highlight the profile selected
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public ProfileData highlightProfile() throws RemoteException {
         return bindServiceInterface.activeProfile();
     }
 
+    /**
+     * function is called to invoke the deleteProfile in BindServiceInterface to delete the selected profile
+     */
     @Override
     public void deleteSelectedProfile() {
         bindServiceInterface.deleteProfile();
 
     }
 
+    /**
+     * function is called to invoke the getProfileCount function in the BindserviceInterface to get the number of profiles saved
+     * @return the number of profiles saved
+     */
     @Override
     public long getProfileCountModel() {
         return bindServiceInterface.getProfileCount();
     }
 
+    /**
+     * function is called to change the profile viewed in the card to the selected profile
+     * @param propertyType
+     * @param data
+     * @throws RemoteException
+     */
     @Override
     public void notifyPersonalAccountChange(int propertyType, int data) throws RemoteException {
 
