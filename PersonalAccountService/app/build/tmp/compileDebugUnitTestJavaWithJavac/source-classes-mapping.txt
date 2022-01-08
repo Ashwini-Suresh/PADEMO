@@ -1,0 +1,6 @@
+com/training/personalaccountservice/PASDataBaseManagerTest.java
+ com.training.personalaccountservice.PASDataBaseManagerTest
+com/training/personalaccountservice/PAServicePreferenceTest.java
+ com.training.personalaccountservice.PAServicePreferenceTest
+com/training/personalaccountservice/ExampleUnitTest.java
+ com.training.personalaccountservice.ExampleUnitTest

@@ -132,7 +132,7 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
         cv.put(COLUMN_AVATAR, profile_avatar);
 
         long result = db.insert(TABLE_NAME, null, cv);
-        if (result == -1) {
+        if (result <=0) {
             Log.i("AddProfile", "failed");
         } else
             Log.i("AddProfile", "Success");
@@ -194,7 +194,7 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
 
         cv.put(COLUMN_AVATAR, newAvatar);
         int count = db.update(TABLE_NAME, cv, COLUMN_ID + " = ?", new String[]{String.valueOf(activeProfileId)});
-        if(count==-1){
+        if(count<=0){
             Log.i("UPDATE_PROFILE_AVATAR","FAILED");
         }else{
             Log.i("UPDATE_PROFILE_AVATAR","SUCCESS");
@@ -214,7 +214,7 @@ public class PASDataBaseManager extends SQLiteOpenHelper {
         cv.put(COLUMN_NAME, newName);
         int count = db.update(TABLE_NAME, cv, COLUMN_ID + " = ?", new String[]{String.valueOf(activeProfileId)});
 
-        if(count==-1){
+        if(count<=0){
             Log.i("UPDATE_PROFILE_NAME","FAILED");
         }else {
             Log.i("UPDATE_PROFILE_NAME","SUCCESS");

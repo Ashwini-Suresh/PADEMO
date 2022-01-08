@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.training.personalaccountservice.PASDataBaseManagerTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2022-01-08T04:59:54" hostname="LAPTOP-O4QK4Q99" time="11.063">
+  <properties/>
+  <testcase name="updateActiveProfileName_Fail_Test" classname="com.training.personalaccountservice.PASDataBaseManagerTest" time="8.466"/>
+  <testcase name="readAllTest" classname="com.training.personalaccountservice.PASDataBaseManagerTest" time="0.427"/>
+  <testcase name="testAdd" classname="com.training.personalaccountservice.PASDataBaseManagerTest" time="0.341"/>
+  <testcase name="updateActiveProfileName_Success_Test" classname="com.training.personalaccountservice.PASDataBaseManagerTest" time="0.281"/>
+  <testcase name="getRowCountTest" classname="com.training.personalaccountservice.PASDataBaseManagerTest" time="0.202"/>
+  <testcase name="readActiveProfileSettingsTest" classname="com.training.personalaccountservice.PASDataBaseManagerTest" time="0.213"/>
+  <testcase name="deleteActiveProfileTest" classname="com.training.personalaccountservice.PASDataBaseManagerTest" time="0.171"/>
+  <testcase name="updateActiveProfileSettingsTest" classname="com.training.personalaccountservice.PASDataBaseManagerTest" time="0.167"/>
+  <testcase name="updateActiveProfileAvatar_Success_Test" classname="com.training.personalaccountservice.PASDataBaseManagerTest" time="0.202"/>
+  <testcase name="readActiveProfileTest" classname="com.training.personalaccountservice.PASDataBaseManagerTest" time="0.157"/>
+  <testcase name="testGetInstance" classname="com.training.personalaccountservice.PASDataBaseManagerTest" time="0.211"/>
+  <testcase name="updateActiveProfileAvatar_Fail_Test" classname="com.training.personalaccountservice.PASDataBaseManagerTest" time="0.22"/>
+  <system-out><![CDATA[Called loadFromPath(/system/framework/framework-res.apk, true); mode=binary sdk=28
+resources.arsc in APK 'C:\Users\aksha\.m2\repository\org\robolectric\android-all-instrumented\9-robolectric-4913185-2-i1\android-all-instrumented-9-robolectric-4913185-2-i1.jar' is compressed.
+]]></system-out>
+  <system-err><![CDATA[System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.java.lang.Throwable: Explicit termination method 'close' not called
+]]></system-err>
+</testsuite>
