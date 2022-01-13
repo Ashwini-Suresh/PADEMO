@@ -110,20 +110,20 @@ public class FragmentEditProfile extends Fragment implements MainActivityContrac
          * onClicking GO TO SETTINGS button the application navigates to Settings application
          */
         btn_gotoSettings.setOnClickListener(v -> {
-            Intent i;
 
             /**
              * creating object of PackageManager, the class that provides the information of applications in the device
              */
-            PackageManager manager = requireActivity().getPackageManager();
+            Intent i;
+            PackageManager manager = mContext.getPackageManager();
             try {
                 i = manager.getLaunchIntentForPackage("com.example.settingsapplication");
-                if (i== null)
+                if (i == null)
                     throw new PackageManager.NameNotFoundException();
                 i.addCategory(Intent.CATEGORY_LAUNCHER);
                 startActivity(i);
             } catch (PackageManager.NameNotFoundException e) {
-                e.printStackTrace();
+
             }
 
         });

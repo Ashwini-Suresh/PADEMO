@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-27:12
+ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-28:12
 MERGED from [com.google.android.material:material:1.4.0] /home/quest/.gradle/caches/transforms-3/1508bc0f4d67cb1fb46dec23183d0585/transformed/material-1.4.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] /home/quest/.gradle/caches/transforms-3/66bbb9fe8c9e1863a78a4ee4625746ef/transformed/constraintlayout-2.1.2/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.4.0] /home/quest/.gradle/caches/transforms-3/46d15f5c58a469270eeba15db4463d05/transformed/appcompat-1.4.0/AndroidManifest.xml:17:1-24:12
@@ -49,31 +49,35 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/q
 MERGED from [androidx.print:print:1.0.0] /home/quest/.gradle/caches/transforms-3/b618f929228947d1fd03b4a852d85b00/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/quest/.gradle/caches/transforms-3/70be178243629fefb8ce9adf6a292e12/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/quest/.gradle/caches/transforms-3/b521f32a8ca2115704fce9eaa65230c1/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-28:12
 	package
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:3:5-45
-		INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
-		INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:3:5-45
+		INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+		INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-27:12
-		INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+		INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-28:12
+		INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-27:12
-		INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+		INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:1-28:12
+		INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:2:11-69
 queries
-ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:4:5-6:15
+ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:4:5-7:15
 package#com.training.personalaccountservice
-ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:5:9-79
+ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:5:9-79
 	android:name
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:5:18-68
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:5:18-68
+package#com.example.settingsapplication
+ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:6:9-75
+	android:name
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:6:18-64
 application
-ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:8:5-25:19
+ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:9:5-26:19
 MERGED from [com.google.android.material:material:1.4.0] /home/quest/.gradle/caches/transforms-3/1508bc0f4d67cb1fb46dec23183d0585/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] /home/quest/.gradle/caches/transforms-3/1508bc0f4d67cb1fb46dec23183d0585/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] /home/quest/.gradle/caches/transforms-3/66bbb9fe8c9e1863a78a4ee4625746ef/transformed/constraintlayout-2.1.2/AndroidManifest.xml:9:5-20
@@ -91,39 +95,39 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] /home/quest/.gradle/caches/
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.7.0] /home/quest/.gradle/caches/transforms-3/9339927e08badd09bc5459e4ba900d5f/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:13:9-35
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:11:9-41
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:12:9-41
 	android:roundIcon
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:12:9-54
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:10:9-43
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:11:9-43
 	android:allowBackup
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:9:9-35
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:14:9-56
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:15:9-56
 activity#com.example.personalaccounthmi.view.MainActivity
-ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:15:9-24:20
+ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:16:9-25:20
 	android:screenOrientation
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:18:13-50
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:19:13-50
 	android:exported
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:17:13-36
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:18:13-36
 	android:name
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:16:13-46
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:17:13-46
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:19:13-23:29
+ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
-ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:20:17-69
+ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:20:25-66
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:22:17-77
+ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:23:17-77
 	android:name
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:22:27-74
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml:23:27-74
 uses-sdk
-INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
-INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
 MERGED from [com.google.android.material:material:1.4.0] /home/quest/.gradle/caches/transforms-3/1508bc0f4d67cb1fb46dec23183d0585/transformed/material-1.4.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.4.0] /home/quest/.gradle/caches/transforms-3/1508bc0f4d67cb1fb46dec23183d0585/transformed/material-1.4.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] /home/quest/.gradle/caches/transforms-3/66bbb9fe8c9e1863a78a4ee4625746ef/transformed/constraintlayout-2.1.2/AndroidManifest.xml:5:5-7:41
@@ -214,16 +218,16 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /home/quest/.gradle/cache
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/quest/.gradle/caches/transforms-3/70be178243629fefb8ce9adf6a292e12/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/quest/.gradle/caches/transforms-3/b521f32a8ca2115704fce9eaa65230c1/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/quest/.gradle/caches/transforms-3/b521f32a8ca2115704fce9eaa65230c1/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
-INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
-INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
-		INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+		INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+		INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
-		ADDED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
-		INJECTED from /home/quest/AndroidStudioProjects/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+		INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+		ADDED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
+		INJECTED from /home/quest/Documents/PADEMO/PersonalAccountHMI/app/src/main/AndroidManifest.xml
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.0.0] /home/quest/.gradle/caches/transforms-3/09b79be83fba3907471fe1de63f439d3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/quest/.gradle/caches/transforms-3/0e4a425e61d135d109d64d5f17d999df/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:26:9-34:20

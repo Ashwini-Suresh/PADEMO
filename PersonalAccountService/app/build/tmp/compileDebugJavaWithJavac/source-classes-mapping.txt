@@ -1,8 +1,5 @@
-common/IPersonalAccount.java
- common.IPersonalAccount
- common.IPersonalAccount$Default
- common.IPersonalAccount$Stub
- common.IPersonalAccount$Stub$Proxy
+com/training/personalaccountservice/PAServiceManager.java
+ com.training.personalaccountservice.PAServiceManager
 com/training/personalaccountservice/PAServicePreference.java
  com.training.personalaccountservice.PAServicePreference
 common/IPersonalAccountListener.java
@@ -21,7 +18,10 @@ com/training/personalaccountservice/BuildConfig.java
  com.training.personalaccountservice.BuildConfig
 com/training/personalaccountservice/PAService.java
  com.training.personalaccountservice.PAService
-com/training/personalaccountservice/PAServiceManager.java
- com.training.personalaccountservice.PAServiceManager
 com/training/personalaccountservice/PASDataBaseManager.java
  com.training.personalaccountservice.PASDataBaseManager
+common/IPersonalAccount.java
+ common.IPersonalAccount
+ common.IPersonalAccount$Default
+ common.IPersonalAccount$Stub
+ common.IPersonalAccount$Stub$Proxy

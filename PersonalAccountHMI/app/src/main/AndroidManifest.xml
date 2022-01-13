@@ -3,6 +3,7 @@
     package="com.example.personalaccounthmi">
     <queries>
         <package android:name="com.training.personalaccountservice"></package>
+        <package android:name="com.example.settingsapplication"></package>
     </queries>
 
     <application
