@@ -1,0 +1,4 @@
+com/example/personalaccounthmi/model/FragmentEditProfileModelTest.java
+ com.example.personalaccounthmi.model.FragmentEditProfileModelTest
+com/example/personalaccounthmi/model/FragmentAllProfileModelTest.java
+ com.example.personalaccounthmi.model.FragmentAllProfileModelTest
