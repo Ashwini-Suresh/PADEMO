@@ -12,38 +12,25 @@ import static com.example.settingsapplication.Common.SettingsConstants.DISPLAY;
 import static com.example.settingsapplication.Common.SettingsConstants.FM;
 import static com.example.settingsapplication.Common.SettingsConstants.TIME_FORMAT;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.ComponentName;
-import android.content.ContentResolver;
-import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.text.Layout;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.settingsapplication.Common.SettingsConstants;
 import com.example.settingsapplication.Presenter.MainActivityPresenter;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-
-import common.IPersonalAccount;
 
 /**
  * @brief This is the main class which implements the View ans onclick listner

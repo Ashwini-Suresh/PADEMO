@@ -1,4 +1,0 @@
-com/example/personalaccounthmi/ExampleInstrumentedTest.java
- com.example.personalaccounthmi.ExampleInstrumentedTest
-com/example/personalaccounthmi/test/BuildConfig.java
- com.example.personalaccounthmi.test.BuildConfig
