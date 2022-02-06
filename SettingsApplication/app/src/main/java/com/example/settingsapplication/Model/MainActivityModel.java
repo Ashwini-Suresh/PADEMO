@@ -127,12 +127,17 @@ public class MainActivityModel implements MainAcitivityContract.MainActivityMode
     public HashMap<String, String> getSettings() {
         String settingsData = mSettingsProvider.getSettings();
         if (settingsData != null && !settingsData.isEmpty()) {
+            Log.d("Model getSettings","SETTINGS_DATA_FROM_PROVIDER_NOTNULL");
             //Json parsing and assign to mSettingsMap
             try {
                 mSettingsMap = jsonToMap(settingsData);
             } catch (JSONException e) {
                 e.printStackTrace();
+                Log.e("Model getSettings","Failed");
             }
+        }else {
+            Log.e("Model getSettings","SETTINGS_DATA_FROM_PROVIDER_NULL");
+            mSettingsMap = getDefaultSettings();
         }
         Log.i("model get settings", mSettingsMap.toString());
         return mSettingsMap;

@@ -16,6 +16,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -202,6 +203,8 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
      */
 
     public void setStatus(Button selected, Button notSelectedOne, Button notSelectedTwo) {
+
+        Log.d("Main_Activity", "setStatus: Selected_button "+selected.getText());
         selected.setBackgroundColor(Color.parseColor(SettingsConstants.GOLD_COLOR));
         selected.setSelected(true);
 
@@ -325,12 +328,12 @@ public class MainActivity extends AppCompatActivity implements MainAcitivityCont
                 }
             }
             else if (mentry.getKey().equals(FM)) {
-                if (mentry.getValue().equals("BIG FM")) {
+                Log.d("MainActivity", "loadSettings:   FM condition Called");
+                if (mentry.getValue().equals("BIG_FM")) {
                     setStatus(mFM1, mFM2, mFM3);
-
                 } else if (mentry.getValue().equals("RADIO CITY")) {
                     setStatus(mFM2, mFM1, mFM3);
-                } else if (mentry.getValue().equals("RADIO FM")) {
+                } else  {
                     setStatus(mFM3, mFM1, mFM2);
                 }
             }
